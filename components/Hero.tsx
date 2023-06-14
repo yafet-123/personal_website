@@ -16,8 +16,8 @@ const Hero: React.FC = () => {
     fade: true,
     infinite: true,
     autoplay: true,
-    speed: 2000,
-    autoplaySpeed: 2000,
+    speed: 10000,
+    autoplaySpeed: 10000,
     // slidesToScroll: 1,
   };
   return (
