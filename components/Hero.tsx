@@ -1,7 +1,7 @@
 'use client'
 import Image from 'next/image';
 import Link from 'next/link';
-import Slider from "react-slick";
+import Slider, { Settings, LazyLoadTypes } from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import HeroImageOne from '@/public/Gena.jpg';
@@ -10,7 +10,7 @@ import HeroImageThree from '@/public/Meskel.png';
 import HeroImageFour from '@/public/omo-valley-1.jpg'; 
 
 const Hero: React.FC = () => {
-  var settings = {
+  var settings: Settings = {
     dots: false,
     lazyLoad: true,
     fade: true,
