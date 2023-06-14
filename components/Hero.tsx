@@ -12,7 +12,7 @@ import HeroImageFour from '@/public/omo-valley-1.jpg';
 const Hero: React.FC = () => {
   var settings: Settings = {
     dots: false,
-    lazyLoad: true,
+    lazyLoad: 'ondemand' as LazyLoadTypes,
     fade: true,
     infinite: true,
     autoplay: true,
