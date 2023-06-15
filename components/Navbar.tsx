@@ -54,11 +54,11 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`sticky ${
-        scrollDirection === "down" ? "md:-top-24 -top-16" : "top-0"
-      }  bg-black bg-opacity-80  w-full md:h-24 h-10 transition-all duration-300 top-0 fixed z-50`}
+      className={`${
+        scrollDirection === "down" ? "bg-[#e6e6e6] bg-opacity-80" : "bg-transparent"
+      } w-full md:h-24 h-10 transition-all duration-300 top-0 fixed z-50`}
     >
-      <div className="md:justify-between justify-around md:px-2 px-4 md:mx-8 items-center md:flex md:pt-4 bg-transparent bg-opacity-80 ">
+      <div className="md:justify-between justify-around md:px-2 px-4 md:mx-8 items-center md:flex md:pt-4">
         <div className="flex items-center justify-between py-3 md:py-0">
           {/* <h1 className="paragraph-fonts text-2xl md:text-4xl cursor-pointer text-white hover:text-[#17c294]">
               TheScentSeeker

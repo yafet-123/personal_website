@@ -4,10 +4,11 @@ import Link from 'next/link';
 import Slider, { Settings, LazyLoadTypes } from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import HeroImageOne from '@/public/Gena.jpg';
-import HeroImageTwo from '@/public/lake-Tana.png';
-import HeroImageThree from '@/public/Meskel.png';
-import HeroImageFour from '@/public/omo-valley-1.jpg'; 
+import HeroImageOne from '@/public/image1.png';
+import HeroImageTwo from '@/public/image2.png';
+import HeroImageThree from '@/public/image3.png';
+import HeroImageFour from '@/public/image4.png'; 
+import HeroImageFive from '@/public/image5.png'; 
 
 const Hero: React.FC = () => {
   var settings: Settings = {
@@ -21,7 +22,7 @@ const Hero: React.FC = () => {
     // slidesToScroll: 1,
   };
   return (
-    <div className="w-full h-screen relative overflow-hidden">
+    <div className="w-full h-screen overflow-hidden">
       <Slider {...settings}>
         {CardHeo.map((data,index)=>(
           <div key={index} className="h-full">
@@ -61,5 +62,9 @@ const CardHeo = [
   {
     id: 4,
     image: HeroImageFour,
+  },
+  {
+    id: 5,
+    image: HeroImageFive,
   },
 ];
