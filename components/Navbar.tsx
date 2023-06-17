@@ -15,6 +15,7 @@ const Navbar = () => {
     { path: "/", name: "Home" },
     { path: "/about", name: "About Us" },
     { path: "/SelectedWorks", name: "Selected Works" },
+    { path: "/bio", name: "Bio" },
   ];
 
   function useScrollDirection() {
@@ -50,10 +51,19 @@ const Navbar = () => {
   }, []);
 
   console.log(pathname)
+  const getClassName = () => {
+    if (pathname !== "/") {
+      return "bg-black bg-opacity-95";
+    } else if (scrollDirection === "down") {
+      return "bg-[#e6e6e6] bg-opacity-80";
+    } else {
+      return "bg-transparent";
+    }
+  };
+  const className = `${getClassName()} w-full md:h-24 h-10 transition-all duration-300 top-0 fixed z-50`;
   return (
     <nav
-      className={ `${ scrollDirection === "down" ? "bg-[#e6e6e6] bg-opacity-80" : "bg-transparent"
-      }  w-full md:h-24 h-10 transition-all duration-300 top-0 fixed z-50 `}
+      className={className}
     >
       <div className="md:justify-between justify-around md:px-2 px-4 md:mx-8 items-center md:flex md:pt-4">
         <div className="flex items-center justify-between py-3 md:py-0">
