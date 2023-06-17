@@ -2,13 +2,15 @@
 import React, { useEffect, useState, useCallback } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 import navbarImage from "@/public/vercel.svg";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
   const router = useRouter();
+  const pathname = usePathname()
+
   const NavLinks = [
     { path: "/", name: "Home" },
     { path: "/about", name: "About Us" },
@@ -47,10 +49,10 @@ const Navbar = () => {
     setOpen(false);
   }, []);
 
-  console.log(router)
+  console.log(pathname)
   return (
     <nav
-      className={ router.pathname == "/" ? "bg-black" : `${ scrollDirection === "down" ? "bg-[#e6e6e6] bg-opacity-80" : "bg-transparent"
+      className={ `${ scrollDirection === "down" ? "bg-[#e6e6e6] bg-opacity-80" : "bg-transparent"
       }  w-full md:h-24 h-10 transition-all duration-300 top-0 fixed z-50 `}
     >
       <div className="md:justify-between justify-around md:px-2 px-4 md:mx-8 items-center md:flex md:pt-4">

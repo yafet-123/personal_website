@@ -10,9 +10,9 @@ export default function SelectedWorksDisplay({CardHeo}) {
   return (
   	<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-20 px-5 lg:px-20 mt-32">
       {CardHeo.map((data,index)=>(
-            <Link href="/" className="relative h-[20rem] w-full">
+            <Link href="/" className="relative h-[20rem] w-full" index={data.asset_id}>
               <Image
-                src={data.image}
+                src={data.url}
                 alt="Slide"
                 className="object-cover h-full w-full"
                 layout="fill"

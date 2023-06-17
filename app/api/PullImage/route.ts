@@ -1,4 +1,5 @@
 import { NextApiRequest, NextApiResponse } from "next";
+import axios from 'axios';
 
 export const GET = async (req: NextApiRequest, res: NextApiResponse) => {
   const cloudName = process.env.CLOUDNAME;
@@ -6,12 +7,18 @@ export const GET = async (req: NextApiRequest, res: NextApiResponse) => {
   const apiSecret = process.env.CLOUDINARYSECRET;
   const url = process.env.CLOUDINARYURL;
   try {
-    const imageUpload = await fetch(
-      `https://api.cloudinary.com/v1_1/${process.env.cloudName}/image/upload/my_upload`,
-    ).then((r) => r.json())
-    console.log(imageUpload)
-    return new Response(JSON.stringify(Allcourses), { status: 200 });
+    const url = `https://api.cloudinary.com/v1_1/${cloudName}/image/upload/Portfolio`;
+
+    const response = await axios.get(url, {
+      auth: {
+        username: apiKey,
+        password: apiSecret
+      }
+    });
+    const retrievedImages = response.data.resources;
+    return new Response(JSON.stringify(retrievedImages), { status: 200 });
   } catch (error) {
+    console.log(error)
     return new Response("Failed to fetch all prompts", { status: 500 });
   }
 };
