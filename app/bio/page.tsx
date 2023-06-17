@@ -30,8 +30,6 @@ export default async function Bio() {
           <Image
             src={HeroImageOne}
             alt="Bio Image"
-            width={5000}
-            height={5000}
             className="absolute object-cover object-center h-full w-full"
             layout="fill"
           />
