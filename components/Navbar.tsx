@@ -13,7 +13,6 @@ const Navbar = () => {
     { path: "/", name: "Home" },
     { path: "/about", name: "About Us" },
     { path: "/SelectedWorks", name: "Selected Works" },
-    { path: "/contact", name: "Contact" },
   ];
 
   function useScrollDirection() {
@@ -48,15 +47,11 @@ const Navbar = () => {
     setOpen(false);
   }, []);
 
-  const handleTryNowButton = () => {
-    router.push("/questions");
-  };
-
+  console.log(router)
   return (
     <nav
-      className={`${
-        scrollDirection === "down" ? "bg-[#e6e6e6] bg-opacity-80" : "bg-transparent"
-      } w-full md:h-24 h-10 transition-all duration-300 top-0 fixed z-50`}
+      className={ router.pathname == "/" ? "bg-black" : `${ scrollDirection === "down" ? "bg-[#e6e6e6] bg-opacity-80" : "bg-transparent"
+      }  w-full md:h-24 h-10 transition-all duration-300 top-0 fixed z-50 `}
     >
       <div className="md:justify-between justify-around md:px-2 px-4 md:mx-8 items-center md:flex md:pt-4">
         <div className="flex items-center justify-between py-3 md:py-0">
@@ -113,10 +108,9 @@ const Navbar = () => {
         </div>
         <div>
           <button
-            onClick={handleTryNowButton}
             className="bg-[#17c294] text-white paragraph-fonts py-2 px-4 mb-4 md:mb-0 md:py-3 md:px-5 shadow-black items-center rounded-md justify-center hidden md:flex shadow-md hover:scale-105 duration-300"
           >
-            <p>Try Now For Free</p>
+            <p>Contact</p>
           </button>
         </div>
       </div>
