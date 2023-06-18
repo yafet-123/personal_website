@@ -16,6 +16,7 @@ const Navbar = () => {
     { path: "/about", name: "About Us" },
     { path: "/SelectedWorks", name: "Selected Works" },
     { path: "/bio", name: "Bio" },
+    { path: "/exhibitions", name: "Exhibitions" },
   ];
 
   function useScrollDirection() {
@@ -53,20 +54,20 @@ const Navbar = () => {
   console.log(pathname)
   const getClassName = () => {
     if (pathname !== "/") {
-      return "bg-black bg-opacity-95";
+      return "bg-slate-200 bg-opacity-95";
     } else if (scrollDirection === "down") {
       return "bg-[#e6e6e6] bg-opacity-80";
     } else {
       return "bg-transparent";
     }
   };
-  const className = `${getClassName()} w-full md:h-24 h-10 transition-all duration-300 top-0 fixed z-50`;
+  const className = `${getClassName()} w-full md:h-24 h-16 transition-all duration-300 top-0 fixed z-50`;
   return (
     <nav
       className={className}
     >
-      <div className="md:justify-between justify-around md:px-2 px-4 md:mx-8 items-center md:flex md:pt-4">
-        <div className="flex items-center justify-between py-3 md:py-0">
+      <div className="md:justify-between justify-around md:px-2 px-0 md:mx-8 items-center md:flex md:pt-4">
+        <div className="flex items-center justify-between py-3 px-4 ">
           {/* <h1 className="paragraph-fonts text-2xl md:text-4xl cursor-pointer text-white hover:text-[#17c294]">
               TheScentSeeker
             </h1> */}
@@ -96,18 +97,18 @@ const Navbar = () => {
 
         <div>
           <div
-            className={`flex-1 justify-self-center pb-3 mt-4 md:block md:pb-0 md:mt-0 ${
-              open ? "flex" : "hidden"
+            className={`flex-1 justify-self-center pb-3 px-4 pt-4 md:block md:pb-0 md:mt-0 ${
+              open ? "flex bg-slate-100 bg-opacity-90" : "hidden"
             }`}
           >
-            <ul className="items-center paragraph-fonts justify-center space-y-8 md:flex md:space-x-6 md:space-y-0 text-white">
+            <ul className="items-center paragraph-fonts justify-center space-y-8 md:flex md:space-x-6 md:space-y-0">
               {NavLinks.map((link) => (
                 <li
                   key={link.name}
-                  className={`md:my-0 my-7 text-xl hover:underline cursor-pointer hover:text-[#17c294] ${
+                  className={`${pathname !== "/" ? 'text-black' : 'text-white' } md:my-0 my-7 font-bold text-2xl hover:underline cursor-pointer hover:text-[#17c294] ${
                     router.pathname === link.path
                       ? "text-[#17c294] underline"
-                      : "text-white"
+                      : ""
                   }`}
                 >
                   <Link href={link.path}>
