@@ -21,9 +21,9 @@ export default async function SelectedWorks() {
   console.log(images)
   return (
     <main className="">
-      {/*<Suspense fallback={<div className="w-full flex items-center justify-center mt-96 text-2xl">Loading Works Please Wait ...</div>}> 
+      <Suspense fallback={<div className="w-full flex items-center justify-center mt-96 text-2xl">Loading Works Please Wait ...</div>}> 
         <SelectedWorksDisplay CardHeo={images} />
-      </Suspense>*/}
+      </Suspense>
     </main>
   )
 }
