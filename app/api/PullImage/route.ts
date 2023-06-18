@@ -1,20 +1,25 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import axios from 'axios';
 
+const cloudinaryUrl = 'https://api.cloudinary.com/v1_1/df7hlpjcj';
+const folderName = 'Portfolio';
+const apiKey = process.env.CLOUDAPIKEY;
+const apiSecret = process.env.CLOUDINARYSECRET;
+const cloudinaryAuth = {
+  username: apiKey,
+  password: apiSecret
+};
+
 export const GET = async (req: NextApiRequest, res: NextApiResponse) => {
-  const cloudName = process.env.CLOUDNAME;
-  const apiKey = process.env.CLOUDAPIKEY;
-  const apiSecret = process.env.CLOUDINARYSECRET;
   try {
-    const url = `https://api.cloudinary.com/v1_1/${cloudName}/image/upload/Portfolio`; 
-
-
-    const response = await axios.get(url, {
-      auth: {
-        username: apiKey,
-        password: apiSecret
+    const response = await axios.get(`${cloudinaryUrl}/resources/image/upload`, {
+      auth: cloudinaryAuth,
+      params: {
+        prefix: folderName,
+        type: 'upload'
       }
     });
+
     const retrievedImages = response.data.resources;
     return new Response(JSON.stringify(retrievedImages), { status: 200 });
   } catch (error) {
