@@ -11,19 +11,19 @@ const cloudinaryAuth = {
 };
 
 export const GET = async (req: NextApiRequest, res: NextApiResponse) => {
-  try {
-    const response = await axios.get(`${cloudinaryUrl}/resources/image/upload`, {
-      auth: cloudinaryAuth,
-      params: {
-        prefix: folderName,
-        type: 'upload'
-      }
-    });
+  // try {
+  //   const response = await axios.get(`${cloudinaryUrl}/resources/image/upload`, {
+  //     auth: cloudinaryAuth,
+  //     params: {
+  //       prefix: folderName,
+  //       type: 'upload'
+  //     }
+  //   });
 
-    const retrievedImages = response.data.resources;
-    return new Response(JSON.stringify(retrievedImages), { status: 200 });
-  } catch (error) {
-    console.log(error)
-    return new Response("Failed to fetch all prompts", { status: 500 });
-  }
+  //   const retrievedImages = response.data.resources;
+  //   return new Response(JSON.stringify(retrievedImages), { status: 200 });
+  // } catch (error) {
+  //   console.log(error)
+  //   return new Response("Failed to fetch all prompts", { status: 500 });
+  // }
 };
