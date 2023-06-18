@@ -10,7 +10,7 @@ export default async function Bio() {
         <div className="flex flex-col w-full lg:w-[75%] lg:mt-20">
           <h1 className="font-bold text-4xl mb-5">Bio</h1>
           <p className="text-lg lg:text-2xl">
-            Daniel Mattar was born in Rio de Janeiro, Brazil, in 1971. He studied art and design at PUC Rio.<br/>
+            {`Daniel Mattar was born in Rio de Janeiro, Brazil, in 1971. He studied art and design at PUC Rio.<br/>
             His research in photography began in Tokyo, Japan, where he lived and worked in the nineties.<br/>
             For twenty-five years that photography is his form of expression,He has travelled through various fields such as fashion, 
             portraits and documentaries.<br/>
@@ -22,7 +22,7 @@ export default async function Bio() {
             establishing a vast dimensional vocabulary of volumes and colours.<br/>
             Daniel holds individual and collective exhibitions since 1988, including the Rio de Janeiro Modern Art Museum (MAM-RJ), 
             the Banco do Brasil Cultural Center (CCBB) and the Sergio Porto Cultural Space.<br/>
-            Today he lives in Lisbon, Portugal, where he develops his artistic work.<br/>
+            Today he lives in Lisbon, Portugal, where he develops his artistic work.<br/>`}
           </p>
         </div>
 
