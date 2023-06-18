@@ -4,7 +4,7 @@ import SelectedWorksDisplay from '@/components/SelectedWorksDisplay'
 async function fetchImages() {
   const response = await fetch(
     // fetch from our code repository
-    '/api/PullImage',
+    process.env.URL + '/api/PullImage',
     {   
       next: {
         revalidate: 60,
