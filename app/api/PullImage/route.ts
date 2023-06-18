@@ -7,8 +7,8 @@ export const GET = async (req: NextApiRequest, res: NextApiResponse) => {
   const apiSecret = process.env.CLOUDINARYSECRET;
   const url = process.env.CLOUDINARYURL;
   try {
-    const url = `https://api.cloudinary.com/v1_1/${cloudName}/image/upload?folder=Portfolio`; 
-
+    const url = `https://api.cloudinary.com/v1_1/${cloudName}/image/upload/Portfolio`; 
+    
 
     const response = await axios.get(url, {
       auth: {
