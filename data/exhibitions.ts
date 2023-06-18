@@ -1,8 +1,8 @@
-import SampleImageOne from '@/public/Sample/sample1.jpg';
-import SampleImageTwo from '@/public/Sample/sample2.png';
-import SampleImageThree from '@/public/Sample/sample3.jpg';
-import SampleImageFour from '@/public/Sample/sample4.jpg'; 
-import SampleImageFive from '@/public/Sample/sample5.jpg'; 
+import SampleImageOne from '@/public/Sample/Sample1.jpg';
+import SampleImageTwo from '@/public/Sample/Sample2.png';
+import SampleImageThree from '@/public/Sample/Sample3.jpg';
+import SampleImageFour from '@/public/Sample/Sample4.jpg'; 
+import SampleImageFive from '@/public/Sample/Sample5.jpg'; 
 
 
 export const ExhibitionsData = [
