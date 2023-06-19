@@ -19,6 +19,6 @@ const WorksSchema = new Schema({
   },
 });
 
-const Works = models.works || model('Works', WorksSchema);
+const Works = models.Works || model('Works', WorksSchema);
 
 export default Works;
