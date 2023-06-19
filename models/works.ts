@@ -1,6 +1,6 @@
 import { Schema, model, models } from 'mongoose';
 
-const worksSchema = new Schema({
+const WorksSchema = new Schema({
   title: {
     type: String,
     required: [true, 'Title is required.'],
@@ -19,6 +19,6 @@ const worksSchema = new Schema({
   },
 });
 
-const Prompt = models.Prompt || model('Prompt', worksSchema);
+const Works = models.works || model('Works', WorksSchema);
 
-export default Prompt;
+export default Works;

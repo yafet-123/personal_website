@@ -7,6 +7,9 @@ const nextConfig = {
       'res.cloudinary.com',
     ],
   },
+  experimental: {
+    serverComponentsExternalPackages: ["mongoose"],
+  },
   typescript: {
     // !! WARN !!
     // Dangerously allow production builds to successfully complete even if
