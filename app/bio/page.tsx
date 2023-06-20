@@ -10,8 +10,8 @@ export default async function Bio() {
         <div className="bio-background w-full h-[20rem] relative">
           <Image
             src={Profile}
-            width={250}
-            height={250}
+            width={300}
+            height={300}
             className="border-8 border-[#355e3b] rounded-full absolute left-1/2 right-1/2 transform -translate-x-1/2 translate-y-1/2 bottom-0"
             alt="latest news image"
           />
