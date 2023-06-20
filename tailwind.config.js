@@ -13,8 +13,16 @@ module.exports = {
       },
       colors: {
         'primary-orange': '#FF5722',
-      }
+      },
+      writingMode: {
+        'vertical': 'vertical-rl',
+      },
+      textOrientation: {
+        'vertical': 'upright',
+      },
     },
+      
+
   },
   plugins: [],
 }

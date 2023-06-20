@@ -55,7 +55,7 @@ const Navbar = () => {
     <nav
       className={`sticky ${
         scrollDirection === "down" ? "md:-top-24 -top-16" : "top-0"
-      }  bg-black  w-full md:h-24 h-16 sticky z-50 transition-all duration-300`}
+      }  bg-transparent  w-full md:h-24 h-16 sticky z-50 transition-all duration-300`}
     >
       <div className="md:justify-between justify-around md:px-2 px-0 md:mx-8 items-center md:flex md:pt-4">
         <div className="flex items-center justify-between py-3 px-4 ">

@@ -1,38 +1,35 @@
 import { Suspense } from 'react';
 import Image from 'next/image'
-import HeroImageOne from '@/public/image1.png';
+import Profile from '@/public/person1.jpg';
 
 export default async function Bio() {
   
   return (
-    <main className="flex flex-col items-center mt-32 px-5 lg:px-10">
-      <div className="flex flex-col-reverse lg:flex-row justify-between">
-        <div className="flex flex-col w-full lg:w-[75%] lg:mt-20">
-          <h1 className="font-bold text-4xl mb-5">Bio</h1>
-          <p className="text-lg lg:text-2xl">
-            {`Daniel Mattar was born in Rio de Janeiro, Brazil, in 1971. He studied art and design at PUC Rio.
-            His research in photography began in Tokyo, Japan, where he lived and worked in the nineties.
-            For twenty-five years that photography is his form of expression,He has travelled through various fields such as fashion, 
-            portraits and documentaries.
-            Daniel's work is full of paradoxes: the technological camera to the intuitive gesture with the oil paint. 
-            In his research, Daniel develops dialogues through photography that show multiple three dimensions on two-dimensional planes. 
-            Through the use of oil paints and/or mineral pigments, the artist composes his images by intervening on small areas of packaging, 
-            book images, ink cartridges, photos from personal files and several other surfaces related to image reproduction. Once finished, 
-            his micro-spaces are immediately photographed at the height of freshness of the paints and then printed in large-scale works, 
-            establishing a vast dimensional vocabulary of volumes and colours.
-            Daniel holds individual and collective exhibitions since 1988, including the Rio de Janeiro Modern Art Museum (MAM-RJ), 
-            the Banco do Brasil Cultural Center (CCBB) and the Sergio Porto Cultural Space.
-            Today he lives in Lisbon, Portugal, where he develops his artistic work.`}
-          </p>
-        </div>
-
-        <div className="w-full h-96 lg:!h-[50rem] relative">
+    <main className="flex flex-col items-center mt-32">
+      <div className="flex flex-col">
+        <div className="bio-background w-full h-[35rem] relative">
           <Image
-              src={HeroImageOne}
-              fill
-              className="!bg-cover w-full !h-full"
-              alt="latest news image"
+            src={Profile}
+            width={250}
+            height={250}
+            className="border-8 border-[#355e3b] rounded-full absolute left-1/2 right-1/2 transform -translate-x-1/2 translate-y-1/2 bottom-0"
+            alt="latest news image"
           />
+        </div>
+        <div className="flex flex-col w-full mt-48 px-5 lg:px-60">
+          <h1 className="font-extrabold tracking-wide text-5xl lg:text-7xl my-5 text-center text-[#355e3b]">HELEN ZERAY</h1>
+          <h2 className="font-extrabold tracking-wide text-3xl lg:text-5xl my-5 text-center text-[#355e3b]">ARTIST</h2>
+          <h1 className="font-extrabold text-4xl mb-5 text-[#355e3b]">Biography</h1>
+          <p className="text-lg lg:text-2xl writing-vertical text-vertical text-left flex flex-col lg:flex-row justify-between items-center mb-10">
+            <span className="lg:pr-10">Helen Zeray's artistic journey is one that is filled with wonder and admiration for the beauty of nature.
+            Growing up in Addis Abeba, Ethiopia, she was captivated by the artistry of the world around her, which led her to pursue her passion for the arts through private classes in her youth.
+            With a heart full of awe and reverence for the natural world, Helen creates stunning works of art that amplify the shapes, colors, and movements of the landscape. 
+            Through her use of acrylic, she masterfully captures the essence of nature, revealing the hand of the divine in its splendor.</span>
+            <span className="lg:pl-10 mt-10 lg:mt-0">But Helen's artistry is not limited to the canvas. She is constantly seeking to expand her knowledge and philosophical understanding of the world beyond her artistic practice. 
+            This thirst for knowledge drives her to explore new compositions, geometric shapes, forms, and colors, as she strives to deepen her connection with the natural world.
+            In Helen's commitment to nonfigurative studies and her endless experimentation with techniques and forms, one can see a beautiful example of an artist's journey of growth and discovery. 
+            Her passion for the arts and her reverence for nature are a testament to the transformative power of creativity and the wonders of the world around us.</span>
+          </p>
         </div>
       </div>
     </main>

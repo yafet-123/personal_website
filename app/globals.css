@@ -68,7 +68,7 @@
 /* Tailwind Styles */
 
 .app {
-  @apply relative z-10 flex justify-center items-center flex-col max-w-7xl mx-auto sm:px-16 px-6;
+  @apply relative z-10 flex flex-col;
 }
 
 
@@ -154,4 +154,11 @@
 
 .flex-between {
   @apply flex justify-between items-center;
+}
+
+.bio-background {
+  background-image:
+    url('../public/image1.png');
+  background-size: cover;
+  background-position: center;
 }
