@@ -12,7 +12,8 @@ export const GET = async (req: NextApiRequest, res: NextApiResponse) => {
                 _id: work._id.toString()
             };
         });
-        return new Response(JSON.stringify(formattedWorks), { status: 200 })
+        console.log(formattedWorks)
+        res.status(200).json(formattedWorks);
     } catch (error) {
         return new Response("Failed to fetch all works", { status: 500 })
     }

@@ -14,7 +14,7 @@ export const GET = async (request, { params }) => {
             };
         });
 
-        return new Response(JSON.stringify(individualwork), { status: 200 })
+        res.status(200).json(formattedWorks);
 
     } catch (error) {
         return new Response("Internal Server Error", { status: 500 });

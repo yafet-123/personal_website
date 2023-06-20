@@ -12,7 +12,7 @@ export const GET = async (req: NextApiRequest, res: NextApiResponse) => {
                 _id: exhibition._id.toString()
             };
         });
-        return new Response(JSON.stringify(formattedexhibition), { status: 200 })
+        res.status(200).json(formattedexhibition);
     } catch (error) {
         return new Response("Failed to fetch all exhibitions", { status: 500 })
     }
