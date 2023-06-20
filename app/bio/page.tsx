@@ -5,9 +5,9 @@ import Profile from '@/public/person1.jpg';
 export default async function Bio() {
   
   return (
-    <main className="flex flex-col items-center mt-32">
+    <main className="flex flex-col items-center">
       <div className="flex flex-col">
-        <div className="bio-background w-full h-[35rem] relative">
+        <div className="bio-background w-full h-[20rem] relative">
           <Image
             src={Profile}
             width={250}
@@ -20,7 +20,7 @@ export default async function Bio() {
           <h1 className="font-extrabold tracking-wide text-5xl lg:text-7xl my-5 text-center text-[#355e3b]">HELEN ZERAY</h1>
           <h2 className="font-extrabold tracking-wide text-3xl lg:text-5xl my-5 text-center text-[#355e3b]">ARTIST</h2>
           <h1 className="font-extrabold text-4xl mb-5 text-[#355e3b]">Biography</h1>
-          <p className="text-lg lg:text-2xl writing-vertical text-vertical text-left flex flex-col lg:flex-row justify-between items-center mb-10">
+          <p className="text-lg lg:text-2xl writing-vertical text-vertical text-left flex flex-col justify-between items-center mb-10">
             <span className="lg:pr-10">{`Helen Zeray's artistic journey is one that is filled with wonder and admiration for the beauty of nature.
             Growing up in Addis Abeba, Ethiopia, she was captivated by the artistry of the world around her, which led her to pursue her passion for the arts through private classes in her youth.
             With a heart full of awe and reverence for the natural world, Helen creates stunning works of art that amplify the shapes, colors, and movements of the landscape. 
