@@ -7,8 +7,13 @@ export const GET = async (request, { params }) => {
 
         const individualexhibition = await exhibition.findById(params.id).populate("_id")
         if (!individualexhibition) return new Response("exhibition Not Found", { status: 404 });
-
-        return new Response(JSON.stringify(individualexhibition), { status: 200 })
+        const formattedexhibition = individualexhibition.map((exhibition) => {
+            return {
+                ...exhibition.toObject(),
+                _id: exhibition._id.toString()
+            };
+        });
+        return new Response(JSON.stringify(formattedexhibition), { status: 200 })
 
     } catch (error) {
         return new Response("Internal Server Error", { status: 500 });

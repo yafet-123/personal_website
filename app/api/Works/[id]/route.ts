@@ -7,6 +7,12 @@ export const GET = async (request, { params }) => {
 
         const individualwork = await Works.findById(params.id).populate("_id")
         if (!individualwork) return new Response("Works Not Found", { status: 404 });
+        const formattedWorks = individualwork.map((work) => {
+            return {
+                ...work.toObject(),
+                _id: work._id.toString()
+            };
+        });
 
         return new Response(JSON.stringify(individualwork), { status: 200 })
 
