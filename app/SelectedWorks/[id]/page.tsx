@@ -1,5 +1,6 @@
 import Image from "next/image";
 import SelectedWorksIndividualDisplay from '@/components/SelectedWorksIndividualDisplay'
+
 const fetchIndividualWorks = async(id : string) => {
   const data = await fetch(process.env.URL + `/api/Works/${id}`,
     {   
