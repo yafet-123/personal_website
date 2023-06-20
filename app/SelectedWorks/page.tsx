@@ -17,12 +17,11 @@ async function fetchSelectedWorks() {
 }
 
 export default async function SelectedWorks() {
-  const works = await fetchSelectedWorks();
-  console.log(works)
+  const Works = await fetchSelectedWorks();
   return (
     <main className="">
       <Suspense fallback={<div className="w-full flex items-center justify-center mt-96 text-2xl">Loading Works Please Wait ...</div>}> 
-        <SelectedWorksDisplay selectedWorks={works} />
+        <SelectedWorksDisplay selectedWorks={Works} />
       </Suspense>
     </main>
   )
