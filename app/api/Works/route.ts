@@ -13,7 +13,7 @@ export const GET = async (req: NextApiRequest, res: NextApiResponse) => {
             };
         });
         console.log(formattedWorks)
-        res.status(200).json(formattedWorks);
+        return new Response(JSON.stringify(formattedWorks), { status: 200 })
     } catch (error) {
         return new Response("Failed to fetch all works", { status: 500 })
     }
