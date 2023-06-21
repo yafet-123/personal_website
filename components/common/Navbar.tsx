@@ -58,7 +58,7 @@ const Navbar = () => {
     <nav
       className={`fixed ${
         scrollDirection === "down" ? "md:-top-24 -top-16 bg-black" : "top-0"
-      } ${ open ? "bg-black bg-opacity-75" : "" }  w-full md:h-24 h-16 fixed z-50 transition-all duration-300`}
+      } ${ open && "bg-black bg-opacity-75" }  w-full md:h-24 h-16 fixed z-50 transition-all duration-300`}
     >
       <div className={`md:justify-between justify-around md:px-2 px-4 md:mx-8 items-center md:flex md:pt-4 bg-transparent ${ open ? "bg-black bg-opacity-75" : "" } `}>
         <div className="flex items-center justify-between py-3 md:py-0">
