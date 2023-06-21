@@ -12,10 +12,9 @@ const Navbar = () => {
   const pathname = usePathname();
   const NavLinks = [
     { path: "/", name: "Home" },
-    { path: "/about", name: "About Us" },
     { path: "/SelectedWorks", name: "Selected Works" },
     { path: "/bio", name: "Bio" },
-    { path: "/exhibitions", name: "Exhibitions" },
+    { path: "/exhibitions", name: "News" },
   ];
 
   function useScrollDirection() {

@@ -1,14 +1,7 @@
 'use client'
-import Image from 'next/image';
-import Link from 'next/link';
 import Slider, { Settings, LazyLoadTypes } from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import HeroImageOne from '@/public/image1.png';
-import HeroImageTwo from '@/public/image2.png';
-import HeroImageThree from '@/public/image3.png';
-import HeroImageFour from '@/public/image4.png'; 
-import HeroImageFive from '@/public/image5.png'; 
 
 const Hero: React.FC = () => {
   var settings: Settings = {
