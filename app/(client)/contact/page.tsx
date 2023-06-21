@@ -1,6 +1,11 @@
 import ReachUs from "@/components/contactus/ReachUs";
 import ContactForm from "@/components/contactus/ContactForm";
-
+import { Metadata } from 'next'
+ 
+export const metadata: Metadata = {
+  title: 'Contact',
+  description: "This is contact page for Helen ",
+}
 
 const ContactUsPage = () => {
   return (
