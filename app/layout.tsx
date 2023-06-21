@@ -17,10 +17,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="">
-        <div className='main'>
-          <div className='gradient' />
-        </div>
-        <div className="relative app">
+        <div className="relative">
           <Navbar />
           <main className="absolute top-0 left-0 right-0">{children}</main>
         </div>
