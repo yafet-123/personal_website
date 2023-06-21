@@ -4,7 +4,7 @@ import Profile from '@/public/person1.jpg';
 const Hero: React.FC = () => {
   return (
     <div className="flex flex-col">
-      <div className="bio-background w-full h-[25rem] lg:h-[30rem] relative">
+      <div className="bio-background w-full h-[25rem] relative">
         <Image
           src={Profile}
           width={350}
@@ -13,11 +13,11 @@ const Hero: React.FC = () => {
           alt="latest news image"
         />
       </div>
-      <div className="flex flex-col w-full mt-32 px-5 lg:px-60">
-        <h1 className="font-extrabold tracking-wide text-4xl lg:text-6xl my-5 text-center text-[#355e3b]">HELEN ZERAY</h1>
-        <h2 className="font-extrabold tracking-wide text-2xl lg:text-4xl my-5 text-center text-[#355e3b]">ARTIST</h2>
-        <h1 className="font-extrabold text-xl lg:text-3xl mb-5 text-[#355e3b]">About</h1>
-        <p className="text-lg lg:text-xl writing-vertical text-vertical text-left flex flex-col justify-between items-center mb-10">
+      <div className="flex flex-col w-full mt-32 px-5 lg:px-60 text-white leading-loose">
+        <h1 className="font-extrabold tracking-wide text-4xl lg:text-6xl my-5 text-center">HELEN ZERAY</h1>
+        <h2 className="font-extrabold tracking-wide text-2xl lg:text-4xl my-5 text-center">ARTIST</h2>
+        <h1 className="font-extrabold text-xl lg:text-3xl mb-5">About</h1>
+        <p className="text-lg lg:text-2xl writing-vertical text-vertical text-left flex flex-col justify-between items-center mb-10">
           <span className="">{`Helen Zeray's artistic journey is one that is filled with wonder and admiration for the beauty of nature.
           Growing up in Addis Abeba, Ethiopia, she was captivated by the artistry of the world around her, which led her to pursue her passion for the arts through private classes in her youth.
           With a heart full of awe and reverence for the natural world, Helen creates stunning works of art that amplify the shapes, colors, and movements of the landscape. 
