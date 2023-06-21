@@ -11,6 +11,7 @@ const Hero: React.FC = () => {
           height={350}
           className="border-[15px] border-[#355e3b] rounded-full absolute left-1/2 right-1/2 transform -translate-x-1/2 translate-y-1/4 bottom-0"
           alt="latest news image"
+          priority
         />
       </div>
       <div className="flex flex-col w-full mt-32 px-5 lg:px-60 text-white leading-loose">

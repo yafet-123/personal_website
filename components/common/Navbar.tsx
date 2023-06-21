@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter,usePathname  } from "next/navigation";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
-import navbarImage from "@/public/vercel.svg";
+import navbarImage from "@/public/logo.svg";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -57,18 +57,19 @@ const Navbar = () => {
   return (
     <nav
       className={`fixed ${
-        scrollDirection === "down" ? "md:-top-24 -top-16" : "top-0"
-      }  bg-transparent  w-full md:h-24 h-16 fixed z-50 transition-all duration-300`}
+        scrollDirection === "down" ? "md:-top-24 -top-16 bg-black" : "top-0"
+      } ${ open ? 'bg-black bg-opacity-75' : '' } bg-transparent  w-full md:h-24 h-16 fixed z-50 transition-all duration-300`}
     >
-      <div className="md:justify-between justify-around md:px-2 px-4 md:mx-8 items-center md:flex md:pt-4 bg-transparent ">
+      <div className={`md:justify-between justify-around md:px-2 px-4 md:mx-8 items-center md:flex md:pt-4 bg-transparent ${ open ? 'bg-black bg-opacity-75' : '' } `}>
         <div className="flex items-center justify-between py-3 md:py-0">
           {/* <h1 className="paragraph-fonts text-2xl md:text-4xl cursor-pointer text-white hover:text-[#17c294]">
               TheScentSeeker
             </h1> */}
-          <div className="h-10 w-24 md:w-36 md:h-12">
+          <div className="h-10 w-24 md:w-36 md:h-12 relative">
             <Link href="/" className="block">
               <Image
                 src={navbarImage}
+                fill
                 alt="Navbar"
                 className="object-contain w-full h-full cursor-pointer"
               />
@@ -81,9 +82,9 @@ const Navbar = () => {
               onClick={() => setOpen(!open)}
             >
               {open === true ? (
-                <AiOutlineClose color="white" size={25} />
+                <AiOutlineClose color="white" size={35} />
               ) : (
-                <AiOutlineMenu color="white" size={25} />
+                <AiOutlineMenu color="white" size={35} />
               )}
             </button>
           </div>
