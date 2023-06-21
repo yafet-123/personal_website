@@ -1,16 +1,14 @@
 // import NextAuth from "next-auth";
 // import GoogleProvider from "next-auth/providers/google";
-// import GithubProvider from "next-auth/providers/github";
-// import prisma from "@/utils/db.server";
+
+// import User from '@/models/user';
+// import { connectToDB } from '@/utils/database';
+
 // const handler = NextAuth({
 //   providers: [
 //     GoogleProvider({
 //       clientId: process.env.GOOGLE_ID,
 //       clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-//     }),
-//     GithubProvider({
-//       clientId: process.env.GITHUB_ID,
-//       clientSecret: process.env.GITHUB_SECRET,
 //     }),
 //   ],
 //   callbacks: {
