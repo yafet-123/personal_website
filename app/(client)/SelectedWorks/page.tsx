@@ -1,5 +1,5 @@
 import { Suspense } from 'react';
-import SelectedWorksDisplay from '@/components/SelectedWorksDisplay'
+import List from '@/components/works/List'
 
 async function fetchSelectedWorks() {
   const response = await fetch(
@@ -22,7 +22,7 @@ export default async function SelectedWorks() {
   return (
     <main className="w-full h-full lg:pt-24 bg-[#3C3E3F]">
       <Suspense fallback={<div className="w-full flex items-center justify-center text-2xl ">Loading Works Please Wait ...</div>}> 
-        <SelectedWorksDisplay selectedWorks={Works} />
+        <List selectedWorks={Works} />
       </Suspense>
     </main>
   )

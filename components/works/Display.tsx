@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
-export default function SelectedWorksIndividualDisplay({work}) {
+export default function Display({work}) {
   return (
   	<div className="grid grid-cols-1 md:grid-cols-2 gap-5 lg:gap-20 px-3 mt-32">
       <div className="flex flex-col items-left font-serif antialiased leading-loose tracking-wide">

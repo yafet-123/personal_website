@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
-export default function Display({work}) {
+export default function Work({work}) {
   const id = work._id
   return (
     <Link href={`/SelectedWorks/${id}`} className="flex flex-col items-center" key={work._id}>

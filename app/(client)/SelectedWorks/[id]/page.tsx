@@ -1,5 +1,5 @@
 import Image from "next/image";
-import SelectedWorksIndividualDisplay from '@/components/SelectedWorksIndividualDisplay'
+import Display from '@/components/works/Display'
 
 const fetchIndividualWorks = async(id : string) => {
   const data = await fetch(process.env.URL + `/api/Works/${id}`,
@@ -18,7 +18,7 @@ export default async function SelectedWorksView({params : {id} }) {
   console.log(id)
   return (
     <section className="w-full h-full lg:pt-24 bg-[#3C3E3F]">
-      <SelectedWorksIndividualDisplay work={work}/>
+      <Display work={work}/>
     </section>
   );
 }
