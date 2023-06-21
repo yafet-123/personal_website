@@ -2,15 +2,14 @@
 import React, { useEffect, useState, useCallback } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter, usePathname } from "next/navigation";
+import { useRouter,usePathname  } from "next/navigation";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 import navbarImage from "@/public/vercel.svg";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
   const router = useRouter();
-  const pathname = usePathname()
-
+  const pathname = usePathname();
   const NavLinks = [
     { path: "/", name: "Home" },
     { path: "/about", name: "About Us" },
@@ -51,14 +50,18 @@ const Navbar = () => {
     setOpen(false);
   }, []);
 
+  const handleTryNowButton = () => {
+    router.push("/questions");
+  };
+
   return (
     <nav
       className={`sticky ${
         scrollDirection === "down" ? "md:-top-24 -top-16" : "top-0"
       }  bg-transparent  w-full md:h-24 h-16 sticky z-50 transition-all duration-300`}
     >
-      <div className="md:justify-between justify-around md:px-2 px-0 md:mx-8 items-center md:flex md:pt-4">
-        <div className="flex items-center justify-between py-3 px-4 ">
+      <div className="md:justify-between justify-around md:px-2 px-4 md:mx-8 items-center md:flex md:pt-4 bg-transparent ">
+        <div className="flex items-center justify-between py-3 md:py-0">
           {/* <h1 className="paragraph-fonts text-2xl md:text-4xl cursor-pointer text-white hover:text-[#17c294]">
               TheScentSeeker
             </h1> */}
@@ -88,18 +91,18 @@ const Navbar = () => {
 
         <div>
           <div
-            className={`flex-1 justify-self-center pb-3 px-4 pt-4 md:block md:pb-0 md:mt-0 ${
-              open ? "flex bg-slate-100 bg-opacity-90" : "hidden"
+            className={`flex-1 justify-self-center pb-3 mt-4 md:block md:pb-0 md:mt-0 ${
+              open ? "flex" : "hidden"
             }`}
           >
-            <ul className="items-center paragraph-fonts justify-center space-y-8 md:flex md:space-x-6 md:space-y-0">
+            <ul className="items-center font-bold paragraph-fonts justify-center space-y-8 md:flex md:space-x-6 md:space-y-0 text-white">
               {NavLinks.map((link) => (
                 <li
                   key={link.name}
-                  className={`${pathname !== "/" ? 'text-black' : 'text-white' } md:my-0 my-7 font-bold text-2xl hover:underline cursor-pointer hover:text-[#17c294] ${
-                    router.pathname === link.path
+                  className={`md:my-0 my-7 text-2xl hover:underline cursor-pointer hover:text-[#17c294] ${
+                    pathname === link.path
                       ? "text-[#17c294] underline"
-                      : ""
+                      : "text-white"
                   }`}
                 >
                   <Link href={link.path}>
@@ -112,7 +115,8 @@ const Navbar = () => {
         </div>
         <div>
           <button
-            className="bg-[#17c294] text-white paragraph-fonts py-2 px-4 mb-4 md:mb-0 md:py-3 md:px-5 shadow-black items-center rounded-md justify-center hidden md:flex shadow-md hover:scale-105 duration-300"
+            onClick={handleTryNowButton}
+            className="bg-[#17c294] font-bold text-2xl text-white paragraph-fonts py-2 px-4 mb-4 md:mb-0 md:py-3 md:px-5 shadow-black items-center rounded-md justify-center hidden md:flex shadow-md hover:scale-105 duration-300"
           >
             <p>Contact</p>
           </button>
