@@ -47,7 +47,7 @@ const ContactForm = () => {
   return (
     <div className="flex flex-col gap-8 md:gap-12">
       <h1 className="headings-fonts text-white text-4xl md:text-6xl">
-        Let's Collaborate.
+        {`Let's Collaborate.`}
       </h1>
       <Formik
         initialValues={initialValues}
