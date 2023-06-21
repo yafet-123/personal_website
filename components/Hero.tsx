@@ -22,18 +22,11 @@ const Hero: React.FC = () => {
     // slidesToScroll: 1,
   };
   return (
-    <div className="w-full h-screen overflow-hidden">
+    <div className="overflow-hidden">
       <Slider {...settings}>
         {CardHeo.map((data,index)=>(
-          <div key={index} className="h-full">
-            <div className="relative h-screen">
-              <Image
-                src={data.image}
-                alt="Slide"
-                className="object-cover object-center h-full w-full"
-                layout="fill"
-              />
-             </div>
+          <div key={index} className={`${data.image} w-full h-screen bg-fixed`}>
+            
           </div>
         ))}
       </Slider>
@@ -49,22 +42,22 @@ export default Hero
 const CardHeo = [
   {
     id: 1,
-    image: HeroImageOne,
+    image: 'hero-background-one',
   },
   {
     id: 2,
-    image: HeroImageTwo,
+    image: 'hero-background-two',
   },
   {
     id: 3,
-    image: HeroImageThree,
+    image: 'hero-background-three',
   },
   {
     id: 4,
-    image: HeroImageFour,
+    image: 'hero-background-four',
   },
   {
     id: 5,
-    image: HeroImageFive,
+    image: 'hero-background-five',
   },
 ];
