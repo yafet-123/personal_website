@@ -50,7 +50,7 @@ const Navbar = () => {
   }, []);
 
   const handleTryNowButton = () => {
-    router.push("/questions");
+    router.push("/contact");
   };
 
   return (
@@ -116,7 +116,7 @@ const Navbar = () => {
         <div>
           <button
             onClick={handleTryNowButton}
-            className="bg-[#17c294] font-bold text-2xl text-white paragraph-fonts py-2 px-4 mb-4 md:mb-0 md:py-3 md:px-5 shadow-black items-center rounded-md justify-center hidden md:flex shadow-md hover:scale-105 duration-300"
+            className="bg-[#17c294] font-bold text-2xl text-white paragraph-fonts py-2 px-4 mb-4 md:mb-0 md:py-3 md:px-5 shadow-black items-center rounded-md justify-center flex shadow-md hover:scale-105 duration-300"
           >
             <p>Contact</p>
           </button>
