@@ -1,8 +1,8 @@
 import NextAuth from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
 
-import User from '@/models/user';
-import { connectToDB } from '@/utils/database';
+import User from "@/models/user";
+import { connectToDB } from "@/utils/database";
 
 const handler = NextAuth({
   providers: [
@@ -20,22 +20,22 @@ const handler = NextAuth({
       return session;
     },
     async signIn({ account, profile, user, credentials }) {
-      	try {
-	        await connectToDB();
+      try {
+        await connectToDB();
 
-	        // check if user already exists
-	        const userExists = await User.findOne({ email: profile.email });
+        // check if user already exists
+        const userExists = await User.findOne({ email: profile.email });
 
-	        // if not, create a new document and save user in MongoDB
-	        if (!userExists) {
-	          throw new Error("User not found in the database");
-	        }
+        // if not, create a new document and save user in MongoDB
+        if (!userExists) {
+          throw new Error("User not found in the database");
+        }
 
-	        return true
-      	} catch (error) {
-        	console.log("Error checking if user exists: ", error.message);
-        	return false
-      	}
+        return true;
+      } catch (error) {
+        console.log("Error checking if user exists: ", error.message);
+        return false;
+      }
     },
   },
 });

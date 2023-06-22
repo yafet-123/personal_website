@@ -1,18 +1,17 @@
 import User from "@/models/user";
 import { connectToDB } from "@/utils/database";
- 
+
 export const GET = async (request, { params }) => {
-    try {
-        await connectToDB()
+  try {
+    await connectToDB();
 
-        const individualuser = await User.findById(params.id).populate("_id")
-        if (!individualuser) return new Response("User Not Found", { status: 404 });
-        return new Response(JSON.stringify(individualuser), { status: 200 })
-
-    } catch (error) {
-        return new Response("Internal Server Error", { status: 500 });
-    }
-}
+    const individualuser = await User.findById(params.id).populate("_id");
+    if (!individualuser) return new Response("User Not Found", { status: 404 });
+    return new Response(JSON.stringify(individualuser), { status: 200 });
+  } catch (error) {
+    return new Response("Internal Server Error", { status: 500 });
+  }
+};
 
 export const PATCH = async (request, { params }) => {
   const { UserName, email } = await request.json();
@@ -23,10 +22,10 @@ export const PATCH = async (request, { params }) => {
     const existingUser = await User.findById(params.id);
 
     if (!existingUser) {
-        return new Response("User not found", { status: 404 });
+      return new Response("User not found", { status: 404 });
     }
 
-        // Update the prompt with new data
+    // Update the prompt with new data
     existingUser.UserName = UserName;
     existingUser.email = email;
 

@@ -1,5 +1,5 @@
-import Image from 'next/image'
-import Profile from '@/public/person1.jpg';
+import Image from "next/image";
+import Profile from "@/public/person1.jpg";
 
 const Hero: React.FC = () => {
   return (
@@ -15,8 +15,12 @@ const Hero: React.FC = () => {
         />
       </div>
       <div className="flex flex-col w-full mt-32 px-5 lg:px-60 text-white leading-loose">
-        <h1 className="font-extrabold tracking-wide text-4xl lg:text-6xl my-5 text-center">HELEN ZERAY</h1>
-        <h2 className="font-extrabold tracking-wide text-2xl lg:text-4xl my-5 text-center">ARTIST</h2>
+        <h1 className="font-extrabold tracking-wide text-4xl lg:text-6xl my-5 text-center">
+          HELEN ZERAY
+        </h1>
+        <h2 className="font-extrabold tracking-wide text-2xl lg:text-4xl my-5 text-center">
+          ARTIST
+        </h2>
         <h1 className="font-extrabold text-xl lg:text-3xl mb-5">About</h1>
         <p className="text-lg lg:text-2xl writing-vertical text-vertical text-left flex flex-col justify-between items-center mb-10">
           <span className="">{`Helen Zeray's artistic journey is one that is filled with wonder and admiration for the beauty of nature.
@@ -29,8 +33,8 @@ const Hero: React.FC = () => {
           Her passion for the arts and her reverence for nature are a testament to the transformative power of creativity and the wonders of the world around us.`}</span>
         </p>
       </div>
-    </div>   
+    </div>
   );
 };
 
-export default Hero
+export default Hero;

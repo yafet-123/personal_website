@@ -1,12 +1,13 @@
-'use client'
+"use client";
 import React, { useEffect, useState, useCallback } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter,usePathname  } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
-import navbarImage from "@/public/logo.svg";
+import { signIn, signOut, useSession, getProviders } from "next-auth/react";
 
 const Navbar = () => {
+  const { data: session } = useSession(); // this is for next-auth
   const [open, setOpen] = useState(false);
   const router = useRouter();
   const pathname = usePathname();
@@ -58,9 +59,15 @@ const Navbar = () => {
     <nav
       className={`fixed ${
         scrollDirection === "down" ? "md:-top-24 -top-16 bg-black" : "top-0"
-      } ${ open && "bg-black bg-opacity-75" }  w-full md:h-24 h-16 fixed z-50 transition-all duration-300`}
+      } ${
+        open && "bg-black bg-opacity-75"
+      }  w-full md:h-24 h-16 fixed z-50 transition-all duration-300`}
     >
-      <div className={`${ open && "bg-black bg-opacity-75" } md:justify-center md:px-2 px-4 md:mx-8 items-center md:flex md:pt-4 `}>
+      <div
+        className={`${
+          open && "bg-black bg-opacity-75"
+        } md:justify-center md:px-2 px-4 md:mx-8 items-center md:flex md:pt-4 `}
+      >
         <div className="flex items-center md:justify-between justify-end py-3 md:py-0">
           <div className="md:hidden">
             <button
@@ -98,6 +105,43 @@ const Navbar = () => {
                 </li>
               ))}
             </ul>
+          </div>
+
+          <div className="flex">
+            {session?.user ? (
+              <div className="flex gap-3 md:gap-5">
+                <button type="button" onClick={signOut} className="outline_btn">
+                  Sign Out
+                </button>
+
+                <Link href="/profile">
+                  <Image
+                    src={session?.user.image}
+                    width={37}
+                    height={37}
+                    className="rounded-full"
+                    alt="profile"
+                  />
+                </Link>
+              </div>
+            ) : (
+              <div className="flex flex-col lg:flex-row">
+                {providers &&
+                  // bring the providers then list them  in this particular example it is only one
+                  Object.values(providers).map((provider) => (
+                    <button
+                      type="button"
+                      key={provider.name}
+                      onClick={() => {
+                        signIn(provider.id);
+                      }}
+                      className="black_btn my-2 lg:mx-1"
+                    >
+                      {provider.name}
+                    </button>
+                  ))}
+              </div>
+            )}
           </div>
         </div>
       </div>

@@ -17,9 +17,7 @@ const VerticalNavbar: React.FC = () => {
     <div className={`flex h-full w-full lg:w-60 pt-24 sticky top-0 bottom-0`}>
       <nav className="w-full lg:h-screen flex flex-col py-8 lg:px-4 dark:bg-[#02201D]">
         <div className="flex justify-between ml-2 lg:ml-5">
-          <h1 className={`text-2xl font-bold text-white`}>
-            Admin Page
-          </h1>
+          <h1 className={`text-2xl font-bold text-white`}>Admin Page</h1>
         </div>
 
         <div className="mt-10">

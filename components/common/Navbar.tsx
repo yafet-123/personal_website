@@ -1,8 +1,8 @@
-'use client'
+"use client";
 import React, { useEffect, useState, useCallback } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter,usePathname  } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 import navbarImage from "@/public/logo.svg";
 
@@ -58,9 +58,15 @@ const Navbar = () => {
     <nav
       className={`fixed ${
         scrollDirection === "down" ? "md:-top-24 -top-16 bg-black" : "top-0"
-      } ${ open && "bg-black bg-opacity-75" }  w-full md:h-24 h-16 fixed z-50 transition-all duration-300`}
+      } ${
+        open && "bg-black bg-opacity-75"
+      }  w-full md:h-24 h-16 fixed z-50 transition-all duration-300`}
     >
-      <div className={`${ open && "bg-black bg-opacity-75" } md:justify-center md:px-2 px-4 md:mx-8 items-center md:flex md:pt-4 `}>
+      <div
+        className={`${
+          open && "bg-black bg-opacity-75"
+        } md:justify-center md:px-2 px-4 md:mx-8 items-center md:flex md:pt-4 `}
+      >
         <div className="flex items-center md:justify-between justify-end py-3 md:py-0">
           <div className="md:hidden">
             <button
