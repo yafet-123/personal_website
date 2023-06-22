@@ -4,7 +4,7 @@ import "../globals.css";
 import VerticalNavbar from "@/components/Admin/Common/VerticalNavbar";
 import Navbar from "@/components/Admin/Common/Navbar";
 const inter = Inter({ subsets: ["latin"] });
-import Provider from "@/components/Admin/common/Provider";
+import Provider from "@/components/Admin/Common/Provider";
 
 export const metadata = {
   title: "Admin",

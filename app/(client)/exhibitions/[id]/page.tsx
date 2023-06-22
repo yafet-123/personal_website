@@ -1,5 +1,5 @@
 import Image from "next/image";
-import SelectedExhibitionsIndividualDisplay from '@/components/SelectedExhibitionsIndividualDisplay'
+import Display from '@/components/exhibitions/Display'
 
 const fetchIndividualExhibition = async(id : string) => {
   const data = await fetch(process.env.URL + `/api/Exhibitions/${id}`,
@@ -18,7 +18,7 @@ export default async function SelectedExhibitionView({params : {id} }) {
   console.log(id)
   return (
     <section className="w-full h-full lg:pt-24">
-      <SelectedExhibitionsIndividualDisplay exhibition={exhibition}/>
+      <Display exhibition={exhibition}/>
     </section>
   );
 }

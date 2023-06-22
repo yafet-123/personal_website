@@ -60,7 +60,7 @@ export default function AdminUserHome() {
   }, []);
   return (
     <section className="w-full box-border lg:pt-24">
-      {session?.user.email === "yafetaddisu123@gmail.com" ? (
+      {session?.user.email === "" ? (
         <Form
           type="Create"
           user={user}
