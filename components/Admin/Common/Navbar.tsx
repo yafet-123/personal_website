@@ -117,7 +117,7 @@ const Navbar = () => {
         </div>
 
         {/* Desktop Navigation */}
-        <div className="sm:flex hidden">
+        <div className="md:flex hidden">
           {session?.user ? (
             <div className="flex gap-3 md:gap-5">
               <button type="button" onClick={signOut} className="outline_btn">
@@ -155,7 +155,7 @@ const Navbar = () => {
         </div>
 
         {/* Mobile Navigation */}
-        <div className="sm:hidden flex relative">
+        <div className="md:hidden flex relative">
           {session?.user ? (
             // in this particular example when we click the icon in this example the photo from google icon
             <div className="flex">
