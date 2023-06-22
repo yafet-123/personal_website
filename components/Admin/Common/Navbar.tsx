@@ -9,6 +9,7 @@ import { signIn, signOut, useSession, getProviders } from "next-auth/react";
 const Navbar = () => {
   const { data: session } = useSession(); // this is for next-auth
   const [open, setOpen] = useState(false);
+  const [toggleDropdown, setToggleDropdown] = useState(false);
   const router = useRouter();
   const pathname = usePathname();
   const [providers, setProviders] = useState(null);
