@@ -2,6 +2,26 @@
 @tailwind components;
 @tailwind utilities;
 
+
+.scroll_width{
+  overflow-x:scroll;
+}
+
+@media (min-width: 1024px) { 
+  .scroll_width{
+    overflow-y: scroll;
+    overflow-x: unset;
+    scrollbar-width: thin;
+  }
+
+  .scroll_width::-webkit-scrollbar {
+    overflow-y: scroll;
+    overflow-x: unset;
+    width: 5px;
+    background-color: #009688;
+  }
+}
+
 .bio-background {
   background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
     url('../public/image1.png');
