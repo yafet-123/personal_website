@@ -114,7 +114,7 @@ const Navbar = () => {
             </ul>
           </div>
 
-          <div className="flex">
+          <div className="sm:flex hidden">
             {session?.user ? (
               <div className="flex gap-3 md:gap-5">
                 <button type="button" onClick={signOut} className="outline_btn">
@@ -132,7 +132,7 @@ const Navbar = () => {
                 </Link>
               </div>
             ) : (
-              <div className="flex flex-col lg:flex-row">
+              <>
                 {providers &&
                   // bring the providers then list them  in this particular example it is only one
                   Object.values(providers).map((provider) => (
@@ -142,12 +142,60 @@ const Navbar = () => {
                       onClick={() => {
                         signIn(provider.id);
                       }}
-                      className="black_btn my-2 lg:mx-1"
+                      className="black_btn"
                     >
-                      {provider.name}
+                      Sign in
                     </button>
                   ))}
+              </>
+            )}
+          </div>
+
+          {/* Mobile Navigation */}
+          <div className="sm:hidden flex relative">
+            {session?.user ? (
+              // in this particular example when we click the icon in this example the photo from google icon
+              <div className="flex">
+                <Image
+                  src={session?.user.image}
+                  width={37}
+                  height={37}
+                  className="rounded-full"
+                  alt="profile"
+                  onClick={() => setToggleDropdown(!toggleDropdown)}
+                />
+
+                {toggleDropdown && (
+                  <div className="dropdown">
+                    <button
+                      type="button"
+                      onClick={() => {
+                        setToggleDropdown(false);
+                        signOut();
+                      }}
+                      className="mt-5 w-full black_btn"
+                    >
+                      Sign Out
+                    </button>
+                  </div>
+                )}
               </div>
+            ) : (
+              <>
+                {providers &&
+                  Object.values(providers).map((provider) => (
+                    <button
+                      type="button"
+                      key={provider.name}
+                      onClick={() => {
+                        signIn(provider.id);
+                      }}
+                      className="black_btn"
+                    >
+                      Sign in
+                    </button>
+                  ))}
+              </>
             )}
           </div>
         </div>
