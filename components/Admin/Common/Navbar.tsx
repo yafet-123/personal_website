@@ -11,6 +11,13 @@ const Navbar = () => {
   const [open, setOpen] = useState(false);
   const router = useRouter();
   const pathname = usePathname();
+  const [providers, setProviders] = useState(null);
+  useEffect(() => {
+    (async () => {
+      const res = await getProviders();
+      setProviders(res);
+    })();
+  }, []);
   const NavLinks = [
     { path: "/", name: "Home" },
     { path: "/SelectedWorks", name: "Selected Works" },
