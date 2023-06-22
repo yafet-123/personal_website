@@ -12,14 +12,17 @@ const Hero: React.FC = () => {
     autoplay: true,
     speed: 7000,
     autoplaySpeed: 7000,
-    // slidesToScroll: 1,
+    slidesToShow: 5,
+    slidesToScroll: 1
   };
   return (
     <div className="overflow-hidden">
       <Slider {...settings}>
         {CardHeo.map((data,index)=>(
-          <div key={index} className={`${data.image} w-full h-screen bg-fixed`}>
-            
+          <div key={index} className={`${data.image} w-full h-screen bg-fixed relative`}>
+            <h1 className="absolute top-1/2 md:left-1/2 md:-translate-x-1/2 -translate-y-1/2 font-bold text-white text-3xl md:text-8xl text-center">
+              Immersed in Nature's Palette:The Artistry of Helen Zeray
+            </h1>
           </div>
         ))}
       </Slider>

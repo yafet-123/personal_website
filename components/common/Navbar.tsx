@@ -14,7 +14,8 @@ const Navbar = () => {
     { path: "/", name: "Home" },
     { path: "/SelectedWorks", name: "Selected Works" },
     { path: "/bio", name: "Bio" },
-    { path: "/news", name: "News" },
+    { path: "/exhibitions", name: "Exhibitions" },
+    { path: "/contact", name: "Contact" },
   ];
 
   function useScrollDirection() {
@@ -59,22 +60,8 @@ const Navbar = () => {
         scrollDirection === "down" ? "md:-top-24 -top-16 bg-black" : "top-0"
       } ${ open && "bg-black bg-opacity-75" }  w-full md:h-24 h-16 fixed z-50 transition-all duration-300`}
     >
-      <div className={`${ open && "bg-black bg-opacity-75" } md:justify-between justify-around md:px-2 px-4 md:mx-8 items-center md:flex md:pt-4 `}>
-        <div className="flex items-center justify-between py-3 md:py-0">
-          {/* <h1 className="paragraph-fonts text-2xl md:text-4xl cursor-pointer text-white hover:text-[#17c294]">
-              TheScentSeeker
-            </h1> */}
-          <div className="h-10 w-24 md:w-36 md:h-12 relative">
-            <Link href="/" className="block">
-              <Image
-                src={navbarImage}
-                fill
-                alt="Navbar"
-                className="object-contain w-full h-full cursor-pointer"
-              />
-            </Link>
-          </div>
-
+      <div className={`${ open && "bg-black bg-opacity-75" } md:justify-center md:px-2 px-4 md:mx-8 items-center md:flex md:pt-4 `}>
+        <div className="flex items-center md:justify-between justify-end py-3 md:py-0">
           <div className="md:hidden">
             <button
               className="p-2  text-gray-700 rounded-md outline-none focus:border-gray-400 focus:border"
@@ -112,14 +99,6 @@ const Navbar = () => {
               ))}
             </ul>
           </div>
-        </div>
-        <div className={`${ open ? "flex" : "hidden md:flex" }`}>
-          <button
-            onClick={handleTryNowButton}
-             className={` bg-[#17c294] font-bold text-2xl text-white paragraph-fonts py-2 px-4 mb-4 md:mb-0 md:py-3 md:px-5 shadow-black items-center rounded-md justify-center shadow-md hover:scale-105 duration-300`}
-          >
-            <p>Contact</p>
-          </button>
         </div>
       </div>
     </nav>

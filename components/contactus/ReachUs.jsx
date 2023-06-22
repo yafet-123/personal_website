@@ -6,11 +6,11 @@ import {BsFacebook, BsYoutube, BsLinkedin, BsInstagram, BsTwitter} from 'react-i
 
 const ReachUs = () => {
   const socialMediaLinks = [
-    {id:1,path:<BsFacebook size={30} />},
-    {id:1,path:<BsYoutube size={30} />},
-    {id:1,path:<BsLinkedin size={30} />},
-    {id:1,path:<BsInstagram size={30} />},
-    {id:1,path:<BsTwitter size={30} />},
+    {id:"/",path:<BsFacebook size={30} />},
+    {id:"/",path:<BsYoutube size={30} />},
+    {id:"/",path:<BsLinkedin size={30} />},
+    {id:"/",path:<BsInstagram size={30} />},
+    {id:"/",path:<BsTwitter size={30} />},
   ]
   
   return (

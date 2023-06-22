@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
-export default function DisplayForExhibition({exhibition}) {
+export default function Exhibition({exhibition}) {
   const id = exhibition._id
   return (
     <Link href={`/SelectedWorks/${id}`} className="flex flex-col items-center" key={exhibition._id}>

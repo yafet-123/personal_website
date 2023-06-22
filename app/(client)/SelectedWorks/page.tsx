@@ -21,7 +21,7 @@ export default async function SelectedWorks() {
   console.log(Works)
   return (
     <main className="w-full h-full pt-32 bg-[#494B4D]">
-      <Suspense fallback={<div className="w-full flex items-center justify-center text-2xl ">Loading Works Please Wait ...</div>}> 
+      <Suspense fallback={<div className="w-full h-screen flex items-center justify-center text-2xl ">Loading Works Please Wait ...</div>}> 
         <List selectedWorks={Works} />
       </Suspense>
     </main>
