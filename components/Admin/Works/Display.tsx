@@ -41,14 +41,14 @@ const Display = ({ Works, handleEdit, handleDelete }) => {
         </div>
       </div>
 
-      <div className="flex justify-between items-center w-full">
-        <p className="my-4 font-satoshi text-sm text-white ">
+      <div className="flex justify-between items-center">
+        <p className="my-4 font-satoshi text-sm text-gray-700">
           {Works.title}
         </p>
         <Image src={Works.image} alt="Works Image" width={100} height={100} />
       </div>
 
-      <p className="my-4 font-satoshi text-sm text-white w-full">
+      <p className="my-4 font-satoshi text-sm text-gray-700">
         {Works.exhibitions}
       </p>
 
