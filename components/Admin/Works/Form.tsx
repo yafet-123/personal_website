@@ -15,14 +15,13 @@ const Form = ({
   const blob = new Blob([Works.Image], { type: "image" });
   return (
     <section className="w-full lg:px-20">
-      <h1 className="head_text text-left">
-        <span className="blue_gradient">
+      <h1 className="head_text text-left mb-5">
+        <span className="text-white">
           {type} {typeofCategory}
         </span>
       </h1>
-      <p className="desc text-left max-w-md">
-        {type} the {typeofCategory} share amazing news with the hulu_neger, and
-        help millions of connect with the worlds.
+      <p className="desc text-white">
+        create Diffrent works that can be view and shared from your own audience
       </p>
 
       <form
@@ -49,7 +48,7 @@ const Form = ({
           </div>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 my-10 px-2">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 my-5 px-2">
           <div className="relative mb-5">
             <textarea
               id="exhibitions"
@@ -93,7 +92,7 @@ const Form = ({
           </div>
         </div>
 
-        <div className="grid grid-cols-1 gap-5 my-10">
+        <div className="grid grid-cols-1 gap-5 my-5">
           <div className="flex items-center justify-center w-full">
             <label
               htmlFor="dropzone-file"
