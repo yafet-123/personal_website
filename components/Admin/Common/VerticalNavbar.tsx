@@ -7,7 +7,7 @@ const VerticalNavbar: React.FC = () => {
   const SideBarList = [
     { link: "/Admin", name: "Dashboard" },
     { link: "/Admin/User", name: "User" },
-    { link: "/Admin/Blogs", name: "Blogs" },
+    { link: "/Admin/Works", name: "Works" },
   ];
   const pathname = usePathname();
   console.log(pathname);

@@ -17,7 +17,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="">
+      <body className="w-full h-full">
         <Provider>
           <div className="relative">
             <Navbar />
