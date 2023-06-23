@@ -118,7 +118,9 @@ const Navbar = () => {
         </div>
 
         { pathname == "/Admin" &&
-        <div className="md:flex hidden">
+        <div className={`lg:ml-10 md:block ${
+              open ? "flex" : "hidden"
+            }`}>
               {session?.user ? (
                 <div className="flex gap-3 md:gap-5">
                   <button type="button" onClick={signOut} className="outline_btn">

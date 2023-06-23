@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 import Navbar from '@/components/common/Navbar'
+import Provider from "@/components/Admin/Common/Provider";
 
 export const metadata = {
   title: "Home",
@@ -17,10 +18,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="">
-        <div className="relative">
-          <Navbar />
-          <main className="absolute top-0 left-0 right-0">{children}</main>
-        </div>
+        <Provider>
+          <div className="relative">
+            <Navbar />
+            <main className="absolute top-0 left-0 right-0">{children}</main>
+          </div>
+        </Provider>
       </body>
     </html>
   );
