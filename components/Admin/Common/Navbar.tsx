@@ -19,6 +19,7 @@ const Navbar = () => {
       setProviders(res);
     })();
   }, []);
+  console.log(providers)
   const NavLinks = [
     { path: "/", name: "Home" },
     { path: "/SelectedWorks", name: "Selected Works" },
@@ -28,29 +29,29 @@ const Navbar = () => {
   ];
 
   function useScrollDirection() {
-    // const [scrollDirection, setScrollDirection] = useState(null);
+    const [scrollDirection, setScrollDirection] = useState(null);
 
-    // useEffect(() => {
-    //   let lastScrollY = window.pageYOffset;
+    useEffect(() => {
+      let lastScrollY = window.pageYOffset;
 
-    //   const updateScrollDirection = () => {
-    //     const scrollY = window.pageYOffset;
-    //     const direction = scrollY > lastScrollY ? "down" : "up";
-    //     if (
-    //       direction !== scrollDirection &&
-    //       (scrollY - lastScrollY > 10 || scrollY - lastScrollY < -10)
-    //     ) {
-    //       setScrollDirection(direction);
-    //     }
-    //     lastScrollY = scrollY > 0 ? scrollY : 0;
-    //   };
-    //   window.addEventListener("scroll", updateScrollDirection); // add event listener
-    //   return () => {
-    //     window.removeEventListener("scroll", updateScrollDirection); // clean up
-    //   };
-    // }, [scrollDirection]);
+      const updateScrollDirection = () => {
+        const scrollY = window.pageYOffset;
+        const direction = scrollY > lastScrollY ? "down" : "up";
+        if (
+          direction !== scrollDirection &&
+          (scrollY - lastScrollY > 10 || scrollY - lastScrollY < -10)
+        ) {
+          setScrollDirection(direction);
+        }
+        lastScrollY = scrollY > 0 ? scrollY : 0;
+      };
+      window.addEventListener("scroll", updateScrollDirection); // add event listener
+      return () => {
+        window.removeEventListener("scroll", updateScrollDirection); // clean up
+      };
+    }, [scrollDirection]);
 
-    // return scrollDirection;
+    return scrollDirection;
   }
 
   const scrollDirection = useScrollDirection();
@@ -58,10 +59,6 @@ const Navbar = () => {
   const closeDropdown = useCallback(() => {
     setOpen(false);
   }, []);
-
-  const handleTryNowButton = () => {
-    router.push("/contact");
-  };
 
   return (
     <nav
@@ -91,12 +88,8 @@ const Navbar = () => {
           </div>
         </div>
 
-        <div>
-          <div
-            className={`flex-1 justify-self-center pb-3 mt-4 md:block md:pb-0 md:mt-0 ${
-              open ? "flex" : "hidden"
-            }`}
-          >
+        <div className="flex">
+          <div className={`flex-1 justify-self-center pb-3 mt-4 md:block md:pb-0 md:mt-0 ${ open ? "flex" : "hidden"}`}>
             <ul className="items-center font-bold paragraph-fonts justify-center space-y-8 md:flex md:space-x-6 md:space-y-0 text-white">
               {NavLinks.map((link) => (
                 <li
@@ -114,92 +107,42 @@ const Navbar = () => {
               ))}
             </ul>
           </div>
-        </div>
-
-        {/* Desktop Navigation */}
-        <div className="md:flex hidden">
-          {session?.user ? (
-            <div className="flex gap-3 md:gap-5">
-              <button type="button" onClick={signOut} className="outline_btn">
-                Sign Out
-              </button>
-
-              <Link href="/profile">
-                <Image
-                  src={session?.user.image}
-                  width={37}
-                  height={37}
-                  className="rounded-full"
-                  alt="profile"
-                />
-              </Link>
-            </div>
-          ) : (
-            <>
-              {providers &&
-                // bring the providers then list them  in this particular example it is only one
-                Object.values(providers).map((provider) => (
-                  <button
-                    type="button"
-                    key={provider.name}
-                    onClick={() => {
-                      signIn(provider.id);
-                    }}
-                    className="black_btn"
-                  >
-                    Sign in
-                  </button>
-                ))}
-            </>
-          )}
-        </div>
-
-        {/* Mobile Navigation */}
-        <div className="md:hidden flex relative">
-          {session?.user ? (
-            // in this particular example when we click the icon in this example the photo from google icon
-            <div className="flex">
-              <Image
-                src={session?.user.image}
-                width={37}
-                height={37}
-                className="rounded-full"
-                alt="profile"
-                onClick={() => setToggleDropdown(!toggleDropdown)}
-              />
-
-              {toggleDropdown && (
-                <div className="dropdown">
-                  <button
-                    type="button"
-                    onClick={() => {
-                      setToggleDropdown(false);
-                      signOut();
-                    }}
-                    className="mt-5 w-full black_btn"
-                  >
+          <div className="md:flex hidden">
+              {session?.user ? (
+                <div className="flex gap-3 md:gap-5">
+                  <button type="button" onClick={signOut} className="outline_btn">
                     Sign Out
                   </button>
+
+                  <Link href="/profile">
+                    <Image
+                      src={session?.user.image}
+                      width={37}
+                      height={37}
+                      className="rounded-full"
+                      alt="profile"
+                    />
+                  </Link>
                 </div>
+                ) : (
+                <>
+                  {providers &&
+                    // bring the providers then list them  in this particular example it is only one
+                    Object.values(providers).map((provider) => (
+                      <button
+                        type="button"
+                        key={provider.name}
+                        onClick={() => {
+                          signIn(provider.id);
+                        }}
+                        className="black_btn"
+                      >
+                        Sign in
+                      </button>
+                    ))}
+                </>
               )}
-            </div>
-          ) : (
-            <>
-              {providers &&
-                Object.values(providers).map((provider) => (
-                  <button
-                    type="button"
-                    key={provider.name}
-                    onClick={() => {
-                      signIn(provider.id);
-                    }}
-                    className="black_btn"
-                  >
-                    Sign in
-                  </button>
-                ))}
-            </>
-          )}
+          </div>
         </div>
       </div>
     </nav>

@@ -17,9 +17,8 @@ export default function AdminRootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="flex flex-col bg-[#212325]">
+    <section className="flex flex-col bg-[#212325]">
       <Provider>
-        <Navbar />
         <div className="flex flex-col lg:flex-row">
           
             {/* @ts-ignore */}
@@ -28,6 +27,6 @@ export default function AdminRootLayout({
           <div className="w-full px-2 lg:px-20">{children}</div>
         </div>
       </Provider>
-    </div>
+    </section>
   );
 }

@@ -5,11 +5,21 @@ import Link from "next/link";
 import { useRouter, usePathname } from "next/navigation";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 import navbarImage from "@/public/logo.svg";
+import { signIn, signOut, useSession, getProviders } from "next-auth/react";
 
 const Navbar = () => {
+  const { data: session } = useSession(); // this is for next-auth
   const [open, setOpen] = useState(false);
+  const [toggleDropdown, setToggleDropdown] = useState(false);
   const router = useRouter();
   const pathname = usePathname();
+  const [providers, setProviders] = useState(null);
+  useEffect(() => {
+    (async () => {
+      const res = await getProviders();
+      setProviders(res);
+    })();
+  }, []);
   const NavLinks = [
     { path: "/", name: "Home" },
     { path: "/SelectedWorks", name: "Selected Works" },
@@ -106,6 +116,45 @@ const Navbar = () => {
             </ul>
           </div>
         </div>
+
+        { pathname == "/Admin" &&
+        <div className="md:flex hidden">
+              {session?.user ? (
+                <div className="flex gap-3 md:gap-5">
+                  <button type="button" onClick={signOut} className="outline_btn">
+                    Sign Out
+                  </button>
+
+                  <Link href="/profile">
+                    <Image
+                      src={session?.user.image}
+                      width={37}
+                      height={37}
+                      className="rounded-full"
+                      alt="profile"
+                    />
+                  </Link>
+                </div>
+                ) : (
+                <>
+                  {providers &&
+                    // bring the providers then list them  in this particular example it is only one
+                    Object.values(providers).map((provider) => (
+                      <button
+                        type="button"
+                        key={provider.name}
+                        onClick={() => {
+                          signIn(provider.id);
+                        }}
+                        className="black_btn"
+                      >
+                        Sign in
+                      </button>
+                    ))}
+                </>
+              )}
+          </div>
+        }
       </div>
     </nav>
   );

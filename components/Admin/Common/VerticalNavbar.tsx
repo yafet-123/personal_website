@@ -8,8 +8,6 @@ const VerticalNavbar: React.FC = () => {
     { link: "/Admin", name: "Dashboard" },
     { link: "/Admin/User", name: "User" },
     { link: "/Admin/Blogs", name: "Blogs" },
-    { link: "/Admin/AiSearch/Category", name: "AiSearch Category" },
-    { link: "/Admin/AiSearch", name: "AiSearch" },
   ];
   const pathname = usePathname();
   console.log(pathname);
