@@ -12,7 +12,7 @@ const Form = ({
   submitting,
   handleSubmit,
 }) => {
-  const blob = new Blob([blogs.Image], { type: "image" });
+  const blob = new Blob([Works.Image], { type: "image" });
   return (
     <section className="w-full lg:px-20">
       <h1 className="head_text text-left">
