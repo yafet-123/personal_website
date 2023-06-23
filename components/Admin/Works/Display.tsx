@@ -19,7 +19,7 @@ const Display = ({ Works, handleEdit, handleDelete }) => {
   };
 
   return (
-    <div className="prompt_card lg:px-10">
+    <div className="prompt_card lg:px-5">
       <div className="flex justify-between items-start gap-5 mb-5">
         <div className="flex-1 flex justify-between items-center gap-3 cursor-pointer">
           <p className="font-inter text-sm text-gray-500">

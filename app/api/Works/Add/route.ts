@@ -3,7 +3,6 @@ import { connectToDB } from "@/utils/database";
 import { NextApiRequest, NextApiResponse } from "next";
 
 export const POST = async (request:NextApiRequest) => {
-
 	const { title, exhibitions, image,description, user_id  } = await request.json();
     try {
         await connectToDB();

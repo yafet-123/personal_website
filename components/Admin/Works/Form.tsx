@@ -14,7 +14,7 @@ const Form = ({
 }) => {
   const blob = new Blob([Works.image], { type: "image" });
   return (
-    <section className="w-full lg:px-20">
+    <section className="w-full lg:px-5">
       <h1 className="head_text text-left mb-5">
         <span className="text-white">
           {type} {typeofCategory}
