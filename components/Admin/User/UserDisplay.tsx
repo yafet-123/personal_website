@@ -66,7 +66,7 @@ const UserDisplay = ({ user }) => {
         </div>
       </div>
 
-      <div className="flex items-center justify-between text-white">
+      <div className="flex items-center justify-between text-gray-700">
         <p className="my-4 font-satoshi text-sm">
           {user.username}
         </p>

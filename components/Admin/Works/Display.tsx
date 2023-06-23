@@ -20,7 +20,7 @@ const Display = ({ Works, handleEdit, handleDelete }) => {
 
   return (
     <div className="prompt_card lg:px-10">
-      <div className="flex justify-between items-start gap-5">
+      <div className="flex justify-between items-start gap-5 mb-5">
         <div className="flex-1 flex justify-between items-center gap-3 cursor-pointer">
           <p className="font-inter text-sm text-gray-500">
             {moment(Works.ModifiedDate).utc().format("YYYY-MM-DD")}
@@ -45,7 +45,7 @@ const Display = ({ Works, handleEdit, handleDelete }) => {
         <p className="my-4 font-satoshi text-sm text-gray-700">
           {Works.title}
         </p>
-        <Image src={Works.image} alt="Works Image" width={100} height={100} />
+        <Image src={Works.image} alt="Works Image" width={50} height={50} />
       </div>
 
       <p className="my-4 font-satoshi text-sm text-gray-700">

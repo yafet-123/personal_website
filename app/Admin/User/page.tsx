@@ -12,7 +12,7 @@ interface User {
 
 const UserCardList = ({ data }) => {
   return (
-    <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+    <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-5">
       {data.map((user) => (
         <UserDisplay key={user._id} user={user} />
       ))}
@@ -59,7 +59,7 @@ export default function AdminUserHome() {
     fetchUsers();
   }, []);
   return (
-    <section className="w-full h-full box-border lg:pt-24">
+    <section className="w-full h-full lg:pt-24">
      
         <Form
           type="Create"
