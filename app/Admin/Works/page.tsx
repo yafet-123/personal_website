@@ -8,7 +8,7 @@ import { usePathname, useRouter } from "next/navigation";
  
 const WorksCardList = ({ data }) => {
   return (
-    <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+    <div className="mt-16 grid grid-cols-1 lg:grid-cols-2 gap-5">
       {data.map((data) => (
         <Display key={data._id} Works={data} />
       ))}
