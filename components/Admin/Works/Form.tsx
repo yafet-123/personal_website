@@ -128,7 +128,7 @@ const Form = ({
                 type="file"
                 className="hidden"
                 onChange={(e) =>
-                  setWorks({ ...Works, Image: e.target.files[0] })
+                  setWorks({ ...Works, image: e.target.files[0] })
                 }
               />
             </label>
@@ -137,14 +137,14 @@ const Form = ({
 
         <div
           className={
-            Works.Image == ""
+            Works.image == ""
               ? "hidden"
               : "flex justify-center items-center mb-10"
           }
         >
           <Image
             src={
-              Works.Image == ""
+              Works.image == ""
                 ? "/images/bgImage1.avif"
                 : URL.createObjectURL(blob)
             }
