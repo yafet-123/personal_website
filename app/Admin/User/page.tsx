@@ -14,7 +14,7 @@ const UserCardList = ({ data }) => {
   return (
     <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
       {data.map((user) => (
-        <UserDisplay key={user.user_id} user={user} />
+        <UserDisplay key={user._id} user={user} />
       ))}
     </div>
   );
