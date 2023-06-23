@@ -60,7 +60,6 @@ export default function AdminUserHome() {
   }, []);
   return (
     <section className="w-full h-full lg:pt-24">
-     
         <Form
           type="Create"
           user={user}

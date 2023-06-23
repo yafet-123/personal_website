@@ -53,7 +53,7 @@ const Display = ({ Works, handleEdit, handleDelete }) => {
       </p>
 
       {session?.user.email === "yafetaddisu123@gmail.com" && (
-        <div className="mt-5 flex-center gap-4 border-t border-gray-100 pt-3">
+        <div className="mt-5 flex justify-between items-center gap-4 border-t border-gray-100 pt-3">
           <p
             className="font-inter text-sm green_gradient cursor-pointer"
             onClick={handleEdit}

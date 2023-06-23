@@ -51,7 +51,7 @@ export default function WorksHome() {
     setIsSubmitting(true);
     const imageData = await imageUploadData()
     try {
-      const response = await fetch("/api/Works//Add", {
+      const response = await fetch("/api/Works/Add", {
         method: "POST",
         body: JSON.stringify({
           title: Works.title,
