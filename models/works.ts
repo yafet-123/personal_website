@@ -17,6 +17,10 @@ const WorksSchema = new Schema({
     type: String,
     required: [true, 'Image is required.'],
   },
+  creator: {
+    type: Schema.Types.ObjectId,
+    ref: 'User',
+  },
 });
 
 const Works = models.Works || model('Works', WorksSchema);

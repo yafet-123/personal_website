@@ -6,8 +6,8 @@ export const POST = async (request: NextApiRequest) => {
   const { UserName, email } = await request.json();
   try {
     await connectToDB();
-    const newUser = new User({ UserName, email });
-
+    const newUser = new User({ username:UserName, email });
+    console.log(newUser)
     await newUser.save();
     return new Response(JSON.stringify(newUser), { status: 201 });
   } catch (error) {

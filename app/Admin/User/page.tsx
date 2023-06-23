@@ -60,7 +60,7 @@ export default function AdminUserHome() {
   }, []);
   return (
     <section className="w-full box-border lg:pt-24">
-      {session?.user.email === "" ? (
+     
         <Form
           type="Create"
           user={user}
@@ -68,11 +68,11 @@ export default function AdminUserHome() {
           submitting={submitting}
           handleSubmit={createUser}
         />
-      ):
+      {/*):
       <div className="flex justify-center items-center lg:pt-20">
         <h1 className="font-bold text-lg lg:text-3xl">You are not allowed to add user.</h1>
       </div>
-    }
+    }*/}
 
       <UserCardList data={allUsers} />
     </section>

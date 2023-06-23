@@ -1,39 +1,37 @@
 "use client";
 import Image from "next/image";
-import Form from "@/components/Admin/Blogs/Form";
-import Display from "@/components/Admin/Blogs/Display";
+import Form from "@/components/Admin/Works/Form";
+import Display from "@/components/Admin/Works/Display";
 import { useState, useEffect } from "react";
 import { useSession } from "next-auth/react";
 import { usePathname, useRouter } from "next/navigation";
-
-const BlogsCardList = ({ data }) => {
+ 
+const WorksCardList = ({ data }) => {
   return (
     <div className="mt-16 prompt_layout">
       {data.map((data) => (
-        <Display key={data.blogs_id} blogs={data} />
+        <Display key={data._id} Works={data} />
       ))}
     </div>
   );
 };
  
-export default function BlogsHome() {
+export default function WorksHome() {
   const router = useRouter();
   const [submitting, setIsSubmitting] = useState(false);
-  const [allBlogs, setAllBlogs] = useState([]);
-  const [Description, setDescription] = useState("")
-  const [categoryId, setCategoryId] = useState([])
-  const [allBlogsCategory, setAllBlogsCategory] = useState([]);
-  const [blogs, setBlogs] = useState({
-    Header: "",
-    ShortDescription: "",
-    Image: "",
+  const [allWorks, setAllWorks] = useState([]);
+  const [Works, setWorks] = useState({
+    title: "",
+    exhibitions: "",
+    image: "",
+    description:""
   });
   const { data: session } = useSession();
-  console.log(blogs)
+  console.log(Works)
   async function imageUploadData() {
     const formData = new FormData();
     let imagesecureUrl = "";
-    formData.append("file", blogs.Image);
+    formData.append("file", Works.image);
 
     formData.append("upload_preset", "my_upload");
 
@@ -48,19 +46,18 @@ export default function BlogsHome() {
     return imagesecureUrl;
   }
 
-  const createBlogs = async (e) => {
+  const createWorks = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
     const imageData = await imageUploadData()
     try {
-      const response = await fetch("/api/Blogs//Add", {
+      const response = await fetch("/api/Works//Add", {
         method: "POST",
         body: JSON.stringify({
-          Header: blogs.Header,
-          Image: imageData,
-          ShortDescription: blogs.ShortDescription,
-          Description: Description,
-          categoryId: categoryId,
+          title: Works.title,
+          image: imageData,
+          exhibitions: Works.exhibitions,
+          Description: Works.description,
           user_id: session?.user.id,
         }),
       });
@@ -74,41 +71,36 @@ export default function BlogsHome() {
     }
   };
 
-  const fetchBlogs = async () => {
-    const response = await fetch("/api/Blogs");
+  const fetchWorks = async () => {
+    const response = await fetch("/api/Works");
     const data = await response.json();
 
-    setAllBlogs(data);
+    setAllWorks(data);
   };
 
-  const fetchBlogsCategory = async () => {
-    const response = await fetch("/api/Blogs/Category");
+  const fetchWorksCategory = async () => {
+    const response = await fetch("/api/Works/Category");
     const data = await response.json();
 
-    setAllBlogsCategory(data);
+    setAllWorksCategory(data);
   };
 
   useEffect(() => {
-    fetchBlogs();
-    fetchBlogsCategory();
+    fetchWorks();
+    fetchWorksCategory();
   }, []);
   return (
     <section className="w-full h-full lg:pt-24">
       <Form
         type="Create"
-        typeofCategory="Blogs"
-        blogs={blogs}
-        setBlogs={setBlogs}
-        Description={Description}
-        setDescription={setDescription}
-        categoryId={categoryId}
-        setCategoryId={setCategoryId}
-        categories={allBlogsCategory}
+        typeofCategory="Works"
+        Works={Works}
+        setWorks={setWorks}
         submitting={submitting}
-        handleSubmit={createBlogs}
+        handleSubmit={createWorks}
       />
 
-      <BlogsCardList data={allBlogs} />
+      <WorksCardList data={allWorks} />
     </section>
   );
 }

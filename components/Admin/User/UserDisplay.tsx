@@ -56,8 +56,8 @@ const UserDisplay = ({ user }) => {
           <Image
             src={
               copied === user.email
-                ? "/assets/icons/tick.svg"
-                : "/assets/icons/copy.svg"
+                ? "/icons/tick.svg"
+                : "/icons/copy.svg"
             }
             alt={copied === user.email ? "tick_icon" : "copy_icon"}
             width={12}
@@ -66,14 +66,14 @@ const UserDisplay = ({ user }) => {
         </div>
       </div>
 
-      <div className="flex items-center justify-between">
-        <p className="my-4 font-satoshi text-sm text-gray-700">
-          {user.UserName}
+      <div className="flex items-center justify-between text-white">
+        <p className="my-4 font-satoshi text-sm">
+          {user.username}
         </p>
-        <p className="my-4 font-satoshi text-sm text-gray-700">{user.email}</p>
+        <p className="my-4 font-satoshi text-sm">{user.email}</p>
       </div>
       {session?.user.email === "yafetaddisu123@gmail.com" && (
-        <div className="mt-5 flex-center gap-4 border-t border-gray-100 pt-3">
+        <div className="mt-5 flex justify-between items-center gap-4 border-t border-gray-100 pt-3">
           <p
             className="font-inter text-sm green_gradient cursor-pointer"
             onClick={() => handleEdit(user.user_id)}

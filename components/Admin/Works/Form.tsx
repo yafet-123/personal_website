@@ -1,89 +1,17 @@
 "use client";
 import Link from "next/link";
-import Multiselect from "multiselect-react-dropdown";
-import "react-quill/dist/quill.snow.css";
 import Image from "next/image";
-import ReactQuill from "react-quill";
-import "react-quill/dist/quill.snow.css";
 import React, { useMemo, useRef } from "react";
 import dynamic from "next/dynamic";
-
-const QuillNoSSRWrapper = dynamic(
-  async () => {
-    const QuillNoSSRWrapper = (await import("react-quill")).default;
-    function Imagehandle({ forwardedRef, ...rest }) {
-      return <QuillNoSSRWrapper ref={forwardedRef} {...rest} />;
-    }
-    return Imagehandle;
-  },
-  {
-    ssr: false,
-  }
-);
 
 const Form = ({
   type,
   typeofCategory,
-  blogs,
-  setBlogs,
-  Description,
-  setDescription,
-  categoryId,
-  setCategoryId,
-  categories,
+  Works,
+  setWorks,
   submitting,
   handleSubmit,
 }) => {
-  const quillRef = useRef(null);
-  const blob = new Blob([blogs.Image], { type: "image" });
-  const modules = useMemo(
-    () => ({
-      toolbar: {
-        container: [
-          ["bold", "italic", "underline", "strike"], // toggled buttons
-          ["blockquote", "code-block"],
-
-          [{ header: 1 }, { header: 2 }], // custom button values
-          [{ list: "ordered" }, { list: "bullet" }],
-          [{ script: "sub" }, { script: "super" }], // superscript/subscript
-          [{ indent: "-1" }, { indent: "+1" }], // outdent/indent
-          [{ direction: "rtl" }], // text direction
-
-          [{ size: ["small", false, "large", "huge"] }], // custom dropdown
-          [{ header: [1, 2, 3, 4, 5, 6, false] }],
-
-          [{ color: [] }, { background: [] }], // dropdown with defaults from theme
-          [{ font: [] }],
-          [{ align: [] }],
-
-          ["link", "image", "video"],
-        ],
-        handlers: {
-          image: imageHandler,
-        },
-      },
-
-      clipboard: {
-        matchVisual: false,
-      },
-    }),
-    []
-  );
-
-  function imageHandler() {
-    console.log(quillRef);
-    if (!quillRef.current) return;
-
-    const editor = quillRef.current.getEditor();
-    const range = editor.getSelection();
-    const value = prompt("Please enter the image URL");
-    console.log(value);
-    console.log(range);
-    console.log(editor);
-    if (value && range) {
-      editor.insertEmbed(range.index, "image", value, "user");
-    }
-  }
   return (
     <section className="w-full lg:px-20">
       <h1 className="head_text text-left">
@@ -103,74 +31,64 @@ const Form = ({
         <div className="flex flex-col my-5 w-full px-2">
           <div className="relative flex-1">
             <input
-              id="Header"
+              id="title"
               type="text"
               required
               className="block w-full px-3 text-md lg:text-xl text-black bg-white py-4 border-2 border-black rounded-xl appearance-none dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-500 peer"
               placeholder=" "
-              value={blogs.Header}
-              onChange={(e) => setBlogs({ ...blogs, Header: e.target.value })}
+              value={Works.title}
+              onChange={(e) => setWorks({ ...Works, title: e.target.value })}
             />
             <label
               htmlFor="floating_outlined"
               className="absolute text-md lg:text-xl text-black duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-1"
             >
-              Header
+              Title
             </label>
           </div>
         </div>
 
-        <div className="my-5">
-          <Multiselect
-            displayValue="CategoryName"
-            placeholder="Category"
-            className="z-50 w-full px-1 lg:px-3 text-md lg:text-xl text-black bg-white py-4 border-2 border-black rounded-xl appearance-none dark:text-black dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-500 peer"
-            onKeyPressFn={function noRefCheck() {}}
-            onRemove={function noRefCheck() {}}
-            onSearch={function noRefCheck() {}}
-            onSelect={(e) => {
-              e.map((data, index) =>
-                setCategoryId([...categoryId, data.category_id])
-              );
-            }}
-            options={categories}
-          />
-        </div>
 
         <div className="relative mb-5">
           <textarea
-            id="ShortDescription"
+            id="exhibitions"
             required
             className="block w-full px-3 text-md lg:text-xl text-black bg-white py-4 border-2 border-black rounded-xl appearance-none dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-500 peer"
             placeholder=" "
-            value={blogs.ShortDescription}
+            value={Works.exhibitions}
             rows="10"
             cols="40"
             onChange={(e) =>
-              setBlogs({ ...blogs, ShortDescription: e.target.value })
+              setWorks({ ...Works, exhibitions: e.target.value })
             }
           />
           <label
             htmlFor="floating_outlined"
             className="absolute text-md lg:text-xl text-black duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-[10%] peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-1"
           >
-            Short Description
+            Exhibitions
           </label>
         </div>
 
-        <div className="mb-10 ">
-          <p className="text-md lg:text-xl text-black dark:text-white mb-5 mx-5">
-            Description
-          </p>
-
-          <QuillNoSSRWrapper
-            forwardedRef={quillRef}
-            value={Description}
-            onChange={setDescription}
-            modules={modules}
-            className="!bg-white dark:!bg-white dark:!text-black !mx-2"
-            theme="snow"
+        <div className="relative mb-5">
+          <textarea
+            id="description"
+            required
+            className="block w-full px-3 text-md lg:text-xl text-black bg-white py-4 border-2 border-black rounded-xl appearance-none dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-500 peer"
+            placeholder=" "
+            value={Works.description}
+            rows="10"
+            cols="40"
+            onChange={(e) =>
+              setWorks({ ...Works, description: e.target.value })
+            }
           />
+          <label
+            htmlFor="floating_outlined"
+            className="absolute text-md lg:text-xl text-black duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-[10%] peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-1"
+          >
+            Description
+          </label>
         </div>
 
         <div className="grid grid-cols-1 gap-5 my-10">
@@ -208,7 +126,7 @@ const Form = ({
                 type="file"
                 className="hidden"
                 onChange={(e) =>
-                  setBlogs({ ...blogs, Image: e.target.files[0] })
+                  setWorks({ ...Works, Image: e.target.files[0] })
                 }
               />
             </label>
@@ -217,14 +135,14 @@ const Form = ({
 
         <div
           className={
-            blogs.Image == ""
+            Works.Image == ""
               ? "hidden"
               : "flex justify-center items-center mb-10"
           }
         >
           <Image
             src={
-              blogs.Image == ""
+              Works.Image == ""
                 ? "/images/bgImage1.avif"
                 : URL.createObjectURL(blob)
             }

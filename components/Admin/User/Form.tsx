@@ -3,10 +3,10 @@ import Link from "next/link";
 const Form = ({ type, user, setUser, submitting, handleSubmit }) => {
   return (
     <section className="w-full">
-      <h1 className="head_text text-left">
-        <span className="blue_gradient">{type} User</span>
+      <h1 className="head_text text-left mb-5 ">
+        <span className="text-white">{type} User</span>
       </h1>
-      <p className="desc text-left max-w-md">
+      <p className="desc text-white">
         {type} the user that can create , update , edit and delete jobs ,
         courses and other
       </p>
@@ -54,8 +54,8 @@ const Form = ({ type, user, setUser, submitting, handleSubmit }) => {
           </div>
         </div>
 
-        <div className="flex-end mx-3 mb-5 gap-4">
-          <Link href="/" className="text-gray-500 text-sm">
+        <div className="flex justify-end items-center mx-3 mb-5 gap-4">
+          <Link href="/" className="bg-white text-black px-5 py-1.5 rounded-full text-sm">
             Cancel
           </Link>
 

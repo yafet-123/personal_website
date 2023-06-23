@@ -117,8 +117,8 @@ const Navbar = () => {
           </div>
         </div>
 
-        { pathname == "/Admin" &&
-        <div className={`lg:ml-10 md:block ${
+        { (pathname == "/Admin" || pathname == "/Admin/User")  &&
+        <div className={`mt-5 lg:mt-0 lg:ml-10 md:block ${
               open ? "flex" : "hidden"
             }`}>
               {session?.user ? (
