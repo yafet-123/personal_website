@@ -28,7 +28,7 @@ const Form = ({
         onSubmit={handleSubmit}
         className="mt-10 w-full flex flex-col gap-7 glassmorphism"
       >
-        <div className="flex flex-col my-5 w-full px-2">
+        <div className="flex flex-col my-2 w-full px-2">
           <div className="relative flex-1">
             <input
               id="title"
@@ -48,7 +48,7 @@ const Form = ({
           </div>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 my-5 px-2">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 my-2 px-2">
           <div className="relative mb-5">
             <textarea
               id="exhibitions"
@@ -92,7 +92,7 @@ const Form = ({
           </div>
         </div>
 
-        <div className="grid grid-cols-1 gap-5 my-5">
+        <div className="grid grid-cols-1 gap-5 my-2">
           <div className="flex items-center justify-center w-full">
             <label
               htmlFor="dropzone-file"
