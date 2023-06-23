@@ -33,11 +33,11 @@ const Display = ({ Works, handleEdit, handleDelete }) => {
         <div className="copy_btn" onClick={handleCopy}>
           <Image
             src={
-              copied === user.email
+              copied === Works.email
                 ? "/icons/tick.svg"
                 : "/icons/copy.svg"
             }
-            alt={copied === user.email ? "tick_icon" : "copy_icon"}
+            alt={copied === Works.email ? "tick_icon" : "copy_icon"}
             width={12}
             height={12}
           />

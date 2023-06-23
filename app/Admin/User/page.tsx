@@ -59,7 +59,7 @@ export default function AdminUserHome() {
     fetchUsers();
   }, []);
   return (
-    <section className="w-full box-border lg:pt-24">
+    <section className="w-full h-full box-border lg:pt-24">
      
         <Form
           type="Create"
