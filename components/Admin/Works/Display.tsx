@@ -22,9 +22,6 @@ const Display = ({ Works, handleEdit, handleDelete }) => {
     <div className="prompt_card lg:px-20">
       <div className="flex justify-between items-start gap-5">
         <div className="flex-1 flex justify-between items-center gap-3 cursor-pointer">
-          <h3 className="font-satoshi font-semibold text-gray-900">
-            {Works._id}
-          </h3>
           <p className="font-inter text-sm text-gray-500">
             {moment(Works.ModifiedDate).utc().format("YYYY-MM-DD")}
           </p>
@@ -44,14 +41,14 @@ const Display = ({ Works, handleEdit, handleDelete }) => {
         </div>
       </div>
 
-      <div className="flex justify-between items-center">
-        <p className="my-4 font-satoshi text-sm text-gray-700">
+      <div className="flex justify-between items-center w-full">
+        <p className="my-4 font-satoshi text-sm text-white ">
           {Works.title}
         </p>
         <Image src={Works.image} alt="Works Image" width={100} height={100} />
       </div>
 
-      <p className="my-4 font-satoshi text-sm text-gray-700">
+      <p className="my-4 font-satoshi text-sm text-white w-full">
         {Works.exhibitions}
       </p>
 
