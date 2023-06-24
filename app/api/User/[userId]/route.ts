@@ -1,13 +1,18 @@
-import User from "@/models/user";
-import { connectToDB } from "@/utils/database";
+import { NextApiRequest, NextApiResponse } from "next";
+import prisma from "@/utils/db.server";
 
 export const GET = async (request, { params }) => {
   try {
-    await connectToDB();
+    console.log(params.userId);
+    const data = await prisma.User.findUnique({
+      where: {
+        user_id: Number(params.userId),
+      },
+    });
+    console.log(data);
+    if (!data) return new Response("Prompt Not Found", { status: 404 });
 
-    const individualuser = await User.findById(params.id).populate("_id");
-    if (!individualuser) return new Response("User Not Found", { status: 404 });
-    return new Response(JSON.stringify(individualuser), { status: 200 });
+    return new Response(JSON.stringify(data), { status: 200 });
   } catch (error) {
     return new Response("Internal Server Error", { status: 500 });
   }
@@ -17,19 +22,24 @@ export const PATCH = async (request, { params }) => {
   const { UserName, email } = await request.json();
 
   try {
-    await connectToDB();
-    // Find the existing user by ID
-    const existingUser = await User.findById(params.id);
+    const existingUser = await prisma.User.findUnique({
+      where: {
+        user_id: Number(params.userId),
+      },
+    });
 
     if (!existingUser) {
       return new Response("User not found", { status: 404 });
     }
 
     // Update the prompt with new data
-    existingUser.UserName = UserName;
-    existingUser.email = email;
-
-    await existingUser.save();
+    const data = await prisma.User.update({
+      where: { user_id: Number(params.userId) },
+      data: {
+        UserName,
+        email,
+      },
+    });
 
     return new Response("Successfully updated the User", { status: 200 });
   } catch (error) {

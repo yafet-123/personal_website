@@ -1,0 +1,47 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+
+model User {
+  user_id      Int           @id @default(autoincrement())
+  UserName     String        @unique @db.VarChar(255)
+  email        String?       @unique @db.VarChar(255)
+  resetToken   String?       @unique @db.VarChar(255)
+  CreatedDate  DateTime?     @default(now()) @db.Timestamptz(6)
+  ModifiedDate DateTime?     @default(now()) @db.Timestamptz(6)
+  Exhibition   Exhibition[]
+  SelectedWorks SelectedWorks[]
+}
+
+model Exhibition {
+  exhibition_id                Int           @id @default(autoincrement()) 
+  title                        String?              
+  description                  String?
+  date                         String?
+  Image                        String?       @db.VarChar(255)
+  CreatedDate                  DateTime?     @default(now()) @db.Timestamptz(6)
+  ModifiedDate                 DateTime?     @default(now()) @db.Timestamptz(6)    
+  user_id                      Int
+  User                         User          @relation(fields: [user_id], references: [user_id], onDelete: Cascade, onUpdate: Cascade)  
+}
+
+model SelectedWorks {
+  selectedWorks_id             Int           @id @default(autoincrement()) 
+  title                        String?   
+  description                  String?           
+  exhibitions                  String?
+  Image                        String?       @db.VarChar(255)
+  CreatedDate                  DateTime?     @default(now()) @db.Timestamptz(6)
+  ModifiedDate                 DateTime?     @default(now()) @db.Timestamptz(6) 
+  user_id                      Int   
+  User                         User          @relation(fields: [user_id], references: [user_id], onDelete: Cascade, onUpdate: Cascade)  
+}
