@@ -10,7 +10,7 @@ export const POST = async (request:NextApiRequest) => {
             exhibitions,
             Image:image,
             description,
-            user_id,
+            user_id:Number(user_id),
           },
         });
         return new Response(JSON.stringify(data), { status: 201 })

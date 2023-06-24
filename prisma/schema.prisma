@@ -33,7 +33,7 @@ model Exhibition {
   user_id                      Int
   User                         User          @relation(fields: [user_id], references: [user_id], onDelete: Cascade, onUpdate: Cascade)  
 }
-
+ 
 model SelectedWorks {
   selectedWorks_id             Int           @id @default(autoincrement()) 
   title                        String?   
