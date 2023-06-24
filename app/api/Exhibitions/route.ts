@@ -6,13 +6,8 @@ export const GET = async (req: NextApiRequest, res: NextApiResponse) => {
     await connectToDB();
 
     const exhibitions = await exhibition.find({}).populate("_id");
-    const formattedexhibition = exhibitions.map((exhibition) => {
-      return {
-        ...exhibition.toObject(),
-        _id: exhibition._id.toString(),
-      };
-    });
-    return new Response(JSON.stringify(formattedexhibition), { status: 200 });
+
+    return new Response(JSON.stringify(exhibitions), { status: 200 });
   } catch (error) {
     return new Response("Failed to fetch all exhibitions", { status: 500 });
   }
