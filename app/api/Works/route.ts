@@ -6,16 +6,16 @@ export const GET = async (req: NextApiRequest, res: NextApiResponse) => {
     const works = await prisma.SelectedWorks.findMany({
       orderBy: { ModifiedDate: "desc" },
     });
-    const Allworks = works.map((data) => ({
-      selectedWorks_id: data.selectedWorks_id,
-      title: data.title,
-      description: data.description,
-      exhibitions: data.exhibitions,
-      Image:data.Image,
-      CreatedDate: data.CreatedDate,
-      ModifiedDate: data.ModifiedDate,
-      UserName: data.UserName,
-    }));
+    // const Allworks = works.map((data) => ({
+    //   selectedWorks_id: data.selectedWorks_id,
+    //   title: data.title,
+    //   description: data.description,
+    //   exhibitions: data.exhibitions,
+    //   Image:data.Image,
+    //   CreatedDate: data.CreatedDate,
+    //   ModifiedDate: data.ModifiedDate,
+    //   UserName: data.UserName,
+    // }));
 
     return new Response(JSON.stringify(works), { status: 200 });
   } catch (error) {
