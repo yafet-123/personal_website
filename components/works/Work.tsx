@@ -2,12 +2,12 @@ import Image from "next/image";
 import Link from "next/link";
 
 export default function Work({ work }) {
-  const id = work.id;
+  const id = work.selectedWorks_id;
   return (
     <Link
       href={`/SelectedWorks/${id}`}
       className="flex flex-col items-center text-white"
-      key={work._id}
+      key={work.selectedWorks_id}
     >
       <div className="relative h-[15rem] w-full">
         <Image
