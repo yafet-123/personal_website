@@ -12,7 +12,7 @@ export const POST = async (req: NextApiRequest) => {
         email: email,
       },
     });
-    console.log("data");
+    console.log(data);
 
     return new Response(JSON.stringify(data), { status: 201 });
   } catch (error) {
