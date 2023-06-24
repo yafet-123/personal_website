@@ -15,7 +15,7 @@ const Update = () => {
   console.log(user)
   useEffect(() => {
     const getUserDetails = async () => {
-      const response = await fetch(`/api/Admin/User/${userId}`);
+      const response = await fetch(`/api/User/${userId}`);
       const data = await response.json();
 
       setUser({
@@ -34,7 +34,7 @@ const Update = () => {
     if (!userId) return alert("Missing UserId!");
 
     try {
-      const response = await fetch(`/api/Admin/User/${userId}`, {
+      const response = await fetch(`/api/User/${userId}`, {
         method: "PATCH",
         body: JSON.stringify({
           UserName: user.UserName,
