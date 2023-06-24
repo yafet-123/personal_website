@@ -9,7 +9,7 @@ const Hero: React.FC = () => {
           src={Profile}
           width={350}
           height={350}
-          className="border-[15px] border-[#355e3b] rounded-full absolute left-1/2 right-1/2 transform -translate-x-1/2 translate-y-1/4 bottom-0"
+          className="border-[10px] lg:border-[15px] border-[#355e3b] rounded-full absolute left-1/2 right-1/2 transform -translate-x-1/2 translate-y-1/4 bottom-0"
           alt="latest news image"
           priority
         />

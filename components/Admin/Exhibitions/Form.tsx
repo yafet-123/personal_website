@@ -7,12 +7,14 @@ import dynamic from "next/dynamic";
 const Form = ({
   type,
   typeofCategory,
-  Works,
-  setWorks,
+  Exhibitions,
+  setExhibitions,
+  typechange,
+  settypechange,
   submitting,
   handleSubmit,
 }) => {
-  const blob = new Blob([Works.image], { type: "image" });
+  const blob = new Blob([Exhibitions.image], { type: "image" });
   return ( 
     <section className="w-full">
       <h1 className="head_text text-left mb-5">
@@ -21,14 +23,14 @@ const Form = ({
         </span>
       </h1>
       <p className="desc text-white">
-        create Diffrent works that can be view and shared from your own audience
+        create Diffrent Exhibitions that can be view and shared from your own audience
       </p>
 
       <form
         onSubmit={handleSubmit}
         className="mt-10 w-full flex flex-col gap-7 glassmorphism"
       >
-        <div className="flex flex-col my-2 w-full px-2">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 my-2 px-2">
           <div className="relative flex-1">
             <input
               id="title"
@@ -36,8 +38,8 @@ const Form = ({
               required
               className="block w-full px-3 text-md lg:text-xl text-black bg-white py-4 border-2 border-black rounded-xl appearance-none dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-500 peer"
               placeholder=" "
-              value={Works.title}
-              onChange={(e) => setWorks({ ...Works, title: e.target.value })}
+              value={Exhibitions.title}
+              onChange={(e) => setExhibitions({ ...Exhibitions, title: e.target.value })}
             />
             <label
               htmlFor="floating_outlined"
@@ -46,41 +48,39 @@ const Form = ({
               Title
             </label>
           </div>
-        </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 my-2 px-2">
           <div className="relative mb-5">
-            <textarea
-              id="exhibitions"
+            <input
+              id="date"
+              type={typechange ? "text" : "date"}
               required
               className="block w-full px-3 text-md lg:text-xl text-black bg-white py-4 border-2 border-black rounded-xl appearance-none dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-500 peer"
               placeholder=" "
-              value={Works.exhibitions}
-              rows="10"
-              cols="20"
-              onChange={(e) =>
-                setWorks({ ...Works, exhibitions: e.target.value })
-              }
+              value={Exhibitions.date}
+              onChange={(e) => setExhibitions({ ...Exhibitions, date: e.target.value })}
+              onClick={() => settypechange(false)}
             />
             <label
               htmlFor="floating_outlined"
-              className="absolute text-md lg:text-xl text-black duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-[10%] peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-1"
+              className="absolute text-md lg:text-xl text-black duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-1"
             >
-              Exhibitions
+              Date
             </label>
           </div>
+        </div>
 
+        <div className="flex flex-col my-2 w-full px-2">
           <div className="relative mb-5">
             <textarea
-              id="description"
+              id="descreption"
               required
               className="block w-full px-3 text-md lg:text-xl text-black bg-white py-4 border-2 border-black rounded-xl appearance-none dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-500 peer"
               placeholder=" "
-              value={Works.description}
+              value={Exhibitions.descreption}
               rows="10"
               cols="20"
               onChange={(e) =>
-                setWorks({ ...Works, description: e.target.value })
+                setExhibitions({ ...Exhibitions, descreption: e.target.value })
               }
             />
             <label
@@ -127,7 +127,7 @@ const Form = ({
                 type="file"
                 className="hidden"
                 onChange={(e) =>
-                  setWorks({ ...Works, image: e.target.files[0] })
+                  setExhibitions({ ...Exhibitions, image: e.target.files[0] })
                 }
               />
             </label>
@@ -136,14 +136,14 @@ const Form = ({
 
         <div
           className={
-            Works.image == ""
+            Exhibitions.image == ""
               ? "hidden"
               : "flex justify-center items-center mb-10"
           }
         >
           <Image
             src={
-              Works.image == ""
+              Exhibitions.image == ""
                 ? "/images/bgImage1.avif"
                 : URL.createObjectURL(blob)
             }

@@ -117,7 +117,7 @@ const Navbar = () => {
           </div>
         </div>
 
-        { (pathname == "/Admin" || pathname == "/Admin/User")  &&
+        { (pathname == "/Admin" || pathname == "/Admin/User"|| pathname == "/Admin/Works" || pathname == "/Admin/Exhibitions")  &&
         <div className={`mt-5 lg:mt-0 lg:ml-10 md:block ${
               open ? "flex" : "hidden"
             }`}>

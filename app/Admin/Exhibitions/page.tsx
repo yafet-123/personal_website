@@ -1,37 +1,38 @@
 "use client";
 import Image from "next/image";
-import Form from "@/components/Admin/Works/Form";
-import Display from "@/components/Admin/Works/Display";
+import Form from "@/components/Admin/Exhibitions/Form";
+import Display from "@/components/Admin/Exhibitions/Display";
 import { useState, useEffect } from "react";
 import { useSession } from "next-auth/react";
 import { usePathname, useRouter } from "next/navigation";
- 
-const WorksCardList = ({ data }) => {
+
+const ExhibitionsCardList = ({ data }) => {
   return (
     <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-5">
       {data.map((data) => (
-        <Display key={data._id} Works={data} />
+        <Display key={data._id} Exhibitions={data} />
       ))}
     </div>
   );
 };
  
-export default function WorksHome() {
+export default function ExhibitionsHome() {
   const router = useRouter();
   const [submitting, setIsSubmitting] = useState(false);
-  const [allWorks, setAllWorks] = useState([]);
-  const [Works, setWorks] = useState({
+  const [allExhibitions, setAllExhibitions] = useState([]);
+  const [typechange , settypechange] = useState(true)
+  const [Exhibitions, setExhibitions] = useState({
     title: "",
-    exhibitions: "",
+    descreption: "",
     image: "",
-    description:""
+    date:""
   });
   const { data: session } = useSession();
-  console.log(Works)
+  console.log(Exhibitions)
   async function imageUploadData() {
     const formData = new FormData();
     let imagesecureUrl = "";
-    formData.append("file", Works.image);
+    formData.append("file", Exhibitions.image);
 
     formData.append("upload_preset", "my_upload");
 
@@ -46,18 +47,18 @@ export default function WorksHome() {
     return imagesecureUrl;
   }
 
-  const createWorks = async (e) => {
+  const createExhibitions = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
     const imageData = await imageUploadData()
     try {
-      const response = await fetch("/api/Works/Add", {
+      const response = await fetch("/api/Exhibitions/Add", {
         method: "POST",
         body: JSON.stringify({
-          title: Works.title,
+          title: Exhibitions.title,
           image: imageData,
-          exhibitions: Works.exhibitions,
-          Description: Works.description,
+          exhibitions: Exhibitions.date,
+          Description: Exhibitions.descreption,
           user_id: session?.user.id,
         }),
       });
@@ -71,28 +72,30 @@ export default function WorksHome() {
     }
   };
 
-  const fetchWorks = async () => {
-    const response = await fetch("/api/Works");
+  const fetchExhibitions = async () => {
+    const response = await fetch("/api/Exhibitions");
     const data = await response.json();
 
-    setAllWorks(data);
+    setAllExhibitions(data);
   };
-  
+
   useEffect(() => {
-    fetchWorks();
+    fetchExhibitions();
   }, []);
   return (
     <section className="w-full h-full lg:pt-24">
       <Form
         type="Create"
-        typeofCategory="Works"
-        Works={Works}
-        setWorks={setWorks}
+        typeofCategory="Exhibitions"
+        Exhibitions={Exhibitions}
+        setExhibitions={setExhibitions}
         submitting={submitting}
-        handleSubmit={createWorks}
+        handleSubmit={createExhibitions}
+        typechange={typechange}
+        settypechange={settypechange}
       />
 
-      <WorksCardList data={allWorks} />
+      <ExhibitionsCardList data={allExhibitions} />
     </section>
   );
 }

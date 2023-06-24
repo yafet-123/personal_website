@@ -7,8 +7,7 @@ const Form = ({ type, user, setUser, submitting, handleSubmit }) => {
         <span className="text-white">{type} User</span>
       </h1>
       <p className="desc text-white">
-        {type} the user that can create , update , edit and delete jobs ,
-        courses and other
+        {type} the user that can create , update , edit and delete diffrent Works and Exhibitions
       </p>
 
       <form

@@ -8,18 +8,19 @@ const VerticalNavbar: React.FC = () => {
     { link: "/Admin", name: "Dashboard" },
     { link: "/Admin/User", name: "User" },
     { link: "/Admin/Works", name: "Works" },
+    { link: "/Admin/Exhibitions", name: "Exhibitions" },
   ];
   const pathname = usePathname();
   console.log(pathname);
   return (
-    <div className={`flex h-full w-full lg:w-60 pt-24 sticky top-0 bottom-0`}>
-      <nav className="w-full lg:h-screen flex flex-col py-8 lg:px-4 dark:bg-[#02201D]">
-        <div className="flex justify-between ml-2 lg:ml-5">
-          <h1 className={`text-2xl font-bold text-white`}>Admin Page</h1>
+    <div className={`flex h-full w-full lg:w-40 pt-24`}>
+      <nav className="w-full lg:h-screen flex flex-col py-8 lg:px-4">
+        <div className="flex justify-between ml-2">
+          <h1 className={`text-xl font-bold text-white`}>Admin Page</h1>
         </div>
 
         <div className="mt-10">
-          <ul className="flex flex-row lg:flex-col w-full lg:w-60 lg:h-[50rem] scroll_width">
+          <ul className="flex flex-row lg:flex-col w-full lg:w-40 lg:h-screen scroll_width">
             {SideBarList.map((side, index) => (
               <li className="mb-5" key={index}>
                 <Link
