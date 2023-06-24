@@ -13,7 +13,7 @@ export const POST = async (request:NextApiRequest) => {
             user_id:Number(user_id),
           },
         });
-        return new Response(JSON.stringify("data"), { status: 201 })
+        return new Response(JSON.stringify(data), { status: 201 })
     } catch (error) {
         return new Response("Failed to create a new prompt", { status: 500 });
     }

@@ -18,7 +18,7 @@ export const GET = async (request, { params }) => {
 
     if (!data) return new Response("Prompt Not Found", { status: 404 });
 
-    return new Response(JSON.stringify("data"), { status: 200 });
+    return new Response(JSON.stringify(data), { status: 200 });
   } catch (error) {
     return new Response("Internal Server Error", { status: 500 });
   }

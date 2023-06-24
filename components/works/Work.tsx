@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 export default function Work({ work }) {
-  const id = work._id;
+  const id = work.id;
   return (
     <Link
       href={`/SelectedWorks/${id}`}
