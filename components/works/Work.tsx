@@ -11,7 +11,7 @@ export default function Work({ work }) {
     >
       <div className="relative h-[15rem] w-full">
         <Image
-          src={work.image}
+          src={work.Image}
           alt="Slide"
           className="object-cover h-full w-full border rounded-lg border-black"
           layout="fill"
