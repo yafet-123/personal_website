@@ -1,14 +1,24 @@
-import Works from "@/models/works";
-import { connectToDB } from "@/utils/database";
+import { NextApiRequest, NextApiResponse } from "next";
+import prisma from "@/utils/db.server";
 
 export const GET = async (request, { params }) => {
   try {
-    await connectToDB();
+    const data = await prisma.SelectedWorks.findUnique({
+      where: {
+        selectedWorks_id: Number(params.id),
+      },
+      include: {
+        User: {
+          select: {
+            email: true,
+          },
+        },
+      },
+    });
 
-    const individualwork = await Works.findById(params.id).populate("_id");
-    if (!individualwork)
-      return new Response("Works Not Found", { status: 404 });
-    return new Response(JSON.stringify(individualwork), { status: 200 });
+    if (!data) return new Response("Prompt Not Found", { status: 404 });
+
+    return new Response(JSON.stringify(data), { status: 200 });
   } catch (error) {
     return new Response("Internal Server Error", { status: 500 });
   }
