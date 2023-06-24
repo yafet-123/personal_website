@@ -14,8 +14,8 @@ export const GET = async (req: NextApiRequest, res: NextApiResponse) => {
       UserName: data.UserName,
     }));
     console.log(Allusers)
-    res.status(200).json(Allusers);
+    res.json(Allusers);
   } catch (error) {
-    res.status(500).json({ error: "Failed to fetch all users" });
+    res.json({ error: "Failed to fetch all users" });
   }
 };
