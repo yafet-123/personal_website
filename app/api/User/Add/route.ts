@@ -6,7 +6,7 @@ export const POST = async (req: NextApiRequest) => {
   try {
     console.log(email);
     console.log(UserName);
-    const data = await prisma.user.create({
+    const data = await prisma.User.create({
       data: {
         UserName: UserName,
         email: email,
