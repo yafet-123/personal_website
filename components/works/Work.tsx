@@ -13,12 +13,12 @@ export default function Work({ work }) {
         <Image
           src={work.image}
           alt="Slide"
-          className="object-cover h-full w-full"
+          className="object-cover h-full w-full border rounded-lg border-black"
           layout="fill"
         />
       </div>
 
-      <h1 className="my-5 text-lg lg:text-xl writing-vertical text-vertical text-left flex flex-col justify-between items-center">
+      <h1 className="my-5 text-lg lg:text-2xl writing-vertical text-vertical text-left flex flex-col justify-between items-center">
         {work.title}
       </h1>
     </Link>

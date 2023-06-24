@@ -21,7 +21,7 @@ const ReachUs = () => {
 
       <Link target="_blank" href="mailto:thescentseekerweb@gmail.com">
         <p className="flex flex-row gap-2 hover:text-[#17c294] cursor-pointer text-lg md:text-xl md:px-8">
-          thescentseekerweb@gmail.com
+          helenzeray8905@gmail.com
         </p>
       </Link>
 

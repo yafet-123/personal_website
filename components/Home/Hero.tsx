@@ -16,7 +16,7 @@ const Hero: React.FC = () => {
     slidesToScroll: 1,
   };
   return (
-    <div className="overflow-hidden">
+    <div className="w-full h-screen overflow-hidden">
       <Slider {...settings}>
         {CardHeo.map((data, index) => (
           <div

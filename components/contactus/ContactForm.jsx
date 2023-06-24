@@ -67,7 +67,7 @@ const ContactForm = () => {
                   id="firstName"
                   name="firstName"
                   placeholder="First Name"
-                  className="w-full  p-2"
+                  className="w-full  p-2 text-black"
                 />
                 <ErrorMessage
                   name="firstName"
@@ -81,7 +81,7 @@ const ContactForm = () => {
                   id="lastName"
                   name="lastName"
                   placeholder="Last Name"
-                  className="w-full  p-2"
+                  className="w-full p-2 text-black"
                 />
                 <ErrorMessage
                   name="lastName"
@@ -101,7 +101,7 @@ const ContactForm = () => {
               type="email"
               id="email"
               name="email"
-              className="w-full  p-2"
+              className="w-full p-2 text-black"
             />
             <ErrorMessage
               name="email"
@@ -119,7 +119,7 @@ const ContactForm = () => {
               type="text"
               id="subject"
               name="subject"
-              className="w-full  p-2"
+              className="w-full p-2 text-black"
             />
             <ErrorMessage
               name="subject"
@@ -137,7 +137,7 @@ const ContactForm = () => {
               as="textarea"
               id="message"
               name="message"
-              className="w-full  p-2"
+              className="w-full p-2 text-black"
             />
             <ErrorMessage
               name="message"

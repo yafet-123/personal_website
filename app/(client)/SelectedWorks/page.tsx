@@ -20,7 +20,7 @@ export default async function SelectedWorks() {
   const Works = await fetchSelectedWorks();
   console.log(Works)
   return (
-    <main className="w-full h-full pt-32 bg-[#494B4D]">
+    <main className="w-full h-full pt-32 bg-black">
       <Suspense fallback={<div className="w-full h-screen flex items-center justify-center text-2xl ">Loading Works Please Wait ...</div>}> 
         <List selectedWorks={Works} />
       </Suspense>

@@ -18,7 +18,9 @@ export default function Exhibition({ exhibition }) {
         />
       </div>
 
-      <h1 className="my-5 text-2xl">{exhibition.title}</h1>
+      <h1 className="my-5 text-lg lg:text-2xl writing-vertical text-vertical text-left flex flex-col justify-between items-center">
+        {exhibition.title}
+      </h1>
     </Link>
   );
 }

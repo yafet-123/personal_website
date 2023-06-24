@@ -1,5 +1,5 @@
 import Link from "next/link";
-
+ 
 const Form = ({ type, user, setUser, submitting, handleSubmit }) => {
   return (
     <section className="w-full">

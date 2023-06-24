@@ -41,7 +41,7 @@ const UserDisplay = ({ user }) => {
   };
 
   return (
-    <div className="prompt_card">
+    <div className="prompt_card w-full">
       <div className="flex justify-between items-start gap-5">
         <div className="flex-1 flex justify-between items-center gap-3 cursor-pointer">
           <h3 className="font-satoshi font-semibold text-gray-900">
