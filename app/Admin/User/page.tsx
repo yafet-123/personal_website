@@ -4,6 +4,7 @@ import Form from "@/components/Admin/User/Form";
 import UserDisplay from "@/components/Admin/User/UserDisplay";
 import { useState, useEffect } from "react";
 import { useSession } from "next-auth/react";
+import { Suspense } from 'react';
 
 interface User {
   UserName: string;
@@ -12,9 +13,9 @@ interface User {
 
 const UserCardList = ({ data }) => {
   return (
-    <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+    <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-5">
       {data.map((user) => (
-        <UserDisplay key={user._id} user={user} />
+        <UserDisplay key={user.user_id} user={user} />
       ))}
     </div>
   );
@@ -67,7 +68,10 @@ export default function AdminUserHome() {
           submitting={submitting}
           handleSubmit={createUser}
         />
-      <UserCardList data={allUsers} />
+      <Suspense fallback={<div className="w-full mt-20 flex items-center text-white">Loading User Please Wait ...</div>}> 
+        <UserCardList data={allUsers} />
+      </Suspense>
+      
     </section>
   );
 }

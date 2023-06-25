@@ -144,7 +144,7 @@ const Form = ({
           <Image
             src={
               Exhibitions.image == ""
-                ? "/images/bgImage1.avif"
+                ? "/images/person1.jpg"
                 : URL.createObjectURL(blob)
             }
             width={500}

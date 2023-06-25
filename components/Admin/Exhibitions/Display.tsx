@@ -7,6 +7,7 @@ import { useSession } from "next-auth/react";
 import { usePathname, useRouter } from "next/navigation";
 
 const Display = ({ Exhibitions, handleEdit, handleDelete }) => {
+  console.log(Exhibitions)
   const { data: session } = useSession();
   const pathName = usePathname();
   const router = useRouter();
@@ -45,7 +46,7 @@ const Display = ({ Exhibitions, handleEdit, handleDelete }) => {
         <p className="my-4 font-satoshi text-sm text-gray-700">
           {Exhibitions.title}
         </p>
-        <Image src={Exhibitions.image} alt="Exhibitions Image" width={50} height={50} />
+        <Image src={Exhibitions.Image} alt="Exhibitions Image" width={50} height={50} />
       </div>
 
       <p className="my-4 font-satoshi text-sm text-gray-700">

@@ -5,7 +5,8 @@ import Display from "@/components/Admin/Works/Display";
 import { useState, useEffect } from "react";
 import { useSession } from "next-auth/react";
 import { usePathname, useRouter } from "next/navigation";
- 
+import { Suspense } from 'react';
+
 const WorksCardList = ({ data }) => {
   return (
     <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-5">
@@ -92,7 +93,9 @@ export default function WorksHome() {
         handleSubmit={createWorks}
       />
 
-      <WorksCardList data={allWorks} />
+      <Suspense fallback={<div className="w-full mt-20 flex items-center text-white">Loading User Please Wait ...</div>}> 
+        <WorksCardList data={allWorks} />
+      </Suspense>
     </section>
   );
 }

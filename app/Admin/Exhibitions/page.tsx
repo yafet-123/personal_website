@@ -5,6 +5,7 @@ import Display from "@/components/Admin/Exhibitions/Display";
 import { useState, useEffect } from "react";
 import { useSession } from "next-auth/react";
 import { usePathname, useRouter } from "next/navigation";
+import { Suspense } from 'react';
 
 const ExhibitionsCardList = ({ data }) => {
   return (
@@ -95,7 +96,9 @@ export default function ExhibitionsHome() {
         settypechange={settypechange}
       />
 
-      <ExhibitionsCardList data={allExhibitions} />
+      <Suspense fallback={<div className="w-full mt-20 flex items-center text-white">Loading Works Please Wait ...</div>}> 
+        <ExhibitionsCardList data={allExhibitions} />
+      </Suspense>
     </section>
   );
 }
