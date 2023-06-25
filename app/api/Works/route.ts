@@ -5,6 +5,13 @@ export const GET = async (req: NextApiRequest, res: NextApiResponse) => {
   try {
     const works = await prisma.SelectedWorks.findMany({
       orderBy: { ModifiedDate: "desc" },
+      include: {
+        User: {
+          select: {
+            email: true,
+          },
+        },
+      },
     });
     const Allworks = works.map((data) => ({
       selectedWorks_id: data.selectedWorks_id,
@@ -14,9 +21,9 @@ export const GET = async (req: NextApiRequest, res: NextApiResponse) => {
       Image:data.Image,
       CreatedDate: data.CreatedDate,
       ModifiedDate: data.ModifiedDate,
-      UserName: data.UserName,
+      UserName: data.User.UserName,
     }));
-    console.log(Allworks)
+    
     return new Response(JSON.stringify(Allworks), { status: 200 });
   } catch (error) {
     return new Response("Failed to fetch all works", { status: 500 });
