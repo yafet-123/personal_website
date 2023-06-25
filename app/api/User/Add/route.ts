@@ -1,6 +1,6 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import prisma from "@/utils/db.server";
- 
+  
 export const POST = async (req: NextApiRequest) => {
   const { UserName, email } = await req.json();
   try {

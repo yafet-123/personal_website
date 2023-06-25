@@ -39,7 +39,7 @@ export default function AdminUserHome() {
         }),
       });
       if (response.ok) {
-        router.push("/");
+        router.push("/Admin/User");
       }
     } catch (error) {
       console.log(error);

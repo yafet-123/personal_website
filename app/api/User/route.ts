@@ -13,7 +13,7 @@ export const GET = async (req: NextApiRequest, res: NextApiResponse) => {
       ModifiedDate: data.ModifiedDate,
       UserName: data.UserName,
     }));
-
+    console.log(Allusers)
     return new Response(JSON.stringify(Allusers), { status: 200 });
   } catch (error) {
     return new Response("Failed to fetch all users", { status: 500 });
