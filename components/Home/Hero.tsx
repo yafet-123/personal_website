@@ -12,8 +12,7 @@ const Hero: React.FC = () => {
     autoplay: true,
     speed: 7000,
     autoplaySpeed: 7000,
-    slidesToShow: 5,
-    slidesToScroll: 1,
+ 
   };
   return (
     <div className="w-full h-screen overflow-hidden">
