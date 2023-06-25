@@ -1,66 +1,66 @@
-// "use client";
+"use client";
 
-// import { useEffect, useState } from "react";
-// import { useRouter, useSearchParams } from "next/navigation";
+import { useEffect, useState } from "react";
+import { useRouter, useSearchParams } from "next/navigation";
 
-// import Form from "@/components/Admin/User/Form";
+import Form from "@/components/Admin/User/Form";
 
-// const Update = () => {
-//   const router = useRouter();
-//   const searchParams = useSearchParams();
-//   const userId = searchParams.get("id");
+const Update = () => {
+  const router = useRouter();
+  const searchParams = useSearchParams();
+  const userId = searchParams.get("id");
 
-//   const [user, setUser] = useState({ UserName: "", email: "" });
-//   const [submitting, setIsSubmitting] = useState(false);
+  const [user, setUser] = useState({ UserName: "", email: "" });
+  const [submitting, setIsSubmitting] = useState(false);
 
-//   useEffect(() => {
-//     const getUserDetails = async () => {
-//       const response = await fetch(`/api/user/${userId}`);
-//       const data = await response.json();
+  useEffect(() => {
+    const getUserDetails = async () => {
+      const response = await fetch(`/api/user/${userId}`);
+      const data = await response.json();
 
-//       setUser({
-//         UserName: data.UserName,
-//         email: data.email,
-//       });
-//     };
+      setUser({
+        UserName: data.UserName,
+        email: data.email,
+      });
+    };
 
-//     if (userId) getUserDetails();
-//   }, [userId]);
+    if (userId) getUserDetails();
+  }, [userId]);
 
-//   const updatePrompt = async (e) => {
-//     e.preventDefault();
-//     setIsSubmitting(true);
+  const updatePrompt = async (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
 
-//     if (!userId) return alert("Missing UserId!");
+    if (!userId) return alert("Missing UserId!");
 
-//     try {
-//       const response = await fetch(`/api/user/${userId}`, {
-//         method: "PATCH",
-//         body: JSON.stringify({
-//           UserName: user.UserName,
-//           email: user.email,
-//         }),
-//       });
+    try {
+      const response = await fetch(`/api/user/${userId}`, {
+        method: "PATCH",
+        body: JSON.stringify({
+          UserName: user.UserName,
+          email: user.email,
+        }),
+      });
 
-//       if (response.ok) {
-//         router.push("/");
-//       }
-//     } catch (error) {
-//       console.log(error);
-//     } finally {
-//       setIsSubmitting(false);
-//     }
-//   };
+      if (response.ok) {
+        router.push("/");
+      }
+    } catch (error) {
+      console.log(error);
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
-//   return (
-//     <Form
-//       type='Edit'
-//       user={user}
-//       setUser={setUser}
-//       submitting={submitting}
-//       handleSubmit={updatePrompt}
-//     />
-//   );
-// };
+  return (
+    <Form
+      type='Edit'
+      user={user}
+      setUser={setUser}
+      submitting={submitting}
+      handleSubmit={updatePrompt}
+    />
+  );
+};
 
-// export default Update;
+export default Update;
