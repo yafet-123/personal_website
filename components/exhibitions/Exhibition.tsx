@@ -6,12 +6,12 @@ export default function Exhibition({ exhibition }) {
   return (
     <Link
       href={`/SelectedWorks/${id}`}
-      className="flex flex-col items-center"
+      className="flex flex-col items-center text-white"
       key={exhibition.exhibition_id}
     >
       <div className="relative h-[15rem] w-full">
         <Image
-          src={exhibition.image}
+          src={exhibition.Image}
           alt="Slide"
           className="object-cover h-full w-full border rounded-lg border-black"
           layout="fill"
