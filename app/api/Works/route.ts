@@ -24,7 +24,7 @@ export const GET = async (req: NextApiRequest, res: NextApiResponse) => {
       UserName: data.User.UserName,
     }));
     
-    return new Response(JSON.stringify(Allworks), { status: 200 });
+    return new Response(JSON.stringify(works), { status: 200 });
   } catch (error) {
     return new Response("Failed to fetch all works", { status: 500 });
   }
