@@ -14,7 +14,7 @@ export const GET = async (req: NextApiRequest, res: NextApiResponse) => {
       },
     });
     const Allworks = works.map((data) => ({
-      selectedWorks_id: data.selectedWorks_id,
+      selectedWorks_id: data.selectedWorks_id.toString(),
       title: data.title,
       description: data.description,
       exhibitions: data.exhibitions,
