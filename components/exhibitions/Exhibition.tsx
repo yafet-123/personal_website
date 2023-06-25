@@ -2,18 +2,18 @@ import Image from "next/image";
 import Link from "next/link";
 
 export default function Exhibition({ exhibition }) {
-  const id = exhibition._id;
+  const id = exhibition.exhibition_id;
   return (
     <Link
       href={`/SelectedWorks/${id}`}
       className="flex flex-col items-center"
-      key={exhibition._id}
+      key={exhibition.exhibition_id}
     >
-      <div className="relative h-[20rem] w-full">
+      <div className="relative h-[15rem] w-full">
         <Image
           src={exhibition.image}
           alt="Slide"
-          className="object-cover h-full w-full"
+          className="object-cover h-full w-full border rounded-lg border-black"
           layout="fill"
         />
       </div>

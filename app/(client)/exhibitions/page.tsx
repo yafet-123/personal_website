@@ -19,7 +19,7 @@ async function fetchExhibitions() {
 
 export default async function Exhibitions() {
 	const exhibitions = await fetchExhibitions();
-    console.log(exhibitions)
+  console.log(exhibitions)
 	return(
 		<main className="w-full h-full pt-32 bg-[#494B4D]">
       <Suspense fallback={<div className="w-full h-screen flex items-center justify-center text-2xl ">Loading Works Please Wait ...</div>}> 

@@ -17,7 +17,7 @@ export default function Work({ work }) {
           layout="fill"
         />
       </div>
-
+ 
       <h1 className="my-5 text-lg lg:text-2xl writing-vertical text-vertical text-left flex flex-col justify-between items-center">
         {work.title}
       </h1>

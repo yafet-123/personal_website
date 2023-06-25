@@ -1,8 +1,28 @@
 import Image from "next/image";
 import Link from "next/link";
 
-export default function SelectedExhibitionsIndividualDisplay({ work }) {
+export default function SelectedExhibitionsIndividualDisplay({ exhibition }) {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-5 lg:gap-20 px-3 mt-32"></div>
+    <div className="flex flex-col-reverse lg:flex-row justify-between px-5 lg:px-32 pt-20 p-20 lg:pb-96 text-white ">
+      <div className="flex flex-col items-left font-serif antialiased leading-loose tracking-wide mr-20 w-full lg:w-[75%]">
+        <h1 className="font-medium tracking-wide text-3xl lg:text-6xl mb-5 lg:mb-10">
+          {exhibition.title}
+        </h1>
+        <p className="text-xl lg:text-2xl mb-5 lg:mb-10">{exhibition.description}</p>
+        <p className="flex flex-col">
+          <span className="text-lg my-5">Date:</span>
+          { exhibition.date == "" ? <span className="lg:pl-10 text-lg mb-5 text-red-700">None</span> :
+          <span className="lg:pl-10 text-lg mb-5">{exhibition.date}</span>}
+        </p>
+      </div>
+      <div className="w-full h-96 lg:!h-[35rem] relative justify-self-center mb-5 lg:mb-0">
+        <Image
+          src={exhibition.Image}
+          fill
+          className="!bg-cover w-full !h-full"
+          alt="latest news image"
+        />
+      </div>
+    </div>
   );
 }
