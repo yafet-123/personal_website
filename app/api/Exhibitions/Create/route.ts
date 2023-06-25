@@ -1,16 +1,20 @@
-// import exhibition from "@/models/exhibition";
-// import { connectToDB } from "@/utils/database";
-// import { NextApiRequest, NextApiResponse } from "next";
+import { NextApiRequest, NextApiResponse } from "next";
+import prisma from "@/utils/db.server";
 
-// export const POST = async (request:NextApiRequest) => {
-// 	const { title ,descreption ,image ,date } = await request.json();
-//     try {
-//         await connectToDB();
-//         const newexhibition = new exhibition({title ,descreption ,image ,date})
-
-//         await newexhibition.save();
-//         return new Response(JSON.stringify(newexhibition), { status: 201 })
-//     } catch (error) {
-//         return new Response("Failed to create a new prompt", { status: 500 });
-//     }
-// }
+export const POST = async (request:NextApiRequest) => {
+	const { title ,descreption ,image ,date, user_id } = await request.json();
+    try {
+    	const data = await prisma.Exhibition.create({
+          data: {
+            title,
+            description:descreption,
+            date,
+            Image:image,
+            user_id:Number(user_id),
+          },
+        });
+        return new Response(JSON.stringify(data), { status: 201 })
+    } catch (error) {
+        return new Response("Failed to create a new prompt", { status: 500 });
+    }
+}

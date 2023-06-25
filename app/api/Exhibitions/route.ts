@@ -1,14 +1,31 @@
-// import exhibition from "@/models/exhibition";
-// import { connectToDB } from "@/utils/database";
+import { NextApiRequest, NextApiResponse } from "next";
+import prisma from "@/utils/db.server";
 
-// export const GET = async (req: NextApiRequest, res: NextApiResponse) => {
-//   try {
-//     await connectToDB();
-
-//     const exhibitions = await exhibition.find({}).populate("_id");
-
-//     return new Response(JSON.stringify(exhibitions), { status: 200 });
-//   } catch (error) {
-//     return new Response("Failed to fetch all exhibitions", { status: 500 });
-//   }
-// };
+export const GET = async (req: NextApiRequest, res: NextApiResponse) => {
+  try {
+    const exhibition = await prisma.Exhibition.findMany({
+      orderBy: { exhibition_id: "asc" },
+      include: {
+        User: {
+          select: {
+            UserName: true,
+          },
+        },
+      },
+    });
+    const AllExhibition = exhibition.map((data) => ({
+      exhibition_id: data.exhibition_id.toString(),
+      title: data.title,
+      description: data.description,
+      date: data.date,
+      Image:data.Image,
+      CreatedDate: data.CreatedDate,
+      ModifiedDate: data.ModifiedDate,
+      UserName: data.User.UserName,
+    }));
+    
+    return new Response(JSON.stringify(AllExhibition), { status: 200 });  
+	} catch (error) {
+    return new Response("Failed to fetch all exhibitions", { status: 500 });
+  }
+};

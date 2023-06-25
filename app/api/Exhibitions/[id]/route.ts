@@ -1,23 +1,25 @@
-// import exhibition from "@/models/exhibition";
-// import { connectToDB } from "@/utils/database";
+import { NextApiRequest, NextApiResponse } from "next";
+import prisma from "@/utils/db.server";
 
-// export const GET = async (request, { params }) => {
-//   try {
-//     await connectToDB();
+export const GET = async (request, { params }) => {
+  try {
+    const data = await prisma.Exhibition.findUnique({
+      where: {
+        exhibition_id: Number(params.id),
+      },
+      include: {
+        User: {
+          select: {
+            email: true,
+          },
+        },
+      },
+    });
 
-//     const individualexhibition = await exhibition
-//       .findById(params.id)
-//       .populate("_id");
-//     if (!individualexhibition)
-//       return new Response("exhibition Not Found", { status: 404 });
-//     const formattedexhibition = individualexhibition.map((exhibition) => {
-//       return {
-//         ...exhibition.toObject(),
-//         _id: exhibition._id.toString(),
-//       };
-//     });
-//     return new Response(JSON.stringify(formattedexhibition), { status: 200 });
-//   } catch (error) {
-//     return new Response("Internal Server Error", { status: 500 });
-//   }
-// };
+    if (!data) return new Response("Prompt Not Found", { status: 404 });
+
+    return new Response(JSON.stringify(data), { status: 200 });
+  } catch (error) {
+    return new Response("Internal Server Error", { status: 500 });
+  }
+};
