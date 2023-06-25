@@ -136,14 +136,14 @@ const Form = ({
 
         <div
           className={
-            Exhibitions.Image == ""
+            Exhibitions.image == ""
               ? "hidden"
               : "flex justify-center items-center mb-10"
           }
         >
           <Image
             src={
-              Exhibitions.Image == ""
+              Exhibitions.image == ""
                 ? "/images/bgImage1.avif"
                 : URL.createObjectURL(blob)
             }
