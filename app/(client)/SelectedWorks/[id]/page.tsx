@@ -27,7 +27,7 @@ export async function generateStaticParams() {
   const selectedworksview = await fetch(process.env.URL + '/api/Works').then((res) => res.json());
   console.log(selectedworksview)
   return selectedworksview.map((work) => ({
-    worksId: work.selectedWorks_id.toString(),
+    worksId: work.selectedWorks_id ? work.selectedWorks_id.toString() : '',
   }));
 }
 
