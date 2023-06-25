@@ -5,7 +5,7 @@ export default function Exhibition({ exhibition }) {
   const id = exhibition.exhibition_id;
   return (
     <Link
-      href={`/exhibition/${id}`}
+      href={`/exhibitions/${id}`}
       className="flex flex-col items-center text-white"
       key={exhibition.exhibition_id}
     >
