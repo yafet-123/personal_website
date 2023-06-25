@@ -25,7 +25,7 @@ export default async function SelectedWorksView({params : {id} }) {
 
 export async function generateStaticParams() {
   const selectedworksview = await fetch(process.env.URL + '/api/Works').then((res) => res.json());
-  console.log(selectedworksview)
+  console.log(selectedworksview[0].selectedWorks_id.toString())
   return selectedworksview.map((work) => ({
     worksId:work.selectedWorks_id.toString(),
   }));
