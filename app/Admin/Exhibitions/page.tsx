@@ -57,7 +57,7 @@ export default function ExhibitionsHome() {
         body: JSON.stringify({
           title: Exhibitions.title,
           image: imageData,
-          exhibitions: Exhibitions.date,
+          date: Exhibitions.date,
           Description: Exhibitions.descreption,
           user_id: session?.user.id,
         }),
