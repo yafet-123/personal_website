@@ -93,7 +93,7 @@ export default function WorksHome() {
         handleSubmit={createWorks}
       />
 
-      <Suspense fallback={<div className="w-full mt-20 flex items-center text-white">Loading User Please Wait ...</div>}> 
+      <Suspense fallback={<div className="w-full mt-20 flex items-center text-white">Loading Works Please Wait ...</div>}> 
         <WorksCardList data={allWorks} />
       </Suspense>
     </section>

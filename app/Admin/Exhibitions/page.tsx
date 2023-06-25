@@ -96,7 +96,7 @@ export default function ExhibitionsHome() {
         settypechange={settypechange}
       />
 
-      <Suspense fallback={<div className="w-full mt-20 flex items-center text-white">Loading Works Please Wait ...</div>}> 
+      <Suspense fallback={<div className="w-full mt-20 flex items-center text-white">Loading Exhibitions Please Wait ...</div>}> 
         <ExhibitionsCardList data={allExhibitions} />
       </Suspense>
     </section>
