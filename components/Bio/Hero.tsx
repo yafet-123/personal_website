@@ -14,7 +14,7 @@ const Hero: React.FC = () => {
           priority
         />
       </div>
-      <div className="flex flex-col items-center opacity 100 transform-none mt-32 px-5">
+      <div className="flex flex-col items-center opacity 100 transform-none mt-32 px-5 mb-5">
         <h1 className="font-poppins dark:text-white text-pro-w-black font-bold sm:text-[48px] sm:leading-[52px] text-[30px] leading-[36px] xs:tracking-[-0.5%] tracking-[-0.25%] text-center">
           Welcome To <br className="md:hidden block"/>
           <span className="bg-gradient-to-r text-transparent bg-clip-text from-blue-400 via-purple-600 to-purple-800">Helen Zeray</span>

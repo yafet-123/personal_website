@@ -26,7 +26,7 @@ export default async function Exhibitions() {
 	const exhibitions = await fetchExhibitions();
   console.log(exhibitions)
 	return(
-		<main className="w-full h-full py-32 bg-black">
+		<main className="w-full h-full py-32 bg-custom-color bg-opacity-100">
       <Suspense fallback={<div className="w-full h-screen flex items-center justify-center text-2xl ">Loading Exhibitions Please Wait ...</div>}> 
         <List exhibitions={exhibitions} />
       </Suspense>

@@ -118,50 +118,9 @@
   @apply flex-1 break-inside-avoid rounded-lg border border-gray-300 bg-white bg-clip-padding p-6 pb-4 backdrop-blur-lg backdrop-filter w-full h-fit;
 }
 
-.exhibitions{
-  display: grid;
-  justify-content: start;
-  gap: 1rem;
-  grid-auto-flow: column;
-  overflow-x: auto;
-  position: relative;
-  padding-block: 2rem;
-}
-
-.exhibition{
-  width: 28.5rem;
-  border-radius: 0.5rem;
-  padding: 2rem;
-  background: var(--clr-primary-800);
-}
-
-.exhibition * {
-  margin: 0;
-}
-
-
-.date{
-  color: var(--clr-accent-400);
-  font-size: var(--fs-300);
-  font-weight: var(--fw-bold);
-  letter-spacing: 0.2em;
-}
-
 .exhibition-info {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
   margin-bottom: 1rem;
-}
-
-.title {
-  font-size: var(--fs-600);
-  line-height: 1.2;
-}
-
-.type {
-  color: var(--clr-primary-200);
-  font-size: var(--fs-300);
-  font-weight: var(--fw-bold);
-  text-transform: uppercase;
 }
