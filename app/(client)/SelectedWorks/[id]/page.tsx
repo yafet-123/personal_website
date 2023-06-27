@@ -22,7 +22,7 @@ export default async function SelectedWorksView({params : {id} }) {
   const work  = await fetchIndividualWorks(id);
   console.log(id)
   return (
-    <section className="w-full h-full pt-16 bg-custom-color bg-opacity-100">
+    <section className="w-full h-full pt-32 bg-custom-color bg-opacity-100">
       <Display work={work}/>
     </section>
   );

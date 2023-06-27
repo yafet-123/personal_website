@@ -13,7 +13,7 @@ export default function Work({ work }) {
         <Image
           src={work.Image[0]}
           alt="Slide"
-          className="object-cover h-full w-full border rounded-lg border-black"
+          className="object-cover h-full w-full border rounded-lg"
           layout="fill"
         />
       </div>
