@@ -22,7 +22,7 @@ export default async function SelectedExhibitionView({params : {id} }) {
   const exhibition  = await fetchIndividualExhibition(id);
   console.log(id)
   return (
-    <section className="w-full h-full lg:py-24 bg-black">
+    <section className="w-full h-full lg:py-24 bg-custom-color bg-opacity-100">
       <Display exhibition={exhibition}/>
     </section>
   );

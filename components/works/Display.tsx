@@ -3,21 +3,21 @@ import Link from "next/link";
 
 export default function Display({ work }) {
   return (
-    <div className="flex flex-col-reverse lg:flex-row justify-between px-5 lg:px-32 pt-20 p-20 lg:pb-96 text-white ">
+    <div className="flex flex-col-reverse md:flex-row justify-between px-5 lg:px-32 lg:pb-20 text-white ">
       <div className="flex flex-col items-left font-serif antialiased leading-loose tracking-wide mr-20 w-full lg:w-[75%]">
-        <h1 className="font-medium tracking-wide text-3xl lg:text-6xl mb-5 lg:mb-10">
+        <h1 className="bg-gradient-to-r text-transparent bg-clip-text from-blue-400 via-purple-600 to-purple-800 text-left font-poppins font-semibold xs:text-[24px] xs:leading-[30px] text-[30px] leading-[26px] tracking-[0.25%] text-[#D0DFFF] mb-10">
           {work.title}
         </h1>
-        <p className="text-xl lg:text-2xl mb-5 lg:mb-10">{work.description}</p>
-        <p className="flex flex-col">
-          <span className="text-lg my-5">EXHIBITIONS:</span>
-          { work.exhibitions == "" ? <span className="lg:pl-10 text-lg mb-5 text-red-700">None</span> :
-          <span className="lg:pl-10 text-lg mb-5">{work.exhibitions}</span>}
+        <p className="font-poppins xs:text-[20px] xs:leading-[27px] text-[20px] leading-[23px] font-normal xl:w-[65%] sm:w-[75%] w-[100%] text-left text-[#A3B3BC] mb-10">{work.description}</p>
+        <p className="flex flex-col text-[#A3B3BC]">
+          <span className="text-lg mb-5">EXHIBITIONS:</span>
+          { work.exhibitions == "" ? <span className="lg:pl-10 text-lg mb-5">None</span> :
+          <span className="font-poppins xs:text-[20px] xs:leading-[27px] text-[16px] leading-[23px] font-normal xl:w-[65%] sm:w-[75%] w-[100%] text-center text-[#A3B3BC]">{work.exhibitions}</span>}
         </p>
       </div>
-      <div className="w-full h-96 lg:!h-[35rem] relative justify-self-center mb-5 lg:mb-0">
+      <div className="w-full h-96 lg:!h-[30rem] relative justify-self-center mb-5 lg:mb-0">
         <Image
-          src={work.Image}
+          src={work.Image[0]}
           fill
           className="!bg-cover w-full !h-full"
           alt="latest news image"
