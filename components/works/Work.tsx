@@ -13,7 +13,7 @@ export default function Work({ work }) {
         <Image
           src={work.Image[0]}
           alt="Slide"
-          className="object-cover h-full w-full border rounded-lg"
+          className="object-cover h-full w-full border rounded-lg border-transparent"
           layout="fill"
         />
       </div>
@@ -24,7 +24,7 @@ export default function Work({ work }) {
         </h1>
         <div className="flex flex-row justify-between items-center w-full mt-5">
           <Link 
-            className="font-poppins font-semibold flex justify-center items-center text-[14px] leading-[16px] text-white rounded-full cursor-pointer bg-[#2190FF] py-3 px-10 w-fit min-h-[48px] hover:scale-110 transition-transform duration-300"
+            className="font-poppins font-semibold flex justify-center items-center text-[14px] leading-[16px] text-white rounded-md cursor-pointer bg-[#17c294] py-3 px-10 w-fit min-h-[48px] hover:scale-110 transition-transform duration-300"
             href={`/SelectedWorks/${id}`}
           >
             View

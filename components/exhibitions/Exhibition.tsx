@@ -21,7 +21,7 @@ export default function Exhibition({ exhibition }) {
 
       <div className="flex flex-row justify-between items-center w-full">
         <Link 
-          className="font-poppins font-semibold flex justify-center items-center text-[14px] leading-[16px] text-white rounded-full cursor-pointer bg-[#2190FF] py-3 px-6 w-fit min-h-[48px] hover:scale-110 transition-transform duration-300"
+          className="font-poppins font-semibold flex justify-center items-center text-[14px] leading-[16px] text-white rounded-md cursor-pointer bg-[#17c294] py-3 px-6 w-fit min-h-[48px] hover:scale-110 transition-transform duration-300"
           href={`/exhibitions/${id}`}
         >
           View Photo
