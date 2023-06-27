@@ -15,7 +15,7 @@ export default function Display({ work }) {
           <span className="font-poppins xs:text-[20px] xs:leading-[27px] text-[16px] leading-[23px] font-normal xl:w-[65%] sm:w-[75%] w-[100%] text-center text-[#A3B3BC]">{work.exhibitions}</span>}
         </p>
       </div>
-      <div className="w-full h-96 lg:!h-[30rem] relative justify-self-center mb-5 lg:mb-0">
+      <div className="w-full !h-[30rem] relative justify-self-center mb-5 lg:mb-0">
         <Image
           src={work.Image[0]}
           fill
