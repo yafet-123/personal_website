@@ -15,7 +15,7 @@ export default function SelectedExhibitionsIndividualDisplay() {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 py-5 px-2 md:px-10 lg:px-20">
       {urls.map((data, index) => (
-        <div className="relative h-[300px] w-full">
+        <div className="relative h-[300px] w-full" key={index} >
           <Image
             src={data}
             alt="Slide"
