@@ -14,15 +14,12 @@ const Hero: React.FC = () => {
           priority
         />
       </div>
-      <div className="flex flex-col w-full mt-32 px-5 lg:px-60 text-white leading-loose">
-        <h1 className="font-extrabold tracking-wide text-4xl lg:text-6xl my-5 text-center">
-          HELEN ZERAY
+      <div className="flex flex-col items-center opacity 100 transform-none mt-32 px-5">
+        <h1 className="font-poppins dark:text-white text-pro-w-black font-bold sm:text-[48px] sm:leading-[52px] text-[30px] leading-[36px] xs:tracking-[-0.5%] tracking-[-0.25%] text-center">
+          Welcome To <br className="md:hidden block"/>
+          <span className="bg-gradient-to-r text-transparent bg-clip-text from-blue-400 via-purple-600 to-purple-800">Helen Zeray</span>
         </h1>
-        <h2 className="font-extrabold tracking-wide text-2xl lg:text-4xl my-5 text-center">
-          ARTIST
-        </h2>
-        <h1 className="font-extrabold text-xl lg:text-3xl mb-5">About</h1>
-        <p className="text-lg lg:text-2xl writing-vertical text-vertical text-left flex flex-col justify-between items-center mb-10">
+        <p className="font-poppins xs:text-[20px] xs:leading-[27px] text-[16px] leading-[23px] font-normal xl:w-[65%] sm:w-[75%] w-[100%] text-center text-[#A3B3BC] mt-4">
           <span className="">{`Helen Zeray's artistic journey is one that is filled with wonder and admiration for the beauty of nature.
           Growing up in Addis Abeba, Ethiopia, she was captivated by the artistry of the world around her, which led her to pursue her passion for the arts through private classes in her youth.
           With a heart full of awe and reverence for the natural world, Helen creates stunning works of art that amplify the shapes, colors, and movements of the landscape. 
