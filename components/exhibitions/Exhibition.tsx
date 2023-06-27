@@ -4,23 +4,28 @@ import Link from "next/link";
 export default function Exhibition({ exhibition }) {
   const id = exhibition.exhibition_id;
   return (
-    <Link
-      href={`/exhibitions/${id}`}
-      className="flex flex-col items-center text-white"
+    <div
+      className="exhibition text-white" 
       key={exhibition.exhibition_id}
     >
-      <div className="relative h-[15rem] w-full">
-        <Image
-          src={exhibition.Image}
-          alt="Slide"
-          className="object-cover h-full w-full border rounded-lg border-black"
-          layout="fill"
-        />
+      <h1 class="date py-5">{exhibition.date}</h1>
+      <div class="exhibition-info py-5">
+        <h2 class="title">{exhibition.date}</h2>
+        <span class="type">exhibition.type</span>
       </div>
 
-      <h1 className="my-5 text-lg lg:text-2xl writing-vertical text-vertical text-left flex flex-col justify-between items-center">
-        {exhibition.title}
-      </h1>
-    </Link>
+      <p className="py-5">
+        {exhibition.description}
+      </p>
+
+      <div className="flex items-center justify-center">
+        <Link 
+          className=""
+          href={`/exhibitions/${id}`}
+        >
+          View Photo
+        </Link>
+      </div>
+    </div>
   );
 }

@@ -27,6 +27,8 @@ model Exhibition {
   title                        String?              
   description                  String?
   date                         String?
+  type                         String?
+  view                         Int           @default(0) 
   Image                        String?       @db.VarChar(255)
   CreatedDate                  DateTime?     @default(now()) @db.Timestamptz(6)
   ModifiedDate                 DateTime?     @default(now()) @db.Timestamptz(6)    
@@ -39,6 +41,7 @@ model SelectedWorks {
   title                        String?   
   description                  String?           
   exhibitions                  String?
+  view                         Int           @default(0) 
   Image                        String?       @db.VarChar(255)
   CreatedDate                  DateTime?     @default(now()) @db.Timestamptz(6)
   ModifiedDate                 DateTime?     @default(now()) @db.Timestamptz(6) 
