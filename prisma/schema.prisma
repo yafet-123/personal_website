@@ -29,7 +29,7 @@ model Exhibition {
   date                         String?
   type                         String?
   view                         Int           @default(0) 
-  Image                        String?       @db.VarChar(255)
+  Image                        String?       
   CreatedDate                  DateTime?     @default(now()) @db.Timestamptz(6)
   ModifiedDate                 DateTime?     @default(now()) @db.Timestamptz(6)    
   user_id                      Int
@@ -42,7 +42,7 @@ model SelectedWorks {
   description                  String?           
   exhibitions                  String?
   view                         Int           @default(0) 
-  Image                        String?       @db.VarChar(255)
+  Image                        String[] 
   CreatedDate                  DateTime?     @default(now()) @db.Timestamptz(6)
   ModifiedDate                 DateTime?     @default(now()) @db.Timestamptz(6) 
   user_id                      Int   

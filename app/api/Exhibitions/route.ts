@@ -19,6 +19,8 @@ export const GET = async (req: NextApiRequest, res: NextApiResponse) => {
       description: data.description,
       date: data.date,
       Image:data.Image,
+      type:data.type,
+      view:data.view,
       CreatedDate: data.CreatedDate,
       ModifiedDate: data.ModifiedDate,
       UserName: data.User.UserName,
