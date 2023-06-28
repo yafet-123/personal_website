@@ -23,7 +23,7 @@ export default function RootLayout({
           <div className="relative">
             <Navbar />
             <main className="absolute top-0 left-0 right-0">{children}</main>
-            <footer />
+            <Footer />
           </div>
         </Provider>
       </body>
