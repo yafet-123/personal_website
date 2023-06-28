@@ -11,6 +11,7 @@ const Navbar = () => {
   const { data: session } = useSession(); // this is for next-auth
   const [open, setOpen] = useState(false);
   const [toggleDropdown, setToggleDropdown] = useState(false);
+  const [shadow, setShadow] = useState(false);
   const router = useRouter();
   const pathname = usePathname();
   const [providers, setProviders] = useState(null);
@@ -28,33 +29,21 @@ const Navbar = () => {
     { path: "/contact", name: "Contact" },
   ];
 
-  function useScrollDirection() {
-    const [scrollDirection, setScrollDirection] = useState(null);
+  const handleNav = () => {
+    setNav(!nav);
+  };
 
-    useEffect(() => {
-      let lastScrollY = window.pageYOffset;
-
-      const updateScrollDirection = () => {
-        const scrollY = window.pageYOffset;
-        const direction = scrollY > lastScrollY ? "down" : "up";
-        if (
-          direction !== scrollDirection &&
-          (scrollY - lastScrollY > 10 || scrollY - lastScrollY < -10)
-        ) {
-          setScrollDirection(direction);
-        }
-        lastScrollY = scrollY > 0 ? scrollY : 0;
-      };
-      window.addEventListener("scroll", updateScrollDirection); // add event listener
-      return () => {
-        window.removeEventListener("scroll", updateScrollDirection); // clean up
-      };
-    }, [scrollDirection]);
-
-    return scrollDirection;
-  }
-
-  const scrollDirection = useScrollDirection();
+  useEffect(() => {
+    // when it will scrolldown greater than 90 it will have navbar will change it style
+    const handleShadow = () => {
+        if (window.scrollY >= 90) {
+          setShadow(true);
+        } else {
+          setShadow(false);
+        } 
+    };
+    window.addEventListener('scroll', handleShadow);
+  }, []);
 
   const closeDropdown = useCallback(() => {
     setOpen(false);
@@ -66,11 +55,10 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed ${
-        scrollDirection === "down" ? "md:-top-24 -top-16 bg-black" : "top-0"
-      } ${
-        open && "bg-black bg-opacity-75"
-      }  w-full md:h-24 h-16 fixed z-50 transition-all duration-300`}
+      className={
+        shadow ? 'fixed w-full h-16 shadow-xl z-[100] ease-in-out duration-300 bg-white bg-opacity-80'
+          : 'fixed w-full h-16 z-[100] '
+      }
     >
       <div
         className={`${
@@ -98,15 +86,15 @@ const Navbar = () => {
               open ? "flex" : "hidden"
             }`}
           >
-            <ul className="items-center font-bold paragraph-fonts justify-center space-y-8 md:flex md:space-x-6 md:space-y-0 text-black">
+            <ul className={` ${ pathname == '/' || pathname == '/bio' && !shadow ? "text-white" : "text-black" } items-center font-bold paragraph-fonts justify-center space-y-8 md:flex md:space-x-6 md:space-y-0`}>
               {NavLinks.map((link) => (
                 <li
                   key={link.name}
-                  className={`md:my-0 my-7 text-2xl hover:underline cursor-pointer hover:text-[#17c294] ${
+                  className={` md:my-0 my-7 text-2xl hover:underline cursor-pointer hover:text-[#17c294] ${
                     pathname === link.path
                       ? "text-[#17c294] underline"
-                      : "text-black"
-                  }`}
+                      : ""
+                  } `}
                 >
                   <Link href={link.path}>
                     <p onClick={closeDropdown}>{link.name}</p>
