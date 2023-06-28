@@ -16,12 +16,12 @@ const Hero: React.FC = () => {
  
   };
   const socialMediaLinks = [
-    {id:"/",path:<BsFacebook size={30} />},
-    {id:"/",path:<BsYoutube size={30} />},
-    {id:"/",path:<BsLinkedin size={30} />},
-    {id:"/",path:<BsInstagram size={30} />},
-    {id:"/",path:<BsTwitter size={30} />},
-    {id:"/",path:<BsTelegram size={30} />},
+    {id:"/",path:<BsFacebook size={30} color="white"/>},
+    {id:"/",path:<BsYoutube size={30} color="white"/>},
+    {id:"/",path:<BsLinkedin size={30} color="white"/>},
+    {id:"/",path:<BsInstagram size={30} color="white"/>},
+    {id:"/",path:<BsTwitter size={30} color="white"/>},
+    {id:"/",path:<BsTelegram size={30} color="white"/>},
   ]
   return (
     <div className="w-full h-screen overflow-hidden">
@@ -31,20 +31,10 @@ const Hero: React.FC = () => {
             key={index}
             className={`${data.image} w-full h-screen bg-fixed relative`}
           >
-            <div className="absolute top-1/2 md:left-1/2 md:-translate-x-1/2 -translate-y-1/2">
-              <h1 className="font-poppins text-7xl font-bold text-[#A3B3BC] w-full">
+            <div className="absolute top-1/2 md:left-1/2 md:-translate-x-1/2 -translate-y-1/2 w-full">
+              <h1 className="font-poppins text-3xl md:text-6xl text-[#A3B3BC] lg:text-9xl font-bold mb-10 text-center">
                 Helen Zeray
               </h1>
-
-              <div className="flex gap-3 md:px-8 pb-4 md:pb-10 z-50">
-                {socialMediaLinks.map((paths, index) => {
-                  return (
-                    <Link key={index} href={paths.id} target="_blank">
-                      {paths.icon}
-                    </Link>
-                  );
-                })}
-              </div>
             </div>
           </div>
         ))}

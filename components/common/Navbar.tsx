@@ -61,20 +61,18 @@ const Navbar = () => {
       }
     >
       <div
-        className={`${
-          open && "bg-black bg-opacity-75"
-        } md:justify-center md:px-2 px-4 md:mx-8 items-center md:flex md:pt-4 `}
+        className={`md:justify-center md:px-2 px-4 md:mx-8 items-center md:flex md:pt-4 `}
       >
         <div className="flex items-center md:justify-between justify-end py-3 md:py-0">
           <div className="md:hidden">
             <button
-              className="p-2  text-gray-700 rounded-md outline-none focus:border-gray-400 focus:border"
+              className="p-2 text-gray-700 rounded-md outline-none focus:border-gray-400 focus:border"
               onClick={() => setOpen(!open)}
             >
               {open === true ? (
-                <AiOutlineClose color="white" size={35} />
+                <AiOutlineClose color="black" size={35} />
               ) : (
-                <AiOutlineMenu color="white" size={35} />
+                <AiOutlineMenu color="black" size={35} />
               )}
             </button>
           </div>

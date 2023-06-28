@@ -46,9 +46,6 @@ const handleSubmit = (values) => {
 const ContactForm = () => {
   return (
     <div className="flex flex-col gap-8 md:gap-12">
-      <h1 className="headings-fonts text-white text-4xl md:text-6xl">
-        {`Let's Collaborate.`}
-      </h1>
       <Formik
         initialValues={initialValues}
         validate={validateForm}
@@ -67,7 +64,7 @@ const ContactForm = () => {
                   id="firstName"
                   name="firstName"
                   placeholder="First Name"
-                  className="w-full  p-2 text-black"
+                  className="w-full  p-2 text-black border border-"
                 />
                 <ErrorMessage
                   name="firstName"
@@ -81,7 +78,7 @@ const ContactForm = () => {
                   id="lastName"
                   name="lastName"
                   placeholder="Last Name"
-                  className="w-full p-2 text-black"
+                  className="w-full p-2 text-black border border-"
                 />
                 <ErrorMessage
                   name="lastName"
@@ -101,7 +98,7 @@ const ContactForm = () => {
               type="email"
               id="email"
               name="email"
-              className="w-full p-2 text-black"
+              className="w-full p-2 text-black border border-"
             />
             <ErrorMessage
               name="email"
@@ -119,7 +116,7 @@ const ContactForm = () => {
               type="text"
               id="subject"
               name="subject"
-              className="w-full p-2 text-black"
+              className="w-full p-2 text- border border-"
             />
             <ErrorMessage
               name="subject"
@@ -137,7 +134,7 @@ const ContactForm = () => {
               as="textarea"
               id="message"
               name="message"
-              className="w-full p-2 text-black"
+              className="w-full p-2 text-black border border-"
             />
             <ErrorMessage
               name="message"
