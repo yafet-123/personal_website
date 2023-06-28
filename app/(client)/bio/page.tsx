@@ -7,7 +7,7 @@ export const metadata: Metadata = {
 }
 export default async function Bio() {
   return (
-    <main className="flex flex-col items-center bg-custom-color bg-opacity-100">
+    <main className="flex flex-col items-center bg-white">
       <Hero />
     </main>
   )

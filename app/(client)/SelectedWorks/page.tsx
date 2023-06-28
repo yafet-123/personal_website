@@ -25,7 +25,7 @@ export default async function SelectedWorks() {
   const Works = await fetchSelectedWorks();
   console.log(Works)
   return (
-    <main className="w-full h-full py-32 bg-custom-color bg-opacity-100">
+    <main className="w-full h-full py-32 bg-white">
       <Suspense fallback={<div className="w-full h-screen flex items-center justify-center text-2xl ">Loading Works Please Wait ...</div>}> 
         <List selectedWorks={Works} />
       </Suspense>

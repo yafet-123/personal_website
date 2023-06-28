@@ -17,6 +17,7 @@ module.exports = {
         'custom-color': 'rgb(13, 17, 23)',
         'pro-w-black': 'rgb(255,255,255,1)',
         'pro-black-2':'rgb(22,27,34,1)',
+        'pro-card-background':'rgb(245,249,255,1)',
       },
       writingMode: {
         'vertical': 'vertical-rl',

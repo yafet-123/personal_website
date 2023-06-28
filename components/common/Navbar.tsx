@@ -98,14 +98,14 @@ const Navbar = () => {
               open ? "flex" : "hidden"
             }`}
           >
-            <ul className="items-center font-bold paragraph-fonts justify-center space-y-8 md:flex md:space-x-6 md:space-y-0 text-white">
+            <ul className="items-center font-bold paragraph-fonts justify-center space-y-8 md:flex md:space-x-6 md:space-y-0 text-black">
               {NavLinks.map((link) => (
                 <li
                   key={link.name}
                   className={`md:my-0 my-7 text-2xl hover:underline cursor-pointer hover:text-[#17c294] ${
                     pathname === link.path
                       ? "text-[#17c294] underline"
-                      : "text-white"
+                      : "text-black"
                   }`}
                 >
                   <Link href={link.path}>
