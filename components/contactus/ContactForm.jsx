@@ -59,13 +59,13 @@ const ContactForm = () => {
       >
         <div className="w-full flex flex-col md:flex-row space-y-6">
           <div className="flex flex-col px-10 w-full">
-            <h1 className="font-poppins font-bold sm:leading-[52px] text-4xl lg:tetx-6xl leading-[36px] xs:tracking-[-0.5%] tracking-[-0.25%] text-left text-[#010101] mb-5 px-10">
+            <h1 className="font-poppins font-bold sm:leading-[52px] text-4xl lg:tetx-6xl leading-[36px] xs:tracking-[-0.5%] tracking-[-0.25%] text-left text-[#010101] mb-5">
               Contact
             </h1>
             <div className="font-poppins text-left text-[#010101]">
-              <h1 className="font-bold text-3xl lg:tetx-4xl mb-2">Helen Zeray</h1>
-              <p className="font-normal text-xl lg:text-2xl mb-2">Sderot hachmel Israel 32</p>
-              <p className="font-normal text-xl lg:text-2xl mb-2">WhatsApp: +9725353323525</p>
+              <h1 className="font-bold text-3xl lg:tetx-4xl mb-5">Helen Zeray</h1>
+              <p className="font-normal text-xl lg:text-2xl mb-5">Sderot hachmel Israel 32</p>
+              <p className="font-normal text-xl lg:text-2xl mb-5">WhatsApp: +9725353323525</p>
             </div>
 
             <div className="flex gap-4">
