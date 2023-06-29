@@ -57,11 +57,11 @@ const Navbar = () => {
     <nav
       className={`
         ${ shadow ? 'fixed w-full h-16 shadow-xl z-[100] ease-in-out duration-300 bg-white bg-opacity-80'
-          : 'fixed w-full h-16 z-[100] '}
+          : 'fixed w-full h-16 z-[100] border-b-2 border-black '}
       `}
     >
       <div
-        className={` ${ open ? "bg-black bg-opacity-80" :"" } lg:justify-between justify-around lg:px-4 px-5 lg:px-10 items-center lg:flex lg:py-[10px]`}
+        className={` ${ open ? "bg-black bg-opacity-80" :"" } lg:justify-between justify-around px-5 lg:px-10 items-center lg:flex lg:py-[10px]`}
       >
         <div className="flex items-center justify-between py-3 ">
           <h1 className={` ${ pathname == '/' || pathname == '/bio' && !shadow ? "text-white" : "text-black" } font-poppins text-lg md:text-2xl font-bold`}>

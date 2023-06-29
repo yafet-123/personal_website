@@ -19,7 +19,7 @@ export default function Display({ work }) {
         <Image
           src={work.Image[0]}
           fill
-          className="!bg-cover w-full !h-full"
+          className="w-full !h-full"
           alt="latest news image"
         />
       </div>
