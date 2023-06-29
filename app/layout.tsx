@@ -19,12 +19,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="w-full h-full">
-        <Provider>
+        <Provider className="flex flex-col">
           <div className="relative">
             <Navbar />
             <main className="absolute top-0 left-0 right-0">{children}</main>
-            <Footer />
           </div>
+          <Footer />
         </Provider>
       </body>
     </html>

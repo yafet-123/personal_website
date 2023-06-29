@@ -11,9 +11,8 @@ import {
 } from 'react-icons/fa';
 import { ImLocation } from 'react-icons/im';
 import { MdEmail } from 'react-icons/md';
-import logo from '../../public/logo.png';
 
-export const Footer: React.FC = () => {
+const Footer: React.FC = () => {
   const socialMediaLinks = [
     {
       icon: <FaFacebook size={30} color="white" />,
@@ -33,29 +32,18 @@ export const Footer: React.FC = () => {
 
   const quickLinks = [
     { link: 'Home', url: '/' },
-    { link: 'About Us', url: '/about' },
-    { link: 'Our Tours', url: '/tours' },
-    { link: 'Sustainabilty', url: '/sustainablity' },
-    { link: 'Destinations', url: '/destinations' },
-    { link: 'Contact Us', url: '/contactus' },
-    { link: 'About Ethiopia', url: '/ethiopia' },
-    { link: 'Travel Tips', url: '/travel_tips' },
+    { link: 'SelectedWorks', url: '/SelectedWorks' },
+    { link: 'Bio', url: '/bio' },
+    { link: 'Exhibitions', url: '/exhibitions' },
+    { link: 'Contact', url: '/contact' },
   ];
 
   return (
-    <footer className="bg-emerald-800">
+    <footer className="bg-white">
       <div className="flex flex-col lg:flex-row  md:justify-evenly p-6 bg-primaryColor gap-4 text-white ">
         <div className="flex flex-col gap-8 items-start justify-evemly mb-10 md:mb-0">
           <div className="">
-            <Link href="/">
-              <Image
-                src={logo}
-                className=""
-                alt="Logo"
-                width={200}
-                // height={80}
-              />
-            </Link>
+            
           </div>
 
           <p className="font-semibold">
@@ -148,3 +136,5 @@ export const Footer: React.FC = () => {
     </footer>
   );
 };
+
+export default Footer
