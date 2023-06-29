@@ -64,7 +64,7 @@ const ContactForm = () => {
             <p className="font-normal text-2xl mb-2">WhatsApp: +9725353323525</p>
           </div>
 
-          <div className="flex justify-center gap-4">
+          <div className="flex gap-4">
             {socialMediaLinks.map((paths, index) => {
               return (
                 <Link key={index} href={paths.path} target="_blank">
