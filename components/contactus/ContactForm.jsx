@@ -80,7 +80,7 @@ const ContactForm = () => {
           </div>
 
           <form className="flex flex-col px-2 lg:px-10 w-full">
-            <h3 className="font-poppins text-left text-[#010101] font-bold text-4xl lg:tetx-6xl">Enquiry form</h3>
+            <h3 className="font-poppins text-left text-[#010101] font-bold text-4xl lg:tetx-6xl mb-5">Enquiry form</h3>
 
             <div className="mb-4">
               <label htmlFor="name" className="block mb-1">
