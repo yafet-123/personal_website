@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 const ContactUsPage = () => {
   return (
-      <div className="w-full h-full flex flex-col justify-center items-center px-2 lg:px-10 py-32 bg-white">
+      <div className="w-full h-full px-2 lg:px-10 py-32 bg-white">
         <ContactForm />
       </div>
   );
