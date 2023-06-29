@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 const ContactUsPage = () => {
   return (
-      <div className="w-full h-full flex flex-col px-10 py-32 bg-white">
+      <div className="w-full h-full flex flex-col px-2 lg:px-10 py-32 bg-white">
         <h1 className="font-poppins sm:leading-[52px] text-2xl md:text-5xl leading-[36px] xs:tracking-[-0.5%] tracking-[-0.25%] text-left text-[#010101]">
           Contact
         </h1>
