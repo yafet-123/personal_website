@@ -59,7 +59,7 @@ const ContactForm = () => {
       >
         <div className="w-full flex flex-col md:flex-row space-y-6">
           <div className="flex flex-col px-2 lg:px-10 w-full">
-            <h1 className="font-poppins font-bold sm:leading-[52px] text-4xl lg:tetx-6xl leading-[36px] xs:tracking-[-0.5%] tracking-[-0.25%] text-left text-[#010101] mb-5">
+            <h1 className="font-poppins font-bold text-4xl lg:tetx-6xl text-left text-[#010101] mb-5">
               Contact
             </h1>
             <div className="font-poppins text-left text-[#010101]">
