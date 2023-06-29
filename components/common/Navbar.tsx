@@ -57,20 +57,20 @@ const Navbar = () => {
     <nav
       className={`
         ${ shadow ? 'fixed w-full h-16 shadow-xl z-[100] ease-in-out duration-300 bg-white bg-opacity-80'
-          : 'fixed w-full h-16 z-[100] border-b-2 border-black '}
+          : 'fixed w-full h-16 z-[100] border-b-2 border-slate-100 '}
       `}
     >
       <div
-        className={` ${ open ? "bg-black bg-opacity-80" :"" } lg:justify-between justify-around px-5 lg:px-10 items-center lg:flex lg:py-[10px]`}
+        className={` ${ open ? "bg-black bg-opacity-80" :"" } lg:justify-between justify-around px-5 lg:px-10 items-center lg:flex`}
       >
         <div className="flex items-center justify-between py-3 ">
-          <h1 className={` ${ pathname == '/' || pathname == '/bio' && !shadow ? "text-white" : "text-black" } font-poppins text-lg md:text-2xl font-bold`}>
+          <h1 className={` ${ pathname == '/' || pathname == '/bio' && !shadow || open ? "text-white" : "text-black" } font-poppins text-lg md:text-2xl font-bold`}>
             Helen Zeray
           </h1>
           <div className="lg:hidden">
             <div className="md:hidden">
               <button
-                className={` ${ pathname == '/' || pathname == '/bio' && !shadow ? "text-white" : "text-black" } p-2 rounded-md outline-none focus:border-gray-400 focus:border`}
+                className={` ${ pathname == '/' || pathname == '/bio' && !shadow || open ? "text-white" : "text-black" } p-2 rounded-md outline-none focus:border-gray-400 focus:border`}
                 onClick={() => setOpen(!open)}
               >
                 {open === true ? ( 
@@ -89,7 +89,7 @@ const Navbar = () => {
               open ? "flex bg-transparent" : "hidden"
             }`}
           >
-            <ul className={` ${ pathname == '/' || pathname == '/bio' && !shadow ? "text-white" : "text-black" } items-center font-bold paragraph-fonts justify-center space-y-8 md:flex md:space-x-6 md:space-y-0`}>
+            <ul className={` ${ pathname == '/' || pathname == '/bio' && !shadow || open ? "text-white" : "text-black" } items-center font-bold paragraph-fonts justify-center space-y-8 md:flex md:space-x-6 md:space-y-0`}>
               {NavLinks.map((link) => (
                 <li
                   key={link.name}
