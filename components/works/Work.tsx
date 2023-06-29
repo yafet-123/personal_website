@@ -7,7 +7,7 @@ export default function Work({ work }) {
   return (
     <Link
       href={`/SelectedWorks/${id}`}
-      className="text-white flex flex-col cursor-pointer shadow-md hover:shadow-xl shadow-inherit overflow-hidden hover:scale-95 transition-transform duration-300"
+      className="text-white flex flex-col cursor-pointer shadow-md hover:shadow-xl shadow-inherit overflow-hidden hover:scale-95 transition-transform duration-300 border border-slate-400"
       key={work.selectedWorks_id}
     >
       <div className="relative h-[400px] w-full">
@@ -19,7 +19,7 @@ export default function Work({ work }) {
         />
       </div>
  
-      <h1 className="my-[1rem] text-left font-poppins font-semibold text-[1.3rem] text-[#010101]">
+      <h1 className="my-[1rem] text-left font-poppins font-semibold text-[1.3rem] text-[#010101] text-center">
         {work.title}
       </h1>
     </Link>

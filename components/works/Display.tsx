@@ -9,12 +9,12 @@ export default function Display({ work }) {
           {work.title}
         </h1>
         <p className="font-poppins xs:text-[20px] xs:leading-[27px] text-[20px] leading-[23px] font-normal xl:w-[65%] sm:w-[75%] w-[100%] text-left text-[#505e66] mb-10">{work.description}</p>
-        <p className="flex flex-col text-[#505e66]">
+        {/*<p className="flex flex-col text-[#505e66]">
           <span className="text-lg mb-5">EXHIBITIONS:</span>
           { work.exhibitions == "" ? <span className="lg:pl-10 text-lg mb-5">None</span> :
           <span className="font-poppins xs:text-[20px] xs:leading-[27px] text-[16px] leading-[23px] font-normal xl:w-[65%] sm:w-[75%] w-[100%] text-center text-[#505e66]">{work.exhibitions}</span>}
         </p>
-      </div>
+*/}      </div>
       <div className="w-full !h-[30rem] relative justify-self-center mb-5 lg:mb-0">
         <Image
           src={work.Image[0]}
