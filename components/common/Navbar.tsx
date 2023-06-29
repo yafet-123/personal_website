@@ -36,7 +36,7 @@ const Navbar = () => {
   useEffect(() => {
     // when it will scrolldown greater than 90 it will have navbar will change it style
     const handleShadow = () => {
-        if (window.scrollY >= 90) {
+        if (window.scrollY >= 70) {
           setShadow(true);
         } else {
           setShadow(false);

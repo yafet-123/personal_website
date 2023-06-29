@@ -57,7 +57,7 @@ const ContactForm = () => {
         validate={validateForm}
         onSubmit={handleSubmit}
       >
-        <div className="w-full flex flex-col md:flex-row space-y-6">
+        <div className="w-full flex flex-col md:flex-row items-center space-y-6">
           <div className="flex flex-col px-2 lg:px-10 w-full">
             <h1 className="font-poppins font-bold text-4xl lg:tetx-6xl text-left text-[#010101] mb-5">
               Contact
