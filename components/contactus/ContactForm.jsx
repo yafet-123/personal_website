@@ -52,41 +52,31 @@ const ContactForm = () => {
         onSubmit={handleSubmit}
       >
         <Form className="w-full mx-auto flex flex-col space-y-6">
+          <h1 className="font-poppins sm:leading-[52px] text-2xl md:text-5xl leading-[36px] xs:tracking-[-0.5%] tracking-[-0.25%] text-left text-[#010101]">
+            Contact
+          </h1>
+          <div className="font-poppins text-left text-[#010101]">
+            <h1 className="font-bold tetx-[1.7rem] mb-2">Helen Zeray</h1>
+            <p className="font-normal text-[1.45rem;] mb-2">Sderot hachmel Israel 32</p>
+            <p className="font-normal text-[1.45rem;] mb-2">WhatsApp: +9725353323525</p>
+          </div>
+
           <div className="mb-4">
-            <label htmlFor="fullName" className="block mb-1">
-              Full Name:
+            <label htmlFor="name" className="block mb-1">
+              Name:
               <span className="text-gray-500 text-sm ml-1">(required)</span>
             </label>
-            <div className="flex">
-              <div className="w-1/2 mr-2">
-                <Field
-                  type="text"
-                  id="firstName"
-                  name="firstName"
-                  placeholder="First Name"
-                  className="w-full  p-2 text-black border border-"
-                />
-                <ErrorMessage
-                  name="firstName"
-                  component="div"
-                  className="text-red-500"
-                />
-              </div>
-              <div className="w-1/2 ml-2">
-                <Field
-                  type="text"
-                  id="lastName"
-                  name="lastName"
-                  placeholder="Last Name"
-                  className="w-full p-2 text-black border border-"
-                />
-                <ErrorMessage
-                  name="lastName"
-                  component="div"
-                  className="text-red-500"
-                />
-              </div>
-            </div>
+            <Field
+              type="name"
+              id="name"
+              name="name"
+              className="w-full p-2 text-black border border-"
+            />
+            <ErrorMessage
+              name="name"
+              component="div"
+              className="text-red-500"
+            />
           </div>
 
           <div className="mb-4">
@@ -108,18 +98,18 @@ const ContactForm = () => {
           </div>
 
           <div className="mb-4">
-            <label htmlFor="subject" className="block mb-1">
-              Subject:
+            <label htmlFor="phone" className="block mb-1">
+              Phone:
               <span className="text-gray-500 text-sm ml-1">(required)</span>
             </label>
             <Field
               type="text"
-              id="subject"
-              name="subject"
+              id="phone"
+              name="phone"
               className="w-full p-2 text- border border-"
             />
             <ErrorMessage
-              name="subject"
+              name="phone"
               component="div"
               className="text-red-500"
             />
