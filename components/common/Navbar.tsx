@@ -55,33 +55,38 @@ const Navbar = () => {
 
   return (
     <nav
-      className={
-        shadow ? 'fixed w-full h-16 shadow-xl z-[100] ease-in-out duration-300 bg-white bg-opacity-80'
-          : 'fixed w-full h-16 z-[100] '
-      }
+      className={`
+        ${ shadow ? 'fixed w-full h-16 shadow-xl z-[100] ease-in-out duration-300 bg-white bg-opacity-80'
+          : 'fixed w-full h-16 z-[100] '}
+      `}
     >
       <div
-        className={`md:justify-center md:px-2 px-4 md:mx-8 items-center md:flex md:pt-4 `}
+        className={` ${ open ? "bg-black bg-opacity-80" :"" } lg:justify-between justify-around lg:px-4 px-5 lg:px-10 items-center lg:flex lg:py-[10px]`}
       >
-        <div className="flex items-center md:justify-between justify-end py-3 md:py-0">
-          <div className="md:hidden">
-            <button
-              className="p-2 text-gray-700 rounded-md outline-none focus:border-gray-400 focus:border"
-              onClick={() => setOpen(!open)}
-            >
-              {open === true ? (
-                <AiOutlineClose color="black" size={35} />
-              ) : (
-                <AiOutlineMenu color="black" size={35} />
-              )}
-            </button>
+        <div className="flex items-center justify-between py-3 ">
+          <h1 className={` ${ pathname == '/' || pathname == '/bio' && !shadow ? "text-white" : "text-black" } font-poppins text-lg md:text-2xl font-bold`}>
+            Helen Zeray
+          </h1>
+          <div className="lg:hidden">
+            <div className="md:hidden">
+              <button
+                className={` ${ pathname == '/' || pathname == '/bio' && !shadow ? "text-white" : "text-black" } p-2 rounded-md outline-none focus:border-gray-400 focus:border`}
+                onClick={() => setOpen(!open)}
+              >
+                {open === true ? ( 
+                  <AiOutlineClose size={35} />
+                ) : (
+                  <AiOutlineMenu size={35} />
+                )}
+              </button>
+            </div>
           </div>
         </div>
 
-        <div>
+        <div className="">
           <div
             className={`flex-1 justify-self-center pb-3 mt-4 md:block md:pb-0 md:mt-0 ${
-              open ? "flex" : "hidden"
+              open ? "flex bg-transparent" : "hidden"
             }`}
           >
             <ul className={` ${ pathname == '/' || pathname == '/bio' && !shadow ? "text-white" : "text-black" } items-center font-bold paragraph-fonts justify-center space-y-8 md:flex md:space-x-6 md:space-y-0`}>
@@ -104,7 +109,7 @@ const Navbar = () => {
         </div>
 
         { (pathname == "/Admin" || pathname == "/Admin/User"|| pathname == "/Admin/Works" || pathname == "/Admin/Exhibitions")  &&
-        <div className={`mt-5 lg:mt-0 lg:ml-10 md:block ${
+          <div className={`mt-5 lg:mt-0 lg:ml-10 md:block ${
               open ? "flex" : "hidden"
             }`}>
               {session?.user ? (

@@ -32,9 +32,7 @@ const Hero: React.FC = () => {
             className={`${data.image} w-full h-screen bg-fixed relative`}
           >
             <div className="absolute top-1/2 md:left-1/2 md:-translate-x-1/2 -translate-y-1/2 w-full">
-              <h1 className="font-poppins text-3xl md:text-6xl text-[#A3B3BC] lg:text-9xl font-bold mb-10 text-center">
-                Helen Zeray
-              </h1>
+              
             </div>
           </div>
         ))}
