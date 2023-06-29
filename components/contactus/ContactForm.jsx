@@ -1,6 +1,7 @@
 'use client'
 import React from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
+import {BsFacebook, BsYoutube, BsLinkedin, BsInstagram, BsTwitter} from 'react-icons/bs'
 
 const initialValues = {
   firstName: "",
@@ -44,6 +45,10 @@ const handleSubmit = (values) => {
 };
 
 const ContactForm = () => {
+  const socialMediaLinks = [
+    {id:"/",path:<BsLinkedin size={30} color="black"/>},
+    {id:"/",path:<BsInstagram size={30} color="black"/>},
+  ]
   return (
     <div className="flex flex-col gap-8 md:gap-12 w-full md:px-10">
       <Formik
@@ -56,6 +61,16 @@ const ContactForm = () => {
             <h1 className="font-bold tetx-[1.7rem] mb-2">Helen Zeray</h1>
             <p className="font-normal text-[1.45rem;] mb-2">Sderot hachmel Israel 32</p>
             <p className="font-normal text-[1.45rem;] mb-2">WhatsApp: +9725353323525</p>
+          </div>
+
+          <div className="flex justify-center gap-4">
+            {socialMediaLinks.map((paths, index) => {
+              return (
+                <Link key={index} href={paths.path} target="_blank">
+                  {paths.path}
+                </Link>
+              );
+            })}
           </div>
 
           <div className="mb-4">

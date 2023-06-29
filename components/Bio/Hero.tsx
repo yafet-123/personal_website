@@ -15,7 +15,7 @@ const Hero: React.FC = () => {
         />
       </div>
       <div className="flex flex-col items-center opacity 100 transform-none mt-32 px-5 mb-5">
-        <h1 className="font-poppins dark:text-white font-bold sm:text-[48px] sm:leading-[52px] text-[30px] leading-[36px] xs:tracking-[-0.5%] tracking-[-0.25%] text-center">
+        <h1 className="font-poppins font-bold sm:text-[48px] sm:leading-[52px] text-[30px] leading-[36px] xs:tracking-[-0.5%] tracking-[-0.25%] text-center">
           Helen Zeray
         </h1>
         <p className="font-poppins xs:leading-[27px] text-xl leading-[23px] font-normal xl:w-[65%] sm:w-[75%] w-[100%] text-center text-[#505e66] mt-4">
