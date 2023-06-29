@@ -2,6 +2,7 @@
 import React from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import {BsFacebook, BsYoutube, BsLinkedin, BsInstagram, BsTwitter} from 'react-icons/bs'
+import Link from "next/link";
 
 const initialValues = {
   firstName: "",
@@ -58,9 +59,9 @@ const ContactForm = () => {
       >
         <Form className="w-full flex flex-col space-y-6">
           <div className="font-poppins text-left text-[#010101]">
-            <h1 className="font-bold tetx-[1.7rem] mb-2">Helen Zeray</h1>
-            <p className="font-normal text-[1.45rem;] mb-2">Sderot hachmel Israel 32</p>
-            <p className="font-normal text-[1.45rem;] mb-2">WhatsApp: +9725353323525</p>
+            <h1 className="font-bold tetx-4xl mb-2">Helen Zeray</h1>
+            <p className="font-normal text-2xl mb-2">Sderot hachmel Israel 32</p>
+            <p className="font-normal text-2xl mb-2">WhatsApp: +9725353323525</p>
           </div>
 
           <div className="flex justify-center gap-4">
