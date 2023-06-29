@@ -58,7 +58,7 @@ const ContactForm = () => {
         onSubmit={handleSubmit}
       >
         <div className="w-full flex flex-col md:flex-row space-y-6">
-          <div className="flex flex-col">
+          <div className="flex flex-col px-10">
             <div className="font-poppins text-left text-[#010101]">
               <h1 className="font-bold text-3xl lg:tetx-4xl mb-2">Helen Zeray</h1>
               <p className="font-normal text-xl lg:text-2xl mb-2">Sderot hachmel Israel 32</p>
@@ -76,7 +76,7 @@ const ContactForm = () => {
             </div>
           </div>
 
-          <form className="flex flex-col">
+          <form className="flex flex-col px-10">
             <h3 className="font-poppins text-left text-[#010101] font-bold text-4xl lg:tetx-6xl">Enquiry form</h3>
 
             <div className="mb-4">
