@@ -45,13 +45,13 @@ const handleSubmit = (values) => {
 
 const ContactForm = () => {
   return (
-    <div className="flex flex-col gap-8 md:gap-12 w-full px-10">
+    <div className="flex flex-col gap-8 md:gap-12 w-full md:px-10">
       <Formik
         initialValues={initialValues}
         validate={validateForm}
         onSubmit={handleSubmit}
       >
-        <Form className="w-full mx-auto flex flex-col space-y-6">
+        <Form className="w-full flex flex-col space-y-6">
           <div className="font-poppins text-left text-[#010101]">
             <h1 className="font-bold tetx-[1.7rem] mb-2">Helen Zeray</h1>
             <p className="font-normal text-[1.45rem;] mb-2">Sderot hachmel Israel 32</p>

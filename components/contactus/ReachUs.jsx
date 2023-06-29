@@ -11,7 +11,7 @@ const ReachUs = () => {
   ]
   
   return (
-    <div className="flex flex-col gap-6 md:gap-10 w-full px-10">
+    <div className="flex flex-col gap-6 md:gap-10 w-full md:px-10">
       <div className="relative w-full !h-[30rem] relative">
         <Image
           src={reachUsImage}
