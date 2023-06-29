@@ -6,42 +6,30 @@ import {BsFacebook, BsYoutube, BsLinkedin, BsInstagram, BsTwitter} from 'react-i
 
 const ReachUs = () => {
   const socialMediaLinks = [
-    {id:"/",path:<BsFacebook size={30} />},
-    {id:"/",path:<BsYoutube size={30} />},
-    {id:"/",path:<BsLinkedin size={30} />},
-    {id:"/",path:<BsInstagram size={30} />},
-    {id:"/",path:<BsTwitter size={30} />},
+    {id:"/",path:<BsLinkedin size={30} color="black"/>},
+    {id:"/",path:<BsInstagram size={30} color="black"/>},
   ]
   
   return (
-    <div className="flex flex-col gap-6 md:gap-10">
-      <h1 className="headings-fonts text-white text-4xl md:text-6xl">
-        Or Reach Us Here
-      </h1>
-
-      <Link target="_blank" href="mailto:thescentseekerweb@gmail.com">
-        <p className="flex flex-row gap-2 hover:text-[#17c294] cursor-pointer text-lg md:text-xl md:px-8">
-          helenzeray8905@gmail.com
-        </p>
-      </Link>
-
-      <div className="flex gap-3 md:px-8 border-b-2 pb-4 md:pb-10 border-gray-500">
-        {socialMediaLinks.map((paths, index) => {
-          return (
-            <Link key={index} href={paths.id} target="_blank">
-              {paths.icon}
-            </Link>
-          );
-        })}
-      </div>
-      <div className="w-full h-72 relative">
+    <div className="flex flex-col gap-6 md:gap-10 w-full px-10">
+      <div className="relative w-full !h-[30rem] relative">
         <Image
           src={reachUsImage}
           alt="Reach Us Image"
-          layout="fill"
-          objectFit="cover"
+          fill
+          className="w-full !h-full"
           priority
         />
+      </div>
+
+      <div className="flex justify-center gap-4">
+        {socialMediaLinks.map((paths, index) => {
+          return (
+            <Link key={index} href={paths.path} target="_blank">
+              {paths.path}
+            </Link>
+          );
+        })}
       </div>
     </div>
   );
