@@ -59,9 +59,9 @@ const ContactForm = () => {
       >
         <Form className="w-full flex flex-col space-y-6">
           <div className="font-poppins text-left text-[#010101]">
-            <h1 className="font-bold tetx-4xl mb-2">Helen Zeray</h1>
-            <p className="font-normal text-2xl mb-2">Sderot hachmel Israel 32</p>
-            <p className="font-normal text-2xl mb-2">WhatsApp: +9725353323525</p>
+            <h1 className="font-bold text-3xl lg:tetx-4xl mb-2">Helen Zeray</h1>
+            <p className="font-normal text-xl lg:text-2xl mb-2">Sderot hachmel Israel 32</p>
+            <p className="font-normal text-xl lg:text-2xl mb-2">WhatsApp: +9725353323525</p>
           </div>
 
           <div className="flex gap-4">
@@ -73,6 +73,8 @@ const ContactForm = () => {
               );
             })}
           </div>
+
+          <h3 className="font-poppins text-left text-[#010101] font-bold text-4xl lg:tetx-6xl">Enquiry form</h3>
 
           <div className="mb-4">
             <label htmlFor="name" className="block mb-1">
