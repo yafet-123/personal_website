@@ -26,7 +26,7 @@ export default async function News() {
   const news = await fetchNews();
   console.log(news)
   return (
-    <main className="flex flex-col items-center bg-white">
+    <main className="flex flex-col items-center bg-white py-24">
       <Suspense fallback={<div className="w-full h-screen flex items-center justify-center text-2xl ">Loading News Please Wait ...</div>}> 
         <List selectenews={news} />
       </Suspense>
