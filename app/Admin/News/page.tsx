@@ -7,7 +7,7 @@ import { useSession } from "next-auth/react";
 import { usePathname, useRouter } from "next/navigation";
 import { Suspense } from 'react';
  
-const newsCardList = ({ data }) => {
+const NewsCardList = ({ data }) => {
   return (
     <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-5">
       {data.map((data) => (
@@ -94,7 +94,7 @@ export default function NewsHome() {
       />
 
       <Suspense fallback={<div className="w-full mt-20 flex items-center text-white">Loading news Please Wait ...</div>}> 
-        <newsCardList data={allnews} />
+        <NewsCardList data={allnews} />
       </Suspense>
     </section>
   );
