@@ -3,9 +3,9 @@ import prisma from "@/utils/db.server";
 
 export const GET = async (request, { params }) => {
   try {
-    const data = await prisma.Exhibition.findUnique({
+    const data = await prisma.news.findUnique({
       where: {
-        exhibition_id: Number(params.exhibitionId),
+        news_id: Number(params.newsId),
       },
       include: {
         User: {
@@ -25,39 +25,39 @@ export const GET = async (request, { params }) => {
 };
 
 export const PATCH = async (request, { params }) => {
-  const { title ,descreption ,date } = await request.json();
+  const { title ,description ,link } = await request.json();
 
   try {
-    const existingExhibitions = await prisma.Exhibition.findUnique({
+    const existingnews = await prisma.news.findUnique({
       where: {
-        exhibition_id: Number(params.exhibitionId),
+        news_id: Number(params.newsId),
       },
     });
 
-    if (!existingExhibitions) {
-      return new Response("Exhibition not found", { status: 404 });
+    if (!existingnews) {
+      return new Response("news not found", { status: 404 });
     }
 
     // Update the prompt with new data
-    const data = await prisma.Exhibition.update({
-      where: { exhibition_id: Number(params.exhibitionId) },
+    const data = await prisma.news.update({
+      where: { news_id: Number(params.newsId) },
       data: {
         title,
-        description:descreption,
-        date,
+        description,
+        link,
       },
     });
 
-    return new Response("Successfully updated the Exhibition", { status: 200 });
+    return new Response("Successfully updated the news", { status: 200 });
   } catch (error) {
-    return new Response("Error Updating Exhibition", { status: 500 });
+    return new Response("Error Updating news", { status: 500 });
   }
 };
 
 export const DELETE = async (request, { params }) => {
   try {
-    const data = await prisma.Exhibition.delete({
-      where: { exhibition_id: Number(params.exhibitionId) },
+    const data = await prisma.news.delete({
+      where: { news_id: Number(params.newsId) },
     });
 
     return new Response("Prompt deleted successfully", { status: 200 });

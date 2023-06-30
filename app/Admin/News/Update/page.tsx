@@ -3,52 +3,53 @@
 import { useEffect, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 
-import Form from "@/components/Admin/Works/Form";
+import Form from "@/components/Admin/news/Form";
 
 const Update = () => {
   const router = useRouter();
   const searchParams = useSearchParams();
-  const worksId = searchParams.get("id");
+  const newsId = searchParams.get("id");
 
-  const [Works, setWorks] = useState({
+  const [news, setnews] = useState({
     title: "",
-    exhibitions: "",
-    image: "",
-    description:""
+    description: "",
+    link: ""
   });
   const [submitting, setIsSubmitting] = useState(false);
 
   useEffect(() => {
-    const getWork = async () => {
-      const response = await fetch(`/api/Works/${worksId}`);
+    const getNews = async () => {
+      const response = await fetch(`/api/News/${newsId}`);
       const data = await response.json();
 
-      setWorks({
+      setnews({
         title: data.title,
-        description:data.description
+        description:data.description,
+        link:data.link
       });
     };
 
-    if (worksId) getWork();
-  }, [worksId]);
+    if (newsId) getNews();
+  }, [newsId]);
 
   const updatePrompt = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    if (!worksId) return alert("Missing worksId!");
+    if (!newsId) return alert("Missing newsId!");
 
     try {
-      const response = await fetch(`/api/Works/${worksId}`, {
+      const response = await fetch(`/api/News/${newsId}`, {
         method: "PATCH",
         body: JSON.stringify({
-          title: Works.title,
-          description: Works.description,
+          title: news.title,
+          description: news.description,
+          link:news.link
         }),
       });
 
       if (response.ok) {
-        router.push("/Admin/Works");
+        router.push("/Admin/News");
       }
     } catch (error) {
       console.log(error);
@@ -61,8 +62,8 @@ const Update = () => {
     <section className="w-full h-full lg:pt-24">
       <Form
         type='Edit'
-        Works={Works}
-        setWorks={setWorks}
+        news={news}
+        setnews={setnews}
         submitting={submitting}
         handleSubmit={updatePrompt}
       />
