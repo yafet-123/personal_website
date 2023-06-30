@@ -52,13 +52,12 @@ const Form = ({
           <div className="relative mb-5">
             <input
               id="date"
-              type={typechange ? "text" : "date"}
+              type="text"
               required
               className="block w-full px-3 text-md lg:text-xl text-black bg-white py-4 border-2 border-black rounded-xl appearance-none dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-500 peer"
               placeholder=" "
               value={Exhibitions.date}
               onChange={(e) => setExhibitions({ ...Exhibitions, date: e.target.value })}
-              onClick={() => settypechange(false)}
             />
             <label
               htmlFor="floating_outlined"
