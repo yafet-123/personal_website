@@ -28,11 +28,11 @@ const Display = ({ Works }) => {
 
     if (hasConfirmed) {
       try {
-        const response = await fetch(`/api/User/${works_id}`, {
+        const response = await fetch(`/api/Works/${works_id}`, {
           method: "DELETE",
         });
         if (response.ok) {
-          router.push("/Admin/User");
+          router.push("/Admin/Works");
         }
       } catch (error) {
         console.log(error);

@@ -6,7 +6,7 @@ import Image from "next/image";
 import { useSession } from "next-auth/react";
 import { usePathname, useRouter } from "next/navigation";
 
-const Display = ({ Exhibitions, handleEdit, handleDelete }) => {
+const Display = ({ Exhibitions }) => {
   console.log(Exhibitions)
   const { data: session } = useSession();
   const pathName = usePathname();
@@ -19,6 +19,28 @@ const Display = ({ Exhibitions, handleEdit, handleDelete }) => {
     setTimeout(() => setCopied(false), 3000);
   };
  
+  const handleEdit = (exhibition_id) => {
+    console.log(exhibition_id);
+    router.push(`/Admin/Exhibitions/Update?id=${exhibition_id}`);
+  };
+
+  const handleDelete = async (exhibition_id) => {
+    const hasConfirmed = confirm("Are you sure you want to delete this Exhibitions?");
+
+    if (hasConfirmed) {
+      try {
+        const response = await fetch(`/api/Exhibitions/${exhibition_id}`, {
+          method: "DELETE",
+        });
+        if (response.ok) {
+          router.push("/Admin/Exhibitions");
+        }
+      } catch (error) {
+        console.log(error);
+      }
+    }
+  };
+
   return (
     <div className="prompt_card">
       <div className="flex justify-between items-start gap-5 mb-5">
@@ -56,13 +78,13 @@ const Display = ({ Exhibitions, handleEdit, handleDelete }) => {
         <div className="mt-5 flex justify-between items-center gap-4 border-t border-gray-100 pt-3">
           <p
             className="font-inter text-sm green_gradient cursor-pointer"
-            onClick={handleEdit}
+            onClick={() => handleEdit(Works.exhibition_id)}
           >
             Edit
           </p>
           <p
             className="font-inter text-sm orange_gradient cursor-pointer"
-            onClick={handleDelete}
+            onClick={() => handleDelete(Works.exhibition_id)}
           >
             Delete
           </p>

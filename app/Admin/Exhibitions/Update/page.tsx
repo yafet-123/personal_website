@@ -2,48 +2,54 @@
 
 import { useEffect, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
-
-import Form from "@/components/Admin/User/Form";
+ 
+import Form from "@/components/Admin/Exhibitions/Form";
 
 const Update = () => {
   const router = useRouter();
   const searchParams = useSearchParams();
-  const userId = searchParams.get("id");
+  const exhibitionsId = searchParams.get("id");
 
-  const [user, setUser] = useState({ UserName: "", email: "" });
+  const [Exhibitions, setExhibitions] = useState({
+    title: "",
+    descreption: "",
+    date:""
+  });
   const [submitting, setIsSubmitting] = useState(false);
 
   useEffect(() => {
-    const getUserDetails = async () => {
-      const response = await fetch(`/api/user/${userId}`);
+    const getExhibitions = async () => {
+      const response = await fetch(`/api/Exhibitions/${exhibitionsId}`);
       const data = await response.json();
 
-      setUser({
-        UserName: data.UserName,
-        email: data.email,
+      setExhibitions({
+        title: data.title,
+        descreption: data.descreption,
+        date:data.date
       });
     };
 
-    if (userId) getUserDetails();
-  }, [userId]);
+    if (exhibitionsId) getExhibitions();
+  }, [exhibitionsId]);
 
   const updatePrompt = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    if (!userId) return alert("Missing UserId!");
+    if (!exhibitionsId) return alert("Missing exhibitionsId!");
 
     try {
-      const response = await fetch(`/api/user/${userId}`, {
+      const response = await fetch(`/api/Exhibitions/${exhibitionsId}`, {
         method: "PATCH",
         body: JSON.stringify({
-          UserName: user.UserName,
-          email: user.email,
+          title: Exhibitions.title,
+          descreption: Exhibitions.descreption,
+          date:Exhibitions.date,
         }),
       });
 
       if (response.ok) {
-        router.push("/");
+        router.push("/Admin/Exhibitions");
       }
     } catch (error) {
       console.log(error);
@@ -55,8 +61,8 @@ const Update = () => {
   return (
     <Form
       type='Edit'
-      user={user}
-      setUser={setUser}
+      Exhibitions={Exhibitions}
+      setExhibitions={setExhibitions}
       submitting={submitting}
       handleSubmit={updatePrompt}
     />

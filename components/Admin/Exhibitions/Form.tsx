@@ -18,11 +18,11 @@ const Form = ({
   return ( 
     <section className="w-full">
       <h1 className="head_text text-left mb-5">
-        <span className="text-white">
+        <span className="text-black">
           {type} {typeofCategory}
         </span>
       </h1>
-      <p className="desc text-white">
+      <p className="desc text-black">
         create Diffrent Exhibitions that can be view and shared from your own audience
       </p>
 
@@ -92,70 +92,8 @@ const Form = ({
           </div>
         </div>
 
-        <div className="grid grid-cols-1 gap-5 my-2">
-          <div className="flex items-center justify-center w-full">
-            <label
-              htmlFor="dropzone-file"
-              className="flex flex-col items-center justify-center w-full h-64 border-2 border-black border rounded-lg cursor-pointer bg-white dark:hover:bg-bray-800 hover:bg-gray-100 dark:border-black dark:hover:border-gray-500 dark:hover:bg-gray-600"
-            >
-              <div className="flex flex-col items-center justify-center pt-5 pb-6">
-                <p className="text-sm lg:text-lg text-black mb-5">
-                  Upload News Image
-                </p>
-                <svg
-                  aria-hidden="true"
-                  className="w-10 h-10 mb-3 text-black"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"
-                  ></path>
-                </svg>
-                <p className="mb-2 text-xs lg:text-sm text-black">
-                  <span className="font-semibold">Click to upload</span> or drag
-                  and drop
-                </p>
-              </div>
-              <input
-                id="dropzone-file"
-                type="file"
-                className="hidden"
-                onChange={(e) =>
-                  setExhibitions({ ...Exhibitions, image: e.target.files[0] })
-                }
-              />
-            </label>
-          </div>
-        </div>
-
-        <div
-          className={
-            Exhibitions.image == ""
-              ? "hidden"
-              : "flex justify-center items-center mb-10"
-          }
-        >
-          <Image
-            src={
-              Exhibitions.image == ""
-                ? "/images/person1.jpg"
-                : URL.createObjectURL(blob)
-            }
-            width={500}
-            height={200}
-            alt="image that will be displayed"
-            className="w-full"
-          />
-        </div>
-
         <div className="flex justify-end items-center mx-3 mb-5 gap-4">
-          <Link href="/Admin" className="bg-white text-black px-5 py-1.5 rounded-full text-sm">
+          <Link href="/Admin" className="bg-black text-white px-5 py-1.5 rounded-full text-sm">
             Cancel
           </Link>
 
