@@ -68,27 +68,34 @@ const Display = ({ Exhibitions }) => {
         <p className="my-4 font-satoshi text-sm text-gray-700">
           {Exhibitions.title}
         </p>
-        <Image src={Exhibitions.Image} alt="Exhibitions Image" width={50} height={50} />
+        
+        <p className="my-4 font-satoshi text-sm text-gray-700">
+          {Exhibitions.date}
+        </p>
       </div>
+
+      <p className="my-4 font-satoshi text-sm text-gray-700">
+        {Exhibitions.type}
+      </p>
 
       <p className="my-4 font-satoshi text-sm text-gray-700">
         {Exhibitions.descreption}
       </p>
 
-        <div className="mt-5 flex justify-between items-center gap-4 border-t border-gray-100 pt-3">
-          <p
-            className="font-inter text-sm green_gradient cursor-pointer"
-            onClick={() => handleEdit(Works.exhibition_id)}
-          >
-            Edit
-          </p>
-          <p
-            className="font-inter text-sm orange_gradient cursor-pointer"
-            onClick={() => handleDelete(Works.exhibition_id)}
-          >
-            Delete
-          </p>
-        </div>
+      <div className="mt-5 flex justify-between items-center gap-4 border-t border-gray-100 pt-3">
+        <p
+          className="font-inter text-sm green_gradient cursor-pointer"
+          onClick={() => handleEdit(Works.exhibition_id)}
+        >
+          Edit
+        </p>
+        <p
+          className="font-inter text-sm orange_gradient cursor-pointer"
+          onClick={() => handleDelete(Works.exhibition_id)}
+        >
+          Delete
+        </p>
+      </div>
    
     </div>
   );
