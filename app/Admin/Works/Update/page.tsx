@@ -48,7 +48,7 @@ const Update = () => {
       });
 
       if (response.ok) {
-        router.push("/");
+        router.push("/Admin/Works");
       }
     } catch (error) {
       console.log(error);
@@ -58,13 +58,15 @@ const Update = () => {
   };
 
   return (
-    <Form
-      type='Edit'
-      Works={Works}
-      setWorks={setWorks}
-      submitting={submitting}
-      handleSubmit={updatePrompt}
-    />
+    <section className="w-full h-full lg:pt-24">
+      <Form
+        type='Edit'
+        Works={Works}
+        setWorks={setWorks}
+        submitting={submitting}
+        handleSubmit={updatePrompt}
+      />
+    </section>
   );
 };
 
