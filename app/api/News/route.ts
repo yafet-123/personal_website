@@ -14,7 +14,7 @@ export const GET = async (req: NextApiRequest, res: NextApiResponse) => {
       },
     });
     const Allnews = data.map((data) => ({
-      news_id: data.news_id.toString(),
+      news_id: data.news_id,
       title: data.title,
       description: data.description,
       link: data.link,

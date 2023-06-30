@@ -17,17 +17,17 @@ async function fetchNews() {
       },
     }
   );
-
+  console.log(response)
   const news = await response.json();
   return news;
 }
 
-export default async function Bio() {
+export default async function News() {
   const news = await fetchNews();
   return (
     <main className="flex flex-col items-center bg-white">
       <Suspense fallback={<div className="w-full h-screen flex items-center justify-center text-2xl ">Loading News Please Wait ...</div>}> 
-        <List news={news} />
+        <List selectenews={news} />
       </Suspense>
     </main>
   )
