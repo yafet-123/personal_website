@@ -6,7 +6,7 @@ export default function Exhibition({ exhibition }) {
   const id = exhibition.exhibition_id;
   return (
     <div
-      className="text-white p-[2rem] flex rounded-[20px] bg-[#e1edfa] flex-col cursor-pointer shadow-md hover:shadow-xl shadow-inherit overflow-hidden hover:scale-95 transition-transform duration-300" 
+      className="text-white p-[2rem] flex rounded-[20px] bg-[#F7F7F7] flex-col cursor-pointer shadow-md hover:shadow-xl shadow-inherit overflow-hidden hover:scale-95 transition-transform duration-300" 
       key={exhibition.exhibition_id}
     >
       <h1 className="font-poppins font-semibold xs:text-[24px] xs:leading-[30px] text-[20px] leading-[26px] tracking-[0.25%] text-black py-5">{exhibition.date}</h1>

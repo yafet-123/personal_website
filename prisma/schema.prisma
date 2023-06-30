@@ -20,6 +20,7 @@ model User {
   ModifiedDate DateTime?     @default(now()) @db.Timestamptz(6)
   Exhibition   Exhibition[]
   SelectedWorks SelectedWorks[]
+  news news[]
 }
 
 model Exhibition {
@@ -41,6 +42,19 @@ model SelectedWorks {
   title                        String?   
   description                  String?           
   exhibitions                  String?
+  view                         Int           @default(0) 
+  Image                        String[] 
+  CreatedDate                  DateTime?     @default(now()) @db.Timestamptz(6)
+  ModifiedDate                 DateTime?     @default(now()) @db.Timestamptz(6) 
+  user_id                      Int   
+  User                         User          @relation(fields: [user_id], references: [user_id], onDelete: Cascade, onUpdate: Cascade)  
+}
+
+model news {
+  news_id                      Int           @id @default(autoincrement()) 
+  title                        String?   
+  description                  String?           
+  link                         String?
   view                         Int           @default(0) 
   Image                        String[] 
   CreatedDate                  DateTime?     @default(now()) @db.Timestamptz(6)
