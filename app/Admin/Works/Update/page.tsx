@@ -1,44 +1,49 @@
 "use client";
-
+ 
 import { useEffect, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 
-import Form from "@/components/Admin/User/Form";
+import Form from "@/components/Admin/Works/Form";
 
 const Update = () => {
   const router = useRouter();
   const searchParams = useSearchParams();
-  const userId = searchParams.get("id");
+  const worksId = searchParams.get("id");
 
-  const [user, setUser] = useState({ UserName: "", email: "" });
+  const [Works, setWorks] = useState({
+    title: "",
+    exhibitions: "",
+    image: "",
+    description:""
+  });
   const [submitting, setIsSubmitting] = useState(false);
 
   useEffect(() => {
-    const getUserDetails = async () => {
-      const response = await fetch(`/api/user/${userId}`);
+    const getWork = async () => {
+      const response = await fetch(`/api/Works/${worksId}`);
       const data = await response.json();
 
-      setUser({
-        UserName: data.UserName,
-        email: data.email,
+      setWorks({
+        title: data.title,
+        description:data.description
       });
     };
 
-    if (userId) getUserDetails();
-  }, [userId]);
+    if (worksId) getWork();
+  }, [worksId]);
 
   const updatePrompt = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    if (!userId) return alert("Missing UserId!");
+    if (!worksId) return alert("Missing worksId!");
 
     try {
-      const response = await fetch(`/api/user/${userId}`, {
+      const response = await fetch(`/api/Works/${worksId}`, {
         method: "PATCH",
         body: JSON.stringify({
-          UserName: user.UserName,
-          email: user.email,
+          title: Works.title,
+          description: Works.description,
         }),
       });
 
@@ -55,8 +60,8 @@ const Update = () => {
   return (
     <Form
       type='Edit'
-      user={user}
-      setUser={setUser}
+      Works={Works}
+      setWorks={setWorks}
       submitting={submitting}
       handleSubmit={updatePrompt}
     />
