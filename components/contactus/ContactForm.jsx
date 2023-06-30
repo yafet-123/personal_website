@@ -63,7 +63,7 @@ const ContactForm = () => {
               Contact
             </h1>
             <div className="font-poppins text-left text-[#010101]">
-              <p className="font-normal text-3xl lg:tetx-4xl mb-5">Helen Zeray</p>
+              <p className="font-normal text-2xl lg:tetx-3xl mb-5">Helen Zeray</p>
               <p className="font-normal text-xl lg:text-2xl mb-5">helenzersy8905@gmail.com </p>
               <p className="font-normal text-xl lg:text-2xl mb-5">Sderot hachmel Israel 32</p>
               <p className="font-normal text-xl lg:text-2xl mb-5">WhatsApp: +9725353323525</p>
