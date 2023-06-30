@@ -16,7 +16,7 @@ const VerticalNavbar: React.FC = () => {
     <div className={`flex h-full w-full lg:w-40 pt-24`}>
       <nav className="w-full lg:h-screen flex flex-col py-8 lg:px-4">
         <div className="flex justify-between ml-2">
-          <h1 className={`text-xl font-bold text-white`}>Admin Page</h1>
+          <h1 className={`text-xl font-bold text-black`}>Admin Page</h1>
         </div>
 
         <div className="mt-10">
@@ -27,8 +27,8 @@ const VerticalNavbar: React.FC = () => {
                   href={side.link}
                   className={
                     side.link == pathname
-                      ? "whitespace-nowrap bg-[#009688] text-white flex items-center p-4 text-xs lg:text-sm rounded-xl"
-                      : "whitespace-nowrap lg:w-full flex items-center p-4 text-xs lg:text-sm text-white hover:bg-white hover:text-[#009688]"
+                      ? "whitespace-nowrap bg-[#009688] text-black flex items-center p-4 text-xs lg:text-sm rounded-xl"
+                      : "whitespace-nowrap lg:w-full flex items-center p-4 text-xs lg:text-sm text-black hover:bg-white hover:text-[#009688]"
                   }
                 >
                   <span className={`ml-0 lg:ml-4 font-semibold`}>

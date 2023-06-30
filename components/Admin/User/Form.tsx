@@ -4,9 +4,9 @@ const Form = ({ type, user, setUser, submitting, handleSubmit }) => {
   return (
     <section className="w-full">
       <h1 className="head_text text-left mb-5 ">
-        <span className="text-white">{type} User</span>
+        <span className="text-black">{type} User</span>
       </h1>
-      <p className="desc text-white">
+      <p className="desc text-black">
         {type} the user that can create , update , edit and delete diffrent Works and Exhibitions
       </p>
 
@@ -21,7 +21,7 @@ const Form = ({ type, user, setUser, submitting, handleSubmit }) => {
               type="text"
               value={user.UserName}
               required
-              className="block w-full px-3 text-sm lg:text-xl text-black dark:text-white bg-white py-4 border-2 border-black rounded-xl appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-500 peer"
+              className="block w-full px-3 text-sm lg:text-xl text-black bg-white py-4 border-2 border-black rounded-xl appearance-none dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-500 peer"
               placeholder=" "
               onChange={(e) => setUser({ ...user, UserName: e.target.value })}
             />
@@ -38,7 +38,7 @@ const Form = ({ type, user, setUser, submitting, handleSubmit }) => {
               id="email"
               type="email"
               required
-              className="block w-full px-3 text-sm lg:text-xl text-black bg-white py-4 border-2 border-black rounded-xl appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-500 peer"
+              className="block w-full px-3 text-sm lg:text-xl text-black bg-white py-4 border-2 border-black rounded-xl appearance-none dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-500 peer"
               placeholder=" "
               value={user.email}
               onChange={(e) => setUser({ ...user, email: e.target.value })}
@@ -54,14 +54,14 @@ const Form = ({ type, user, setUser, submitting, handleSubmit }) => {
         </div>
 
         <div className="flex justify-end items-center mx-3 mb-5 gap-4">
-          <Link href="/" className="bg-white text-black px-5 py-1.5 rounded-full text-sm">
+          <Link href="/" className="bg-black text-black px-5 py-1.5 rounded-full text-sm">
             Cancel
           </Link>
 
           <button
             type="submit"
             disabled={submitting}
-            className="px-5 py-1.5 text-sm bg-primary-orange rounded-full text-white"
+            className="px-5 py-1.5 text-sm bg-primary-orange rounded-full text-black"
           >
             {submitting ? `${type}ing...` : type}
           </button>
