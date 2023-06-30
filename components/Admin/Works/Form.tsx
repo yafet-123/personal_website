@@ -16,11 +16,11 @@ const Form = ({
   return ( 
     <section className="w-full">
       <h1 className="head_text text-left mb-5">
-        <span className="text-white">
+        <span className="text-black">
           {type} {typeofCategory}
         </span>
       </h1>
-      <p className="desc text-white">
+      <p className="desc text-black">
         create Diffrent works that can be view and shared from your own audience
       </p>
 
@@ -48,28 +48,7 @@ const Form = ({
           </div>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 my-2 px-2">
-          <div className="relative mb-5">
-            <textarea
-              id="exhibitions"
-              required
-              className="block w-full px-3 text-md lg:text-xl text-black bg-white py-4 border-2 border-black rounded-xl appearance-none dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-500 peer"
-              placeholder=" "
-              value={Works.exhibitions}
-              rows="10"
-              cols="20"
-              onChange={(e) =>
-                setWorks({ ...Works, exhibitions: e.target.value })
-              }
-            />
-            <label
-              htmlFor="floating_outlined"
-              className="absolute text-md lg:text-xl text-black duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-[10%] peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-1"
-            >
-              Exhibitions
-            </label>
-          </div>
-
+        <div className="flex flex-col my-2 w-full px-2">
           <div className="relative mb-5">
             <textarea
               id="description"
@@ -155,7 +134,7 @@ const Form = ({
         </div>
 
         <div className="flex justify-end items-center mx-3 mb-5 gap-4">
-          <Link href="/Admin" className="bg-white text-black px-5 py-1.5 rounded-full text-sm">
+          <Link href="/Admin" className="bg-black text-white px-5 py-1.5 rounded-full text-sm">
             Cancel
           </Link>
 

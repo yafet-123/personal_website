@@ -54,14 +54,14 @@ const Form = ({ type, user, setUser, submitting, handleSubmit }) => {
         </div>
 
         <div className="flex justify-end items-center mx-3 mb-5 gap-4">
-          <Link href="/" className="bg-black text-black px-5 py-1.5 rounded-full text-sm">
+          <Link href="/Admin" className="bg-black text-white px-5 py-1.5 rounded-full text-sm">
             Cancel
           </Link>
 
           <button
             type="submit"
             disabled={submitting}
-            className="px-5 py-1.5 text-sm bg-primary-orange rounded-full text-black"
+            className="px-5 py-1.5 text-sm bg-primary-orange rounded-full text-white"
           >
             {submitting ? `${type}ing...` : type}
           </button>
