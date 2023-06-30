@@ -24,7 +24,7 @@ const Update = () => {
 
       setExhibitions({
         title: data.title,
-        descreption: data.descreption,
+        descreption: data.description,
         date:data.date
       });
     };
