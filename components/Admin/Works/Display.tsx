@@ -17,6 +17,11 @@ const Display = ({ Works, handleEdit, handleDelete }) => {
     navigator.clipboard.writeText(Works.title);
     setTimeout(() => setCopied(false), 3000);
   };
+
+  const handleEdit = (user_id) => {
+    console.log(user_id);
+    router.push(`/Admin/Works/Update?id=${user_id}`);
+  };
  
   return (
     <div className="prompt_card">
@@ -55,13 +60,13 @@ const Display = ({ Works, handleEdit, handleDelete }) => {
       <div className="mt-5 flex justify-between items-center gap-4 border-t border-gray-100 pt-3">
         <p
           className="font-inter text-sm green_gradient cursor-pointer"
-          onClick={handleEdit}
+          onClick={() => handleEdit(user.user_id)}
         >
           Edit
         </p>
         <p
           className="font-inter text-sm orange_gradient cursor-pointer"
-          onClick={handleDelete}
+          onClick={() => handleDelete(user.user_id)}
         >
           Delete
         </p>

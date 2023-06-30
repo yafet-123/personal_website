@@ -65,7 +65,7 @@ const Navbar = () => {
         className={` ${ open ? "bg-black bg-opacity-90" :"" } lg:justify-between justify-around px-5 lg:px-10 items-center lg:flex`}
       >
         <div className="flex items-center justify-between py-3 ">
-          <h1 className={` ${ pathname == '/' || pathname == '/bio' && !shadow || open ? "text-white" : "text-black" } font-poppins text-3xl md:text-4xl font-bold`}>
+          <h1 className={` ${ pathname == '/' || pathname == '/bio' && !shadow || open ? "text-white" : "text-black" } font-poppins text-2xl md:text-3xl font-normal`}>
             Helen Zeray
           </h1>
           <div className="lg:hidden">

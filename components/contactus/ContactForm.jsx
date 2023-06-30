@@ -47,8 +47,8 @@ const handleSubmit = (values) => {
 
 const ContactForm = () => {
   const socialMediaLinks = [
-    {id:"/",path:<BsLinkedin size={30} color="black"/>},
-    {id:"/",path:<BsInstagram size={30} color="black"/>},
+    {id:"https://www.linkedin.com/in/helen-zeray-789b89267",path:<BsLinkedin size={30} color="black"/>},
+    {id:"https://instagram.com/helenzeray1?igshid=ZGUzMzM3NWJiOQ==",path:<BsInstagram size={30} color="black"/>},
   ]
   return (
     <div className="flex flex-col gap-8 md:gap-12 w-full md:px-10">
@@ -63,7 +63,8 @@ const ContactForm = () => {
               Contact
             </h1>
             <div className="font-poppins text-left text-[#010101]">
-              <h1 className="font-bold text-3xl lg:tetx-4xl mb-5">Helen Zeray</h1>
+              <p className="font-normal text-3xl lg:tetx-4xl mb-5">Helen Zeray</p>
+              <p className="font-normal text-xl lg:text-2xl mb-5">helenzersy8905@gmail.com </p>
               <p className="font-normal text-xl lg:text-2xl mb-5">Sderot hachmel Israel 32</p>
               <p className="font-normal text-xl lg:text-2xl mb-5">WhatsApp: +9725353323525</p>
             </div>
