@@ -17,7 +17,7 @@ export default function AdminRootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <section className="flex flex-col bg-[#212325] w-full h-full">
+    <section className="flex flex-col bg-white w-full h-full">
       <Provider>
         <div className="flex flex-col lg:flex-row">
           
