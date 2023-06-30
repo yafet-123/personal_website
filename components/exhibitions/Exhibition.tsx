@@ -11,7 +11,7 @@ export default function Exhibition({ exhibition }) {
     >
       <h1 className="font-poppins font-semibold xs:text-[24px] xs:leading-[30px] text-[20px] leading-[26px] tracking-[0.25%] text-black py-5">{exhibition.date}</h1>
       <div className="grid grid-cols-1 md:grid-cols-2 py-5">
-        <h2 className="font-normal font-poppins xs:text-[24px] xs:leading-[30px] text-[20px] leading-[26px] tracking-[0.25%] dark:text-[#FFFFFF] text-pro-w-black bg-gradient-to-r text-transparent bg-clip-text from-blue-400 via-purple-600 to-purple-800">{exhibition.title}</h2>
+        <h2 className="font-normal font-poppins xs:text-[24px] xs:leading-[30px] text-[20px] leading-[26px] tracking-[0.25%] text-black">{exhibition.title}</h2>
         <span className="font-poppins font-normal xs:text-[14px] xs:leading-[20px] text-[20px] leading-[16.89px] tracking-[0.5%] text-[#6B707B] mt-1 text-right">{exhibition.type}</span>
       </div>
 
