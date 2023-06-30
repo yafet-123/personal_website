@@ -132,26 +132,27 @@ const Form = ({
             </div>
           </div>
         )}
-
-        <div
-          className={
-            news.image == ""
-              ? "hidden"
-              : "flex justify-center items-center mb-10"
-          }
-        >
-          <Image
-            src={
+        { type == "Create" && (
+          <div
+            className={
               news.image == ""
-                ? "/images/person1.jpg"
-                : URL.createObjectURL(blob)
+                ? "hidden"
+                : "flex justify-center items-center mb-10"
             }
-            width={500}
-            height={200}
-            alt="image that will be displayed"
-            className="w-full"
-          />
-        </div>
+          >
+            <Image
+              src={
+                news.image == ""
+                  ? "/images/person1.jpg"
+                  : URL.createObjectURL(blob)
+              }
+              width={500}
+              height={200}
+              alt="image that will be displayed"
+              className="w-full"
+            />
+          </div>
+        )}
 
         <div className="flex justify-end items-center mx-3 mb-5 gap-4">
           <Link href="/Admin" className="bg-black text-white px-5 py-1.5 rounded-full text-sm">
