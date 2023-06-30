@@ -71,7 +71,7 @@ const Form = ({
           </div>
         </div>
 
-        { type == "create" && (        
+        { type == "Create"  && (        
           <div className="grid grid-cols-1 gap-5 my-2">
             <div className="flex items-center justify-center w-full">
               <label
