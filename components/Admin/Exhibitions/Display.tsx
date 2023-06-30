@@ -85,13 +85,13 @@ const Display = ({ Exhibitions }) => {
       <div className="mt-5 flex justify-between items-center gap-4 border-t border-gray-100 pt-3">
         <p
           className="font-inter text-sm green_gradient cursor-pointer"
-          onClick={() => handleEdit(Works.exhibition_id)}
+          onClick={() => handleEdit(Exhibitions.exhibition_id)}
         >
           Edit
         </p>
         <p
           className="font-inter text-sm orange_gradient cursor-pointer"
-          onClick={() => handleDelete(Works.exhibition_id)}
+          onClick={() => handleDelete(Exhibitions.exhibition_id)}
         >
           Delete
         </p>
