@@ -1,5 +1,6 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import prisma from "@/utils/db.server";
+import { NextResponse } from 'next/server';
 
 export const GET = async (req: NextApiRequest, res: NextApiResponse) => {
   try {
@@ -14,7 +15,7 @@ export const GET = async (req: NextApiRequest, res: NextApiResponse) => {
       UserName: data.UserName,
     }));
     console.log(Allusers)
-    return new Response(JSON.stringify(users), { status: 200 });
+    return NextResponse.json(users);
   } catch (error) {
     return new Response("Failed to fetch all users", { status: 500 });
   }
