@@ -50,13 +50,10 @@ export default function AdminUserHome() {
   };
 
   const fetchUsers = async () => {
-    const response = await fetch("/api/User");
+    const response = await fetch("/api/User", { cache: 'no-store' });
     const data = await response.json();
 
-    setAllUsers({
-      UserName: data.UserName,
-      email: data.email,
-    });
+    setAllUsers(data);
   };
 
   useEffect(() => {
