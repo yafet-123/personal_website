@@ -53,7 +53,10 @@ export default function AdminUserHome() {
     const response = await fetch("/api/User");
     const data = await response.json();
 
-    setAllUsers(data);
+    setAllUsers({
+      UserName: data.UserName,
+      email: data.email,
+    });
   };
 
   useEffect(() => {
