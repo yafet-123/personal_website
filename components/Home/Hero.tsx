@@ -16,8 +16,8 @@ const Hero: React.FC = () => {
  
   };
   const socialMediaLinks = [
-    {id:"https://www.linkedin.com/in/helen-zeray-789b89267",path:<BsLinkedin size={30} color="black"/>},
-    {id:"https://instagram.com/helenzeray1?igshid=ZGUzMzM3NWJiOQ==",path:<BsInstagram size={30} color="black"/>},
+    {id:"https://www.linkedin.com/in/helen-zeray-789b89267",path:<BsLinkedin size={30} color="white"/>},
+    {id:"https://instagram.com/helenzeray1?igshid=ZGUzMzM3NWJiOQ==",path:<BsInstagram size={30} color="white"/>},
   ]
   return (
     <div className="w-full h-screen overflow-hidden">
@@ -27,7 +27,7 @@ const Hero: React.FC = () => {
             key={index}
             className={`${data.image} w-full h-screen bg-fixed relative`}
           >
-            <div className="absolute top-1/2 right-0 -translate-y-1/2 w-full">
+            <div className="absolute top-1/2 flex justify-end -translate-y-1/2 w-full px-20">
               <div className="flex flex-col gap-4">
                 {socialMediaLinks.map((paths, index) => {
                   return (
