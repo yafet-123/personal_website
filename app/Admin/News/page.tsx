@@ -63,7 +63,7 @@ export default function NewsHome() {
         }),
       });
       if (response.ok) {
-        router.push("/Admin");
+        router.push("/Admin/News");
       }
     } catch (error) {
       console.log(error);
