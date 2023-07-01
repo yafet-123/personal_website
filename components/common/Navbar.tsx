@@ -86,7 +86,7 @@ const Navbar = () => {
 
         <div className="">
           <div
-            className={`flex-1 justify-self-center pb-3 mt-4 md:block md:pb-0 md:mt-0 ${
+            className={`flex-1 justify-self-center pb-2 mt-4 md:block md:pb-0 md:mt-0 ${
               open ? "flex bg-transparent" : "hidden"
             }`}
           >
@@ -110,7 +110,7 @@ const Navbar = () => {
         </div>
 
         { (pathname == "/Admin" || pathname == "/Admin/User"|| pathname == "/Admin/Works" || pathname == "/Admin/Exhibitions")  &&
-          <div className={`mt-5 lg:mt-0 lg:ml-10 md:block ${
+          <div className={`mt-5 lg:mt-0 lg:ml-5 md:block ${
               open ? "flex" : "hidden"
             }`}>
               {session?.user ? (

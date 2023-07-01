@@ -64,7 +64,7 @@ export default function ExhibitionsHome() {
         }),
       });
       if (response.ok) {
-        router.push("/Admin");
+        router.push("/Admin/Exhibitions");
       }
     } catch (error) {
       console.log(error);

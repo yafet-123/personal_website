@@ -62,7 +62,7 @@ export default function WorksHome() {
         }),
       });
       if (response.ok) {
-        router.push("/Admin");
+        router.push("/Admin/Works");
       }
     } catch (error) {
       console.log(error);
