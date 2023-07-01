@@ -26,7 +26,8 @@ export default function ExhibitionsHome() {
     title: "",
     descreption: "",
     image: "",
-    date:""
+    date:"",
+    type:""
   });
   const { data: session } = useSession();
   console.log(Exhibitions)
@@ -60,6 +61,7 @@ export default function ExhibitionsHome() {
           image: imageData,
           date: Exhibitions.date,
           Description: Exhibitions.descreption,
+          type: Exhibitions.type,
           user_id: session?.user.id,
         }),
       });

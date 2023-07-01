@@ -45,6 +45,7 @@ export const PATCH = async (request, { params }) => {
         title,
         description:descreption,
         date,
+        type
       },
     });
 

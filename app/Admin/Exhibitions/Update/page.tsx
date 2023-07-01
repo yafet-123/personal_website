@@ -13,7 +13,8 @@ const Update = () => {
   const [Exhibitions, setExhibitions] = useState({
     title: "",
     descreption: "",
-    date:""
+    date:"",
+    type:""
   });
   const [submitting, setIsSubmitting] = useState(false);
 
@@ -25,7 +26,8 @@ const Update = () => {
       setExhibitions({
         title: data.title,
         descreption: data.description,
-        date:data.date
+        date:data.date,
+        type:data.type
       });
     };
 
@@ -45,6 +47,7 @@ const Update = () => {
           title: Exhibitions.title,
           descreption: Exhibitions.descreption,
           date:Exhibitions.date,
+          type:Exhibitions.type
         }),
       });
 
