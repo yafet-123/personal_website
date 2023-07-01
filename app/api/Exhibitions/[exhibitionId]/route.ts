@@ -25,7 +25,7 @@ export const GET = async (request, { params }) => {
 };
 
 export const PATCH = async (request, { params }) => {
-  const { title ,descreption ,date } = await request.json();
+  const { title ,descreption ,date, type } = await request.json();
 
   try {
     const existingExhibitions = await prisma.Exhibition.findUnique({
