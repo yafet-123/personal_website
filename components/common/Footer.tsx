@@ -15,16 +15,11 @@ import { MdEmail } from 'react-icons/md';
 const Footer: React.FC = () => {
   const socialMediaLinks = [
     {
-      icon: <FaFacebook size={30} color="white" />,
-      path: 'https://www.facebook.com/profile.php?id=100088896946771&mibextid=LQQJ4d',
-    },
-    // { icon: <FaYoutube size={30} color="white" /> ,  path:""},
-    {
-      icon: <FaLinkedin size={30} color="white" />,
+      icon: <FaLinkedin size={30} color="black" />,
       path: 'https://www.linkedin.com/in/ecotravel-ethiopia-ab4519260/',
     },
     {
-      icon: <FaInstagram size={30} color="white" />,
+      icon: <FaInstagram size={30} color="black" />,
       path: 'https://www.instagram.com/ecotravels_ethiopia/',
     },
     // { icon: <FaTelegram size={30} color="white" /> , path:""},
@@ -39,8 +34,8 @@ const Footer: React.FC = () => {
   ];
 
   return (
-    <footer className="bg-white">
-      <div className="flex flex-col lg:flex-row  md:justify-evenly p-6 bg-primaryColor gap-4 text-white ">
+    <footer className="bg-white fixed z-[100] bottom-0 w-full">
+      <div className="flex flex-col lg:flex-row  md:justify-evenly p-6 bg-primaryColor gap-4 text-black ">
         <div className="flex flex-col gap-8 items-start justify-evemly mb-10 md:mb-0">
           <div className="">
             

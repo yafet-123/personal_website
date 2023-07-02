@@ -55,7 +55,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav
+    <nav 
       className={`
         ${ shadow ? 'fixed w-full h-20 shadow-xl z-[100] ease-in-out duration-300 bg-zinc-300 bg-opacity-80'
           : 'fixed w-full h-20 z-[100] border-b-2 border-slate-100 '}
