@@ -38,21 +38,6 @@ const handler = NextAuth({
         return false;
       }
     },
-    async jwt({ token, user }) {
-      const sessionUser = await prisma.User.findUnique({
-        where: { email: session.user.email },
-      });
-      const tokens = jwt.sign(
-        { userId: sessionUser.user_id.toString(), role: "admin" },process.env.JWT_SECRET,
-        {expiresIn: process.env.JWT_LIFETIME,}
-      );
-      if (sessionUser) {
-          token.userId = user.userId;
-          token.accessToken = tokens;
-          token.role = user.role;
-      }
-      return token;
-    },
   },
 });
 
