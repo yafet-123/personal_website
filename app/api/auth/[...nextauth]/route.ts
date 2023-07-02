@@ -18,7 +18,6 @@ const handler = NextAuth({
       });
       
       session.user.id = sessionUser.user_id.toString();
-      session.user.token = token
       // session.user have all the information from the database and inaddition we send the mongoose id
       return session;
     },
