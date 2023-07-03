@@ -37,6 +37,13 @@ const handler = NextAuth({
         return false;
       }
     },
+    async jwt (token, user) {
+      if (user) {
+        token.userId = user.user_id
+        token.role = "admin" // assuming your user model has a `role` field
+      }
+      return token
+    },
   },
 });
 
