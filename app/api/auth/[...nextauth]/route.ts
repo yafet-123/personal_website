@@ -11,19 +11,8 @@ const handler = NextAuth({
     }),
   ],
   callbacks: {
-    async session({ session }) {
-      // store the user id from MongoDB to session
-      const sessionUser = await prisma.User.findUnique({
-        where: { email: session.user.email },
-      });
-      
-      session.user.id = sessionUser.user_id.toString();
-      // session.user have all the information from the database and inaddition we send the mongoose id
-      return session;
-    },
     async signIn({ account, profile, user, credentials }) {
       try {
-        console.log("user");
         const userExists = await prisma.User.findUnique({
           where: { email: profile.email },
         });
@@ -37,12 +26,28 @@ const handler = NextAuth({
         return false;
       }
     },
-    async jwt (token, user) {
+    async jwt ({token,user}) {
+      console.log(user)
       if (user) {
-        token.userId = user.user_id
-        token.role = "admin" // assuming your user model has a `role` field
+        const sessionUser = await prisma.User.findUnique({
+          where: { email: user.email },
+        });
+        const role = 'admin'; // Assuming you have a `role` field in your user model
+
+        token.userId = sessionUser.user_id.toString();
+        token.role = role;     
       }
       return token
+    },
+    async session({ session }) {
+      // store the user id from MongoDB to session
+      const sessionUser = await prisma.User.findUnique({
+        where: { email: session.user.email },
+      });
+      
+      session.userId = sessionUser.user_id.toString();
+      // session.user have all the information from the database and inaddition we send the mongoose id
+      return session;
     },
   },
 });
