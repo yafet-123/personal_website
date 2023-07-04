@@ -7,8 +7,16 @@ import Footer from '@/components/common/Footer'
 import Provider from "@/components/Admin/Common/Provider";
 
 export const metadata = {
-  title: "Home",
+  title: "Helen Zerray : Home",
   description: "Helen Zeray's artistic journey is one that is filled with wonder and admiration for the beauty of nature.",
+  // verification: {
+  //   google: 'google',
+  //   yandex: 'yandex',
+  //   yahoo: 'yahoo',
+  //   other: {
+  //     me: ['my-email', 'my-link'],
+  //   },
+  // },
   openGraph: {
     title: 'Helen Zeray Portfolio',
     description: "Helen Zeray's artistic journey is one that is filled with wonder and admiration for the beauty of nature.",

@@ -4,7 +4,7 @@ import List from '@/components/exhibitions/List'
 import { Metadata } from 'next'
  
 export const metadata: Metadata = {
-  title: 'Exhibitions',
+  title: 'Helen Zerray : Exhibitions',
 }
 async function fetchExhibitions() {
   const response = await fetch(

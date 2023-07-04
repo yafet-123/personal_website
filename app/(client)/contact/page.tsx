@@ -3,7 +3,7 @@ import ContactForm from "@/components/contactus/ContactForm";
 import { Metadata } from 'next'
  
 export const metadata: Metadata = {
-  title: 'Contact',
+  title: 'Helen Zerray : Contact',
 }
 
 const ContactUsPage = () => {
