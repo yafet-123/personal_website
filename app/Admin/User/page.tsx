@@ -28,6 +28,7 @@ export default function AdminUserHome() {
   const { data: session } = useSession();
   const [submitting, setIsSubmitting] = useState(false);
   const [allUsers, setAllUsers] = useState([]);
+  const [loading , setloading] = useState(false)
   const [user, setUser] = useState<User>({ UserName: "", email: "" });
   console.log(allUsers)
   const createUser = async (e) => {

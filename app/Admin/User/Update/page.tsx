@@ -15,7 +15,7 @@ const Update = () => {
 
   const [user, setUser] = useState({ UserName: "", email: "" });
   const [submitting, setIsSubmitting] = useState(false);
-  console.log(user)
+
   useEffect(() => {
     const getUserDetails = async () => {
       const response = await fetch(`/api/User/${userId}`);
