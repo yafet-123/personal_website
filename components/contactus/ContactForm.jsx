@@ -15,12 +15,8 @@ const initialValues = {
 const validateForm = (values) => {
   const errors = {};
 
-  if (!values.firstName) {
-    errors.firstName = "First Name is required";
-  }
-
-  if (!values.lastName) {
-    errors.lastName = "Last Name is required";
+  if (!values.name) {
+    errors.name = "Name is required";
   }
 
   if (!values.email) {
@@ -29,8 +25,8 @@ const validateForm = (values) => {
     errors.email = "Invalid email address";
   }
 
-  if (!values.subject) {
-    errors.subject = "Subject is required";
+  if (!values.phone) {
+    errors.phone = "Phone is required";
   }
 
   if (!values.message) {
