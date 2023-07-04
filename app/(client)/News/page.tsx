@@ -4,7 +4,6 @@ import { Suspense } from 'react';
 
 export const metadata: Metadata = {
   title: 'NEWS & PRESS',
-  description: "Helen Zeray's artistic journey is one that is filled with wonder and admiration for the beauty of nature.",
 }
 
 async function fetchNews() {

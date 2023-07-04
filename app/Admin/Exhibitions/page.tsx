@@ -6,6 +6,10 @@ import { useState, useEffect } from "react";
 import { useSession } from "next-auth/react";
 import { usePathname, useRouter } from "next/navigation";
 import { Suspense } from 'react';
+import type { Metadata } from "next";
+export const metadata: Metadata = {
+  title: 'Admin Exhibitions',
+}
 
 const ExhibitionsCardList = ({ data }) => {
   return (

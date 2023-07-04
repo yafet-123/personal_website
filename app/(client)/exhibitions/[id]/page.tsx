@@ -4,7 +4,6 @@ import { Metadata } from 'next'
  
 export const metadata: Metadata = {
   title: 'Exhibitions',
-  description: "Helen Zeray's artistic journey is one that is filled with wonder and admiration for the beauty of nature.",
 }
 // const fetchIndividualExhibition = async(id : string) => {
 //   const data = await fetch(process.env.URL + `/api/Exhibitions/${id}`,

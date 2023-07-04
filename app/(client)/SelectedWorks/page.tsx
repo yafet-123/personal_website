@@ -4,7 +4,6 @@ import { Metadata } from 'next'
  
 export const metadata: Metadata = {
   title: 'Selected Works',
-  description: "Helen Zeray's artistic journey is one that is filled with wonder and admiration for the beauty of nature.",
 }
 async function fetchSelectedWorks() {
   const response = await fetch(
