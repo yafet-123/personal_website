@@ -17,6 +17,15 @@ export const metadata = {
   //     me: ['my-email', 'my-link'],
   //   },
   // },
+  // icons: {
+  //   icon: '/icon.png',
+  //   shortcut: '/shortcut-icon.png',
+  //   apple: '/apple-icon.png',
+  //   other: {
+  //     rel: 'apple-touch-icon-precomposed',
+  //     url: '/apple-touch-icon-precomposed.png',
+  //   },
+  // },
   openGraph: {
     title: 'Helen Zeray Portfolio',
     description: "Helen Zeray's artistic journey is one that is filled with wonder and admiration for the beauty of nature.",
