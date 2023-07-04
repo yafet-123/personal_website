@@ -4,10 +4,10 @@ import { useEffect, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 
 import Form from "@/components/Admin/news/Form";
-import type { Metadata } from "next";
-export const metadata: Metadata = {
-  title: 'Admin News Update',
-}
+// import type { Metadata } from "next";
+// export const metadata: Metadata = {
+//   title: 'Admin News Update',
+// }
 const Update = () => {
   const router = useRouter();
   const searchParams = useSearchParams();

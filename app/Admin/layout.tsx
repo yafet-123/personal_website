@@ -8,7 +8,6 @@ import Provider from "@/components/Admin/Common/Provider";
 
 export const metadata = {
   title: "Admin",
-  description: "Admin page for creating updating and deleting the project",
 };
 
 export default function AdminRootLayout({

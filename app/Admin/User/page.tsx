@@ -5,10 +5,10 @@ import UserDisplay from "@/components/Admin/User/UserDisplay";
 import { useState, useEffect } from "react";
 import { useSession } from "next-auth/react";
 import { Suspense } from 'react';
-import type { Metadata } from "next";
-export const metadata: Metadata = {
-  title: 'Admin User',
-}
+// import type { Metadata } from "next";
+// export const metadata: Metadata = {
+//   title: 'Admin User',
+// }
 interface User {
   UserName: string;
   email: string;
