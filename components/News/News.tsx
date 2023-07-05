@@ -7,10 +7,10 @@ export default function Work({ news }) {
   return (
     <Link
       href={news.link}
-      className="text-white flex flex-row cursor-pointer shadow-md hover:shadow-xl shadow-inherit overflow-hidden hover:scale-95 transition-transform duration-300 border shadow-2xl"
+      className="text-white flex flex-row cursor-pointer shadow-md hover:shadow-xl shadow-inherit overflow-hidden hover:scale-95 transition-transform duration-300 border shadow-2xl my-5"
       key={news.news_id}
     >
-      <div className="relative h-[300px] w-full">
+      <div className="relative h-[250px] w-full">
         <Image
           src={news.Image[0]}
           alt="Slide"
@@ -19,7 +19,7 @@ export default function Work({ news }) {
         />
       </div>
 
-      <div className="flex flex-col">
+      <div className="flex flex-col px-5">
         <h1 className="my-[1rem] text-left font-poppins font-semibold text-[1.3rem] text-[#010101] text-center">
           {news.title}
         </h1>
