@@ -17,13 +17,13 @@ export default function List({ exhibitions }) {
     <div className="flex flex-col px-10">
       <div className="flex flex-col mb-10">
         <h1 className="font-bold text-xl md:text-2xl text-black font-poppins mb-5">GROUP EXHIBITION</h1>
-        <div className="grid grid-cols-1 md:grid-cols-2 px-20">
+        <div className="grid grid-cols-1 md:grid-cols-2">
           {groupExhibitions.map((exhibition, index) => (
             <div className="flex flex-row justify-between" key={index}>
-              <h1 className="font-poppins font-semibold text-black text-xl md:text-2xl">{exhibition.date}</h1>
+              <h1 className="font-poppins font-semibold text-black text-xl md:text-2xl pr-10">{exhibition.date}</h1>
               <div className="flex flex-col text-left">
                 <h2 className="font-normal font-poppins text-black text-lg md:text-xl">{exhibition.title}</h2>
-                <p className="font-poppins font-normal text-md md:text-lg mt-5">at the {exhibition.place}</p>
+                <p className="font-poppins font-normal text-md md:text-lg mt-2">at the {exhibition.place}</p>
               </div>
             </div>
           ))}
@@ -32,13 +32,13 @@ export default function List({ exhibitions }) {
 
       <div className="flex flex-col">
         <h1 className="font-bold text-xl md:text-2xl text-black font-poppins mb-5">SELF EXHIBITION</h1>
-        <div className="grid grid-cols-1 md:grid-cols-2 px-20">
+        <div className="grid grid-cols-1 md:grid-cols-2">
           {selfExhibitions.map((exhibition, index) => (
-            <div className="flex flex-row justify-between" key={index}>
-              <h1 className="font-poppins font-bold text-black text-xl md:text-2xl">{exhibition.date}</h1>
+            <div className="flex flex-row" key={index}>
+              <h1 className="font-poppins font-bold text-black text-xl md:text-2xl pr-10">{exhibition.date}</h1>
               <div className="flex flex-col text-left">
                 <h2 className="font-normal font-poppins text-black text-lg md:text-xl">{exhibition.title}</h2>
-                <p className="font-poppins font-normal text-md md:text-lg mt-5"> at the {exhibition.place}</p>
+                <p className="font-poppins font-normal text-md md:text-lg mt-2"> at the {exhibition.place}</p>
               </div>
             </div>
           ))}
