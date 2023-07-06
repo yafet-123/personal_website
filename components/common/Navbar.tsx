@@ -32,8 +32,8 @@ const Navbar = () => {
   ];
 
   const socialMediaLinks = [
-    {id:"https://www.linkedin.com/in/helen-zeray-789b89267",path:<BsLinkedin size={25} color="black"/>},
-    {id:"https://instagram.com/helenzeray1?igshid=ZGUzMzM3NWJiOQ==",path:<BsInstagram size={25} color="black"/>},
+    {id:"https://www.linkedin.com/in/helen-zeray-789b89267",path:<BsLinkedin size={25}/>},
+    {id:"https://instagram.com/helenzeray1?igshid=ZGUzMzM3NWJiOQ==",path:<BsInstagram size={25}/>},
   ]
 
   const handleNav = () => {
@@ -127,7 +127,7 @@ const Navbar = () => {
         <div className="flex flex-row gap-4 hidden lg:flex">
           {socialMediaLinks.map((paths, index) => {
             return (
-              <Link key={index} href={paths.path} target="_blank">
+              <Link key={index} href={paths.path} target="_blank" className={` ${ pathname == '/' || pathname == '/bio'? "text-white" : "text-black" }`}>
                 {paths.path}
               </Link>
             );
