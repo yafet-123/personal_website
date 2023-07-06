@@ -21,12 +21,13 @@ export const GET = async (req: NextApiRequest, res: NextApiResponse) => {
       Image:data.Image,
       type:data.type,
       view:data.view,
+      place:data.place,
       CreatedDate: data.CreatedDate,
       ModifiedDate: data.ModifiedDate,
       UserName: data.User.UserName,
     }));
     console.log(AllExhibition)
-    return new Response(JSON.stringify(AllExhibition), { status: 200 });  
+    return new Response(JSON.stringify(exhibition), { status: 200 });  
 	} catch (error) {
     return new Response("Failed to fetch all exhibitions", { status: 500 });
   }
