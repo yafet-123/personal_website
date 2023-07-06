@@ -1,7 +1,7 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import prisma from "@/utils/db.server";
 
-export const GET = async (req: NextApiRequest, res: NextApiResponse) => {
+export const GET = async (req: Request) => {
   try {
     const data = await prisma.news.findMany({
       orderBy: { news_id: "asc" },
