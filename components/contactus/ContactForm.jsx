@@ -3,17 +3,26 @@ import React from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import {BsFacebook, BsYoutube, BsLinkedin, BsInstagram, BsTwitter} from 'react-icons/bs'
 import Link from "next/link";
+import PhoneInput from 'react-phone-number-input';
+import 'react-phone-number-input/style.css';
 
 const initialValues = {
-  firstName: "",
-  lastName: "",
+  name: "",
   email: "",
-  subject: "",
+  phone: "",
   message: "",
 };
 
 const validateForm = (values) => {
   const errors = {};
+  const MAX_TEXT_LENGTH = 100;
+  const Name = values.name;
+  console.log(Name.length)
+
+  if (Name.length > MAX_TEXT_LENGTH) {
+    errors.name = `Name must be ${MAX_TEXT_LENGTH} characters or less`;
+    console.log(errors.name)
+  }
 
   if (!values.name) {
     errors.name = "Name is required";
@@ -88,7 +97,7 @@ const ContactForm = () => {
                 type="name"
                 id="name"
                 name="name"
-                className="w-full p-2 text-black border border-"
+                className="w-full p-2 text-black border border-gray-300"
               />
               <ErrorMessage
                 name="name"
@@ -106,7 +115,7 @@ const ContactForm = () => {
                 type="email"
                 id="email"
                 name="email"
-                className="w-full p-2 text-black border border-"
+                className="w-full p-2 text-black border border-gray-300"
               />
               <ErrorMessage
                 name="email"
@@ -124,7 +133,7 @@ const ContactForm = () => {
                 type="text"
                 id="phone"
                 name="phone"
-                className="w-full p-2 text- border border-"
+                className="w-full p-2 text-black border border-gray-300"
               />
               <ErrorMessage
                 name="phone"
@@ -142,7 +151,7 @@ const ContactForm = () => {
                 as="textarea"
                 id="message"
                 name="message"
-                className="w-full p-2 text-black border border-"
+                className="w-full p-2 text-black border border-gray-300"
               />
               <ErrorMessage
                 name="message"
