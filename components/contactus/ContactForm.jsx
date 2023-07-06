@@ -46,7 +46,7 @@ const validateForm = (values) => {
   return errors;
 };
 
-const handleSubmit = (values) => {
+const handleSubmit = async (values) => {
   // Handle form submission logic here
   console.log(values);
   try {
