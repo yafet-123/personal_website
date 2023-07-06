@@ -1,23 +1,23 @@
 import nodemailer from 'nodemailer';
 
 export default async function handler(req, res) {
-  const { recipient, subject, text } = req.body;
+  const { name , email , phone , message} = req.body;
 
   // Create a Nodemailer transporter
   const transporter = nodemailer.createTransport({
     service: 'Gmail',
     auth: {
-      user: 'your-email@gmail.com',
-      pass: 'your-password'
+      user: 'addisuyafet321@gmail.com',
+      pass: process.env.Password
     }
   });
 
   // Define the email options
   const mailOptions = {
     from: 'your-email@gmail.com',
-    to: recipient,
-    subject,
-    text
+    to: 'yafetaddisu123@gmail.com',
+    subject: 'New Contact Form Submission',
+    text: `Name: ${name} \nEmail: ${email} \nphone: ${phone} \nMessage: ${message}`,
   };
 
   try {

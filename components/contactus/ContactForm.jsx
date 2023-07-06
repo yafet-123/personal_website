@@ -5,6 +5,7 @@ import {BsFacebook, BsYoutube, BsLinkedin, BsInstagram, BsTwitter} from 'react-i
 import Link from "next/link";
 import PhoneInput from 'react-phone-number-input';
 import 'react-phone-number-input/style.css';
+import { useRouter, useSearchParams } from "next/navigation";
 
 const initialValues = {
   name: "",
@@ -48,9 +49,33 @@ const validateForm = (values) => {
 const handleSubmit = (values) => {
   // Handle form submission logic here
   console.log(values);
+  try {
+    const response = await fetch('/api/sendEmail', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ 
+        name:values.name, 
+        email:values.email,
+        phone:values.phone,
+        message:values.message
+      }),
+    });
+
+    if (response.ok) {
+      window.alert('Email sent successfully');
+      router.reload()
+    } else {
+      console.log('Failed to send email');
+    }
+  } catch (error) {
+    console.error('Error:', error);
+  }
 };
 
 const ContactForm = () => {
+  const router = useRouter();
   const socialMediaLinks = [
     {id:"https://www.linkedin.com/in/helen-zeray-789b89267",path:<BsLinkedin size={30} color="black"/>},
     {id:"https://instagram.com/helenzeray1?igshid=ZGUzMzM3NWJiOQ==",path:<BsInstagram size={30} color="black"/>},
