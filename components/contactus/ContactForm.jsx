@@ -67,6 +67,7 @@ const handleSubmit = (values) => {
       window.alert('Email sent successfully');
       router.reload()
     } else {
+      window.alert('Email not sent successfully');
       console.log('Failed to send email');
     }
   } catch (error) {
