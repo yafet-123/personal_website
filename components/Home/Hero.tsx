@@ -28,15 +28,7 @@ const Hero: React.FC = () => {
             className={`${data.image} w-full h-screen bg-fixed relative`}
           >
             <div className="absolute top-1/2 flex justify-end -translate-y-1/2 w-full px-10">
-              <div className="flex flex-col gap-4">
-                {socialMediaLinks.map((paths, index) => {
-                  return (
-                    <Link key={index} href={paths.path} target="_blank">
-                      {paths.path}
-                    </Link>
-                  );
-                })}
-              </div>
+              
             </div>
           </div>
         ))}

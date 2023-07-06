@@ -6,6 +6,7 @@ import { useRouter, usePathname } from "next/navigation";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 import navbarImage from "@/public/logo.svg";
 import { signIn, signOut, useSession, getProviders } from "next-auth/react";
+import {BsFacebook, BsYoutube, BsLinkedin, BsInstagram, BsTwitter, BsTelegram} from 'react-icons/bs'
 
 const Navbar = () => {
   const { data: session } = useSession(); // this is for next-auth
@@ -29,6 +30,11 @@ const Navbar = () => {
     { path: "/News", name: "News and Press" },
     { path: "/contact", name: "Contact" },
   ];
+
+  const socialMediaLinks = [
+    {id:"https://www.linkedin.com/in/helen-zeray-789b89267",path:<BsLinkedin size={25} color="black"/>},
+    {id:"https://instagram.com/helenzeray1?igshid=ZGUzMzM3NWJiOQ==",path:<BsInstagram size={25} color="black"/>},
+  ]
 
   const handleNav = () => {
     setNav(!nav);
@@ -65,11 +71,20 @@ const Navbar = () => {
         className={` ${ open ? "bg-black bg-opacity-90" :"" } lg:justify-between justify-around px-5 lg:px-10 items-center lg:flex`}
       >
         <div className="flex items-center justify-between py-3 ">
-          <h1 className={` ${ pathname == '/' || pathname == '/bio' && !shadow || open ? "text-white" : "text-black" } font-poppins text-2xl md:text-3xl font-normal`}>
+          <h1 className={` ${ pathname == '/' || pathname == '/bio' && !shadow || open ? "text-white" : "text-black" } font-poppins text-xl md:text-2xl font-normal`}>
             Helen Zeray
           </h1>
-          <div className="lg:hidden">
-            <div className="md:hidden">
+          <div className="flex items-center lg:hidden">
+            <div className="flex flex-row gap-4">
+              {socialMediaLinks.map((paths, index) => {
+                return (
+                  <Link key={index} href={paths.path} target="_blank">
+                    {paths.path}
+                  </Link>
+                );
+              })}
+            </div>
+            <div className="pl-5">
               <button
                 className={` ${ pathname == '/' || pathname == '/bio' && !shadow || open ? "text-white" : "text-black" } p-2 rounded-md outline-none focus:border-gray-400 focus:border`}
                 onClick={() => setOpen(!open)}
@@ -94,7 +109,7 @@ const Navbar = () => {
               {NavLinks.map((link) => (
                 <li
                   key={link.name}
-                  className={` md:my-0 my-7 text-2xl hover:underline cursor-pointer hover:text-[#17c294] ${
+                  className={` md:my-0 my-7 text-lg md:text-xl hover:underline cursor-pointer hover:text-[#17c294] ${
                     pathname === link.path
                       ? "text-[#17c294] underline"
                       : ""
@@ -107,6 +122,16 @@ const Navbar = () => {
               ))}
             </ul>
           </div>
+        </div>
+
+        <div className="flex flex-row gap-4 hidden lg:flex">
+          {socialMediaLinks.map((paths, index) => {
+            return (
+              <Link key={index} href={paths.path} target="_blank">
+                {paths.path}
+              </Link>
+            );
+          })}
         </div>
 
         { (pathname == "/Admin" || pathname == "/Admin/User"|| pathname == "/Admin/Works" || pathname == "/Admin/Exhibitions")  &&
