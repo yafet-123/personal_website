@@ -10,14 +10,18 @@ export default function Work({ news }) {
       className="text-white flex flex-row cursor-pointer shadow-md hover:shadow-xl shadow-inherit overflow-hidden hover:scale-95 transition-transform duration-300 border shadow-2xl my-5"
       key={news.news_id}
     >
-      <div className="relative h-[250px] w-full">
-        <Image
-          src={news.Image[0]}
-          alt="Slide"
-          className="h-full w-full"
-          layout="fill"
-        />
-      </div>
+      { news.Image == "" ?
+        <div></div>
+         : 
+        <div className="relative h-[100px] lg:h-[250px] w-full">
+          <Image
+            src={news.Image}
+            alt="Slide"
+            className="h-full w-full"
+            layout="fill"
+          />
+        </div>
+      }
 
       <div className="flex flex-col px-5">
         <h1 className="my-[1rem] text-left font-poppins font-semibold text-[1.3rem] text-[#010101] text-center">
