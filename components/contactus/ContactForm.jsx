@@ -46,33 +46,32 @@ const validateForm = (values) => {
   return errors;
 };
 
-const handleSubmit = async (values) => {
-  // Handle form submission logic here
-  console.log(values);
-  try {
-    const response = await fetch('/api/SentMail', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ 
-        name:values.name, 
-        email:values.email,
-        phone:values.phone,
-        message:values.message
-      }),
-    });
-
-    if (response.ok) {
-      window.alert('Email sent successfully');
-      router.reload()
-    } else {
-      window.alert('Email not sent successfully');
-      console.log('Failed to send email');
-    }
-  } catch (error) {
-    console.error('Error:', error);
-  }
+const handleSubmit = async ({e,values}) => {
+  console.log(values)
+  // Handle form submission logic her
+  // try {
+  //   const response = await fetch('/api/SentMail', {
+  //     method: 'POST',
+  //     headers: {
+  //       'Content-Type': 'application/json',
+  //     },
+  //     body: JSON.stringify({ 
+  //       name:values.name, 
+  //       email:values.email,
+  //       phone:values.phone,
+  //       message:values.message
+  //     }),
+  //   });
+  //   console.log(response.ok)
+  //   if (response.ok) {
+  //     window.alert('Email sent successfully');
+  //   } else {
+  //     window.alert('Email not sent successfully');
+  //     console.log('Failed to send email');
+  //   }
+  // } catch (error) {
+  //   console.error('Error:', error);
+  // }
 };
 
 const ContactForm = () => {
@@ -82,36 +81,32 @@ const ContactForm = () => {
     {id:"https://instagram.com/helenzeray1?igshid=ZGUzMzM3NWJiOQ==",path:<BsInstagram size={30} color="black"/>},
   ]
   return (
-    <div className="flex flex-col gap-8 md:gap-12 w-full md:px-10">
+    <div className="w-full flex flex-col md:flex-row items-center space-y-6">
+      <div className="flex flex-col px-2 lg:px-10 w-full">
+        <h1 className="font-poppins font-bold text-4xl lg:tetx-6xl text-left text-[#010101] mb-5">
+          Contact
+        </h1>
+        <div className="font-poppins text-left text-[#010101]">
+          <p className="font-normal text-xl lg:text-2xl mb-5">helenzersy8905@gmail.com </p>
+          <p className="font-normal text-xl lg:text-2xl mb-5">Sderot hachmel Israel 32</p>
+          <p className="font-normal text-xl lg:text-2xl mb-5">WhatsApp: +9725353323525</p>
+        </div>
+
+        <div className="flex gap-4">
+          {socialMediaLinks.map((paths, index) => {
+            return (
+              <Link key={index} href={paths.path} target="_blank">
+                {paths.path}
+              </Link>
+            );
+          })}
+        </div>
+      </div>
       <Formik
         initialValues={initialValues}
         validate={validateForm}
-        onSubmit={handleSubmit}
       >
-        <div className="w-full flex flex-col md:flex-row items-center space-y-6">
-          <div className="flex flex-col px-2 lg:px-10 w-full">
-            <h1 className="font-poppins font-bold text-4xl lg:tetx-6xl text-left text-[#010101] mb-5">
-              Contact
-            </h1>
-            <div className="font-poppins text-left text-[#010101]">
-              <p className="font-normal text-2xl lg:tetx-3xl mb-5">Helen Zeray</p>
-              <p className="font-normal text-xl lg:text-2xl mb-5">helenzersy8905@gmail.com </p>
-              <p className="font-normal text-xl lg:text-2xl mb-5">Sderot hachmel Israel 32</p>
-              <p className="font-normal text-xl lg:text-2xl mb-5">WhatsApp: +9725353323525</p>
-            </div>
-
-            <div className="flex gap-4">
-              {socialMediaLinks.map((paths, index) => {
-                return (
-                  <Link key={index} href={paths.path} target="_blank">
-                    {paths.path}
-                  </Link>
-                );
-              })}
-            </div>
-          </div>
-
-          <form className="flex flex-col px-2 lg:px-10 w-full">
+          <form className="flex flex-col px-2 lg:px-10 w-full" onSubmit={handleSubmit}>
             <h3 className="font-poppins text-left text-[#010101] font-bold text-4xl lg:tetx-6xl mb-5">Enquiry form</h3>
 
             <div className="mb-4">
@@ -194,7 +189,6 @@ const ContactForm = () => {
               Submit
             </button>
           </form>
-        </div>
       </Formik>
     </div>
   );

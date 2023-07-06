@@ -4,6 +4,7 @@ export default async function handler(req, res) {
   const { name , email , phone , message} = req.body;
 
   // Create a Nodemailer transporter
+  console.log(req.body)
   const transporter = nodemailer.createTransport({
     service: 'Gmail',
     auth: {
