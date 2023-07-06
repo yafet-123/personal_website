@@ -50,7 +50,7 @@ const handleSubmit = async (values) => {
   // Handle form submission logic here
   console.log(values);
   try {
-    const response = await fetch('/api/sendEmail', {
+    const response = await fetch('/api/SentMail', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
