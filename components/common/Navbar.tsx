@@ -71,14 +71,14 @@ const Navbar = () => {
         className={` ${ open ? "bg-black bg-opacity-90" :"" } lg:justify-between justify-around px-5 lg:px-10 items-center lg:flex`}
       >
         <div className="flex items-center justify-between py-3 ">
-          <h1 className={` ${ pathname == '/' || pathname == '/bio' && !shadow || open ? "text-white" : "text-black" } font-poppins text-xl md:text-2xl font-normal`}>
+          <h1 className={` ${ pathname == '/' && !shadow || open ? "text-white" : "text-black" } font-poppins text-xl md:text-2xl font-normal`}>
             Helen Zeray
           </h1>
           <div className="flex items-center lg:hidden">
             <div className="flex flex-row gap-4">
               {socialMediaLinks.map((paths, index) => {
                 return (
-                  <Link key={index} href={paths.path} target="_blank" className={` ${ pathname == '/' || pathname == '/bio'? "text-white" : "text-black" }`}>
+                  <Link key={index} href={paths.path} target="_blank" className={` ${ pathname == '/'? "text-white" : "text-black" }`}>
                     {paths.path}
                   </Link>
                 );
@@ -86,7 +86,7 @@ const Navbar = () => {
             </div>
             <div className="pl-5">
               <button
-                className={` ${ pathname == '/' || pathname == '/bio' && !shadow || open ? "text-white" : "text-black" } p-2 rounded-md outline-none focus:border-gray-400 focus:border`}
+                className={` ${ pathname == '/' && !shadow || open ? "text-white" : "text-black" } p-2 rounded-md outline-none focus:border-gray-400 focus:border`}
                 onClick={() => setOpen(!open)}
               >
                 {open === true ? ( 
@@ -105,7 +105,7 @@ const Navbar = () => {
               open ? "flex bg-transparent" : "hidden"
             }`}
           >
-            <ul className={` ${ pathname == '/' || pathname == '/bio' && !shadow || open ? "text-white" : "text-black" } items-center font-bold paragraph-fonts justify-center space-y-8 md:flex md:space-x-6 md:space-y-0`}>
+            <ul className={` ${ pathname == '/'  && !shadow || open ? "text-white" : "text-black" } items-center font-bold paragraph-fonts justify-center space-y-8 md:flex md:space-x-6 md:space-y-0`}>
               {NavLinks.map((link) => (
                 <li
                   key={link.name}
@@ -127,7 +127,7 @@ const Navbar = () => {
         <div className="flex flex-row gap-4 hidden lg:flex">
           {socialMediaLinks.map((paths, index) => {
             return (
-              <Link key={index} href={paths.path} target="_blank" className={` ${ pathname == '/' || pathname == '/bio'? "text-white" : "text-black" }`}>
+              <Link key={index} href={paths.path} target="_blank" className={` ${ pathname == '/' ? "text-white" : "text-black" }`}>
                 {paths.path}
               </Link>
             );
