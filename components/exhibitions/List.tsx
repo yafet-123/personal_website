@@ -14,7 +14,7 @@ export default function List({ exhibitions }) {
   }
   console.log(selfExhibitions)
   return (
-    <div className="flex flex-col px-10">
+    <div className="flex flex-col px-5 lg:px-10">
       <div className="flex flex-col mb-10">
         <h1 className="font-bold text-xl md:text-2xl text-black font-poppins mb-5">GROUP EXHIBITION</h1>
         <div className="grid grid-cols-1 md:grid-cols-2">

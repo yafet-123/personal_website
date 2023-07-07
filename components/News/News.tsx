@@ -11,9 +11,11 @@ export default function Work({ news }) {
       key={news.news_id}
     >
       { news.Image == "" ?
-        <div></div>
+        <div className="h-[100px] lg:h-[250px] w-full">
+          
+        </div>
          : 
-        <div className="relative h-[100px] lg:h-[250px] w-full">
+        <div className="relative h-full lg:h-[250px] w-full">
           <Image
             src={news.Image}
             alt="Slide"
@@ -24,11 +26,11 @@ export default function Work({ news }) {
       }
 
       <div className="flex flex-col px-5">
-        <h1 className="my-[1rem] text-left font-poppins font-semibold text-[1.3rem] text-[#010101] text-center">
+        <h1 className="my-[1rem] text-left font-poppins font-semibold text-xl md:text-2xl text-[#010101] text-center">
           {news.title}
         </h1>
 
-        <p className="mb-5 font-poppins xs:text-[20px] xs:leading-[27px] text-[16px] leading-[23px] font-normal w-full text-left text-[#505e66] mt-4">
+        <p className="mb-5 font-poppins text-lg md:text-xl leading-[23px] font-normal w-full text-left text-[#505e66] mt-4">
           {news.description}
         </p>
       </div>

@@ -1,5 +1,6 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import prisma from "@/utils/db.server";
+import { PrismaClient } from '@prisma/client'
+const prisma = new PrismaClient()
 
 export const GET = async (req: NextApiRequest, res: NextApiResponse) => {
   try {
@@ -13,6 +14,7 @@ export const GET = async (req: NextApiRequest, res: NextApiResponse) => {
         },
       },
     });
+    console.log(exhibition)
     const AllExhibition = exhibition.map((data) => ({
       exhibition_id: data.exhibition_id.toString(),
       title: data.title,
@@ -26,7 +28,7 @@ export const GET = async (req: NextApiRequest, res: NextApiResponse) => {
       ModifiedDate: data.ModifiedDate,
       UserName: data.User.UserName,
     }));
-    console.log(AllExhibition)
+    console.log(exhibition)
     return new Response(JSON.stringify(exhibition), { status: 200 });  
 	} catch (error) {
     return new Response("Failed to fetch all exhibitions", { status: 500 });

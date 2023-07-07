@@ -78,7 +78,7 @@ const Navbar = () => {
             <div className="flex flex-row gap-4">
               {socialMediaLinks.map((paths, index) => {
                 return (
-                  <Link key={index} href={paths.path} target="_blank">
+                  <Link key={index} href={paths.path} target="_blank" className={` ${ pathname == '/' || pathname == '/bio'? "text-white" : "text-black" }`}>
                     {paths.path}
                   </Link>
                 );
