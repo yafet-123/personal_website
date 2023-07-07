@@ -4,7 +4,7 @@
 
 .scroll_width{
   overflow-x:scroll;
-}
+} 
 
 @media (min-width: 1024px) { 
   .scroll_width{
@@ -32,7 +32,7 @@
 
 .hero-background-one {
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url('../public/image1.png');
+    url('../public/image6.png');
   background-size: cover;
   background-position: center;
 }
