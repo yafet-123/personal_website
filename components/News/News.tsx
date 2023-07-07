@@ -7,7 +7,7 @@ export default function Work({ news }) {
   return (
     <Link
       href={news.link}
-      className="text-white flex flex-row cursor-pointer shadow-md hover:shadow-xl shadow-inherit overflow-hidden hover:scale-95 transition-transform duration-300 border shadow-2xl my-5"
+      className="text-white flex flex-row cursor-pointer shadow-md hover:shadow-xl shadow-inherit overflow-hidden hover:scale-95 transition-transform duration-300 border shadow-2xl my-2"
       key={news.news_id}
     >
       { news.Image == "" ?
