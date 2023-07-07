@@ -1,5 +1,6 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import prisma from "@/utils/db.server";
+import { PrismaClient } from '@prisma/client'
+const prisma = new PrismaClient()
 
 export const GET = async (req: NextApiRequest, res: NextApiResponse) => {
   try {
