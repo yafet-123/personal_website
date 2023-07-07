@@ -11,7 +11,7 @@ export default function Work({ news }) {
       key={news.news_id}
     >
       { news.Image == "" ?
-        <div className="h-[100px] lg:h-[250px] w-[200px] lg:w-full">
+        <div className="h-[100px] lg:h-[250px] w-full">
           
         </div>
          : 
