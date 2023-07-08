@@ -1,20 +1,12 @@
+'use client'
 import Exhibition from "./Exhibition";
 
 export default function List({ exhibitions }) {
-  // classify the exhibition in to two the first one is group and the second on e is solo exhibition
-  const selfExhibitions = [];
-  const groupExhibitions = [];
-  for (const exhibition of exhibitions) {
-    if (exhibition.type === "Solo") {
-      selfExhibitions.push(exhibition);
-    } else if (exhibition.type === "Group") {
-      groupExhibitions.push(exhibition);
-    }
-  }
-  console.log(selfExhibitions)
   return (
-    <div className="flex flex-col px-5 lg:px-10">
-      <Exhibition exhibition={exhibition} />
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 px-2 lg:px-10">
+      {exhibitions.map((data, index) => (
+        <Work key={data.exhibition_id} exhibition={data} />
+      ))}
     </div>
   );
 }
