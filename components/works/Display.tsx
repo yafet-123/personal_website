@@ -17,7 +17,7 @@ export default function Display({ work }) {
 */}      </div>
       <div className="w-full !h-[30rem] relative justify-self-center mb-5 lg:mb-0">
         <Image
-          src={work.Image[0]}
+          src={work.Image}
           fill
           className="w-full !h-full"
           alt="latest news image"

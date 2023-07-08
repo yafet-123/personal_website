@@ -67,7 +67,7 @@ const Display = ({ Works }) => {
         <p className="my-4 font-satoshi text-sm text-gray-700">
           {Works.title}
         </p>
-        <Image src={Works.Image[0]} alt="Works Image" width={50} height={50} />
+        <Image src={Works.Image} alt="Works Image" width={50} height={50} />
       </div>
 
       <p className="my-4 font-satoshi text-sm text-gray-700">
