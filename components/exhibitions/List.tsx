@@ -1,4 +1,3 @@
-'use client'
 import Exhibition from "./Exhibition";
 
 export default function List({ exhibitions }) {
@@ -15,35 +14,7 @@ export default function List({ exhibitions }) {
   console.log(selfExhibitions)
   return (
     <div className="flex flex-col px-5 lg:px-10">
-      <div className="flex flex-col mb-10">
-        <h1 className="font-bold text-xl md:text-2xl text-black font-poppins mb-5">GROUP EXHIBITION</h1>
-        <div className="grid grid-cols-1 md:grid-cols-2">
-          {groupExhibitions.map((exhibition, index) => (
-            <div className="flex flex-row mb-5 md:mb-10" key={index}>
-              <h1 className="font-poppins font-semibold text-black text-xl md:text-2xl pr-10">{exhibition.date}</h1>
-              <div className="flex flex-col text-left">
-                <h2 className="font-normal font-poppins text-black text-lg md:text-xl">{exhibition.title}</h2>
-                <p className="font-poppins font-light text-md md:text-lg mt-2">at the {exhibition.place}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      <div className="flex flex-col">
-        <h1 className="font-bold text-xl md:text-2xl text-black font-poppins mb-5">SELF EXHIBITION</h1>
-        <div className="grid grid-cols-1 md:grid-cols-2">
-          {selfExhibitions.map((exhibition, index) => (
-            <div className="flex flex-row mb-5 md:mb-10" key={index}>
-              <h1 className="font-poppins font-bold text-black text-xl md:text-2xl pr-10">{exhibition.date}</h1>
-              <div className="flex flex-col text-left">
-                <h2 className="font-normal font-poppins text-black text-lg md:text-xl">{exhibition.title}</h2>
-                <p className="font-poppins font-light text-md md:text-lg mt-2"> at the {exhibition.place}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
+      <Exhibition exhibition={exhibition} />
     </div>
   );
 }
