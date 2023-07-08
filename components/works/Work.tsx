@@ -12,7 +12,7 @@ export default function Work({ work }) {
     >
       <div className="relative h-[400px] w-full">
         <Image
-          src={work.Image[0]}
+          src={work.Image}
           alt="Slide"
           className="h-full w-full"
           layout="fill"
