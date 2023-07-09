@@ -77,7 +77,7 @@ const ContactForm = () => {
         setModalIsOpen(true)
         
       } else {
-        window.alert('Email not sent successfully');
+        window.alert('Your Enquiry form Submitted un Successfull.  Please retry');
         console.log('Failed to send email');
       }
     } catch (error) {
@@ -212,11 +212,13 @@ const ContactForm = () => {
             borderRadius: '8px',
           },
         }}
-        className="flex items-center justify-center w-[500px] h-[200px]"
+        className="flex items-center justify-center w-[300px] h-[200px]"
       >
         {/* Add your modal content here */}
-        <p  className="text-md lg:text-xl">Your Enquiry form Submitted Successfully.</p>
-        <button onClick={closeModal} className="p-2 bg-blue-600 border rounded-sm">Close</button>
+        <div className="flex flex-col items-center">
+          <p  className="text-md lg:text-xl">Your Enquiry form Submitted Successfully.</p>
+          <button onClick={closeModal} className="p-2 bg-[#17c294] border text-white rounded-sm">Close</button>
+        </div>
       </ReactModal>
     </div>
   );
