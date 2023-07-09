@@ -46,34 +46,6 @@ const validateForm = (values) => {
   return errors;
 };
 
-const handleSubmit = async (values) => {
-  event.preventDefault()
-  console.log(values)
-  // Handle form submission logic her
-  try {
-    const response = await fetch('/api/SentMail', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ 
-        name:values.name, 
-        email:values.email,
-        phone:values.phone,
-        message:values.message
-      }),
-    });
-    console.log(response.ok)
-    if (response.ok) {
-      window.alert('Email sent successfully');
-    } else {
-      window.alert('Email not sent successfully');
-      console.log('Failed to send email');
-    }
-  } catch (error) {
-    console.error('Error:', error);
-  }
-};
 
 const ContactForm = () => {
   const router = useRouter();
@@ -81,6 +53,35 @@ const ContactForm = () => {
     {id:"https://www.linkedin.com/in/helen-zeray-789b89267",path:<BsLinkedin size={30} color="black"/>},
     {id:"https://instagram.com/helenzeray1?igshid=ZGUzMzM3NWJiOQ==",path:<BsInstagram size={30} color="black"/>},
   ]
+  const handleSubmit = async (values) => {
+    event.preventDefault()
+    console.log(values)
+    // Handle form submission logic her
+    try {
+      const response = await fetch('/api/SentMail', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ 
+          name:values.name, 
+          email:values.email,
+          phone:values.phone,
+          message:values.message
+        }),
+      });
+      console.log(response.ok)
+      if (response.ok) {
+        window.alert('Email sent successfully');
+        router.push('/contact')
+      } else {
+        window.alert('Email not sent successfully');
+        console.log('Failed to send email');
+      }
+    } catch (error) {
+      console.error('Error:', error);
+    }
+  };
   return (
     <div className="w-full flex flex-col md:flex-row items-center space-y-6">
       <div className="flex flex-col px-2 lg:px-10 w-full">
