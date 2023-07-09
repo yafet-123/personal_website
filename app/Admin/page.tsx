@@ -4,5 +4,5 @@ export const metadata: Metadata = {
   title: 'Admin Home',
 }
 export default function AdminHome() {
-  return <section className="w-full h-full flex-center flex-col pt-24">yafet</section>;
+  return <section className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-5">yafet</section>;
 }

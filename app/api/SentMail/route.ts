@@ -1,10 +1,11 @@
 import nodemailer from 'nodemailer';
+import { NextApiRequest, NextApiResponse } from "next";
 
-export default async function handler(req, res) {
-  const { name , email , phone , message} = req.body;
+export const POST = async (req:NextApiRequest, res) => {
+  const { name , email , phone , message} = await req.json();
 
   // Create a Nodemailer transporter
-  console.log(req.body)
+  console.log("name")
   const transporter = nodemailer.createTransport({
     service: 'Gmail',
     auth: {
@@ -15,12 +16,12 @@ export default async function handler(req, res) {
 
   // Define the email options
   const mailOptions = {
-    from: 'your-email@gmail.com',
-    to: 'yafetaddisu123@gmail.com',
+    from: 'addisuyafet321@gmail.com',
+    to: 'natnaelhabtamu0@gmail.com',
     subject: 'New Contact Form Submission',
     text: `Name: ${name} \nEmail: ${email} \nphone: ${phone} \nMessage: ${message}`,
   };
-
+  console.log(mailOptions)
   try {
     // Send the email
     await transporter.sendMail(mailOptions);

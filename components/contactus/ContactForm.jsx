@@ -46,32 +46,33 @@ const validateForm = (values) => {
   return errors;
 };
 
-const handleSubmit = async ({e,values}) => {
+const handleSubmit = async (values) => {
+  event.preventDefault()
   console.log(values)
   // Handle form submission logic her
-  // try {
-  //   const response = await fetch('/api/SentMail', {
-  //     method: 'POST',
-  //     headers: {
-  //       'Content-Type': 'application/json',
-  //     },
-  //     body: JSON.stringify({ 
-  //       name:values.name, 
-  //       email:values.email,
-  //       phone:values.phone,
-  //       message:values.message
-  //     }),
-  //   });
-  //   console.log(response.ok)
-  //   if (response.ok) {
-  //     window.alert('Email sent successfully');
-  //   } else {
-  //     window.alert('Email not sent successfully');
-  //     console.log('Failed to send email');
-  //   }
-  // } catch (error) {
-  //   console.error('Error:', error);
-  // }
+  try {
+    const response = await fetch('/api/SentMail', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ 
+        name:values.name, 
+        email:values.email,
+        phone:values.phone,
+        message:values.message
+      }),
+    });
+    console.log(response.ok)
+    if (response.ok) {
+      window.alert('Email sent successfully');
+    } else {
+      window.alert('Email not sent successfully');
+      console.log('Failed to send email');
+    }
+  } catch (error) {
+    console.error('Error:', error);
+  }
 };
 
 const ContactForm = () => {
@@ -105,8 +106,10 @@ const ContactForm = () => {
       <Formik
         initialValues={initialValues}
         validate={validateForm}
+        onSubmit={handleSubmit}
       >
-          <form className="flex flex-col px-2 lg:px-10 w-full" onSubmit={handleSubmit}>
+        {({ handleSubmit }) => (
+        <form className="flex flex-col px-2 lg:px-10 w-full" onSubmit={handleSubmit} >
             <h3 className="font-poppins text-left text-[#010101] font-bold text-4xl lg:tetx-6xl mb-5">Enquiry form</h3>
 
             <div className="mb-4">
@@ -188,7 +191,8 @@ const ContactForm = () => {
             >
               Submit
             </button>
-          </form>
+        </form>
+        )}
       </Formik>
     </div>
   );
