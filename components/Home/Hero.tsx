@@ -1,37 +1,41 @@
 "use client";
-import React, { useEffect, useRef } from 'react';
-import Swiper from 'swiper';
-import '@/app/globals.css';
+import React, { useRef, useState } from 'react';
+// Import Swiper React components
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
 
 
-const Hero = () => {
-  const swiperRef = useRef(null);
+// import required modules
+import { Pagination, Navigation } from 'swiper/modules';
 
-  useEffect(() => {
-    if (swiperRef.current) {
-      new Swiper(swiperRef.current, {
-        slidesPerView: 'auto', // Set the number of slides per view
-        spaceBetween: 16, // Set the space between slides
-        grabCursor: true, // Enable grab cursor when user hovers over the swiper
-        pagination: {
-          el: '.swiper-pagination', // Specify the pagination container element
-          clickable: true // Enable clickable pagination bullets
-        }
-      });
-    }
-  }, []);
-
+export default function Hero() {
   return (
-    <div ref={swiperRef} className="swiper-container">
-      <div className="swiper-wrapper">
-        {/* Add your slides here */}
-        <div className="swiper-slide">Slide 1</div>
-        <div className="swiper-slide">Slide 2</div>
-        <div className="swiper-slide">Slide 3</div>
-      </div>
-      <div className="swiper-pagination"></div>
-    </div>
+    <>
+      <Swiper
+        slidesPerView={1}
+        spaceBetween={30}
+        loop={true}
+        pagination={{
+          clickable: true,
+        }}
+        navigation={true}
+        modules={[Pagination, Navigation]}
+        className="mySwiper"
+      >
+        <SwiperSlide>Slide 1</SwiperSlide>
+        <SwiperSlide>Slide 2</SwiperSlide>
+        <SwiperSlide>Slide 3</SwiperSlide>
+        <SwiperSlide>Slide 4</SwiperSlide>
+        <SwiperSlide>Slide 5</SwiperSlide>
+        <SwiperSlide>Slide 6</SwiperSlide>
+        <SwiperSlide>Slide 7</SwiperSlide>
+        <SwiperSlide>Slide 8</SwiperSlide>
+        <SwiperSlide>Slide 9</SwiperSlide>
+      </Swiper>
+    </>
   );
-};
-
-export default Hero;
+}

@@ -1,7 +1,6 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import '~swiper/swiper.min.css';
 
 .scroll_width{
   overflow-x:scroll;
