@@ -75,7 +75,7 @@ const ContactForm = () => {
       console.log(response.ok)
       if (response.ok) {
         setModalIsOpen(true)
-        router.push('/contact')
+        
       } else {
         window.alert('Email not sent successfully');
         console.log('Failed to send email');
@@ -87,6 +87,7 @@ const ContactForm = () => {
 
   const closeModal = () => {
     setModalIsOpen(false);
+    router.push('/contact')
   };
   return (
     <div className="w-full flex flex-col md:flex-row items-center space-y-6">
@@ -206,6 +207,18 @@ const ContactForm = () => {
         isOpen={modalIsOpen}
         onRequestClose={closeModal}
         contentLabel="Modal"
+        style={{
+          overlay: {
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+          },
+          content: {
+            width: '300px',
+            height: '200px',
+            borderRadius: '8px',
+          },
+        }}s
       >
         {/* Add your modal content here */}
         <p>Your Enquiry form Submitted Successfully.</p>
