@@ -6,31 +6,31 @@ export const metadata: Metadata = {
   title: 'Admin Home',
 }
 
-async function fetchExhibitionsCount() {
-  const data = await fetch(
-    process.env.URL + '/api/Exhibitions/Count',
-    {   
-      next: {
-        revalidate: 60,
-      },
-    }
-  );
-  const exhibitions = await data.json();
-  return exhibitions;
-}
-
-// async function fetchuserCount() {
+// async function fetchExhibitionsCount() {
 //   const data = await fetch(
-//     process.env.URL + '/api/User/Count',
+//     process.env.URL + '/api/Exhibitions/Count',
 //     {   
 //       next: {
 //         revalidate: 60,
 //       },
 //     }
 //   );
-//   const users = await data.json();
-//   return users;
+//   const exhibitions = await data.json();
+//   return exhibitions;
 // }
+
+async function fetchuserCount() {
+  const data = await fetch(
+    process.env.URL + '/api/User/Count',
+    {   
+      next: {
+        revalidate: 60,
+      },
+    }
+  );
+  const users = await data.json();
+  return users;
+}
 
 // async function fetchnewsCount() {
 //   const data = await fetch(
@@ -59,9 +59,9 @@ async function fetchExhibitionsCount() {
 // }
 
 export default async function AdminHome() {
-  const exhibitioncount = await fetchExhibitionsCount();
+  // const exhibitioncount = await fetchExhibitionsCount();
   // const Workcount = await fetchWorkCount();
-  // const usercount = await fetchuserCount();
+  const usercount = await fetchuserCount();
   // const newscount = await fetchnewsCount();
   return (
     <section className="mt-32 flex flex-col w-full h-full">
