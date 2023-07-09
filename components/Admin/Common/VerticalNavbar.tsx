@@ -28,7 +28,7 @@ const VerticalNavbar: React.FC = () => {
                   href={side.link}
                   className={
                     side.link == pathname
-                      ? "whitespace-nowrap bg-[#009688] text-black flex items-center p-4 text-xs lg:text-sm rounded-xl"
+                      ? "whitespace-nowrap bg-[#009688] text-white flex items-center p-4 text-xs lg:text-sm rounded-xl"
                       : "whitespace-nowrap lg:w-full flex items-center p-4 text-xs lg:text-sm text-black hover:bg-white hover:text-[#009688]"
                   }
                 >
