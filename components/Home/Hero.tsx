@@ -3,7 +3,7 @@ import React, { useEffect, useRef } from 'react';
 import Swiper from 'swiper';
 import 'swiper/swiper.min.css';
 
-const MySwiper = () => {
+const Hero = () => {
   const swiperRef = useRef(null);
 
   useEffect(() => {
@@ -33,4 +33,4 @@ const MySwiper = () => {
   );
 };
 
-export default MySwiper;
+export default Hero;
