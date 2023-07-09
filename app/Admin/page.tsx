@@ -59,10 +59,10 @@ async function fetchWorkCount() {
 }
 
 export default async function AdminHome() {
-  // const exhibitioncount = await fetchExhibitionsCount();
-  // const Workcount = await fetchWorkCount();
+  const exhibitioncount = await fetchExhibitionsCount();
+  const Workcount = await fetchWorkCount();
   const usercount = await fetchuserCount();
-  // const newscount = await fetchnewsCount();
+  const newscount = await fetchnewsCount();
   return (
     <section className="mt-32 flex flex-col w-full h-full">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 px-2 lg:px-10">
