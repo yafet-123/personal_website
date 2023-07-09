@@ -24,18 +24,42 @@ export default function Hero() {
         }}
         navigation={true}
         modules={[Pagination, Navigation]}
-        className="mySwiper"
+        className="w-full h-full"
       >
-        <SwiperSlide>Slide 1</SwiperSlide>
-        <SwiperSlide>Slide 2</SwiperSlide>
-        <SwiperSlide>Slide 3</SwiperSlide>
-        <SwiperSlide>Slide 4</SwiperSlide>
-        <SwiperSlide>Slide 5</SwiperSlide>
-        <SwiperSlide>Slide 6</SwiperSlide>
-        <SwiperSlide>Slide 7</SwiperSlide>
-        <SwiperSlide>Slide 8</SwiperSlide>
-        <SwiperSlide>Slide 9</SwiperSlide>
+        {CardHeo.map((data, index) => (
+          <SwiperSlide>
+            <div
+              key={index}
+              className={`${data.image} w-full h-screen bg-fixed relative`}
+            >
+              
+            </div>
+          </SwiperSlide>
+        ))}
       </Swiper>
     </>
   );
 }
+
+const CardHeo = [
+  {
+    id: 1,
+    image: "hero-background-one",
+  },
+  {
+    id: 2,
+    image: "hero-background-two",
+  },
+  {
+    id: 3,
+    image: "hero-background-three",
+  },
+  {
+    id: 4,
+    image: "hero-background-four",
+  },
+  {
+    id: 5,
+    image: "hero-background-five",
+  },
+];
