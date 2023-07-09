@@ -208,21 +208,15 @@ const ContactForm = () => {
         onRequestClose={closeModal}
         contentLabel="Modal"
         style={{
-          overlay: {
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-          },
           content: {
-            width: '300px',
-            height: '200px',
             borderRadius: '8px',
           },
-        }}s
+        }}
+        className="flex items-center justify-center w-[500px] h-[200px]"
       >
         {/* Add your modal content here */}
-        <p>Your Enquiry form Submitted Successfully.</p>
-        <button onClick={closeModal}>Close Modal</button>
+        <p  className="text-md lg:text-xl">Your Enquiry form Submitted Successfully.</p>
+        <button onClick={closeModal} className="p-2 bg-blue-600 border rounded-sm">Close</button>
       </ReactModal>
     </div>
   );
