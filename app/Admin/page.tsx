@@ -19,10 +19,11 @@ async function fetchExhibitionsCount() {
 
 export default async function AdminHome() {
   const exhibitioncount = await fetchExhibitionsCount();
+  console.log(exhibitioncount)
   return (
     <section className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-5">
       <div>
-        {exhibitioncount}
+        
       </div>
     </section>
   );

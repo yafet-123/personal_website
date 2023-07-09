@@ -7,6 +7,6 @@ export const GET = async (req: NextApiRequest, res: NextApiResponse) => {
     const counts = await prisma.Exhibition.count()
     return new Response(JSON.stringify(counts), { status: 200 });  
 	} catch (error) {
-    return new Response("Failed to fetch all exhibitions", { status: 500 });
+    return new Response("Failed to fetch Exhibition Count", { status: 500 });
   }
 };
