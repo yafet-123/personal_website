@@ -212,11 +212,11 @@ const ContactForm = () => {
             borderRadius: '8px',
           },
         }}
-        className="flex items-center justify-center w-[400px] h-[200px]"
+        className="flex items-center justify-center w-full h-full"
       >
         {/* Add your modal content here */}
-        <div className="flex flex-col items-center bg-[#F7F7F7]">
-          <p  className="text-md lg:text-xl">Your Enquiry form Submitted Successfully.</p>
+        <div className="flex flex-col items-center bg-[#F7F7F7] w-[350px] h-[200px]">
+          <p  className="text-md lg:text-xl mb-5">Your Enquiry form Submitted Successfully.</p>
           <button onClick={closeModal} className="p-2 bg-[#17c294] border text-white rounded-sm">Close</button>
         </div>
       </ReactModal>
