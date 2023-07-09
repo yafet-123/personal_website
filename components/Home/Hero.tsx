@@ -27,9 +27,8 @@ export default function Hero() {
         className="w-full h-full"
       >
         {CardHeo.map((data, index) => (
-          <SwiperSlide>
+          <SwiperSlide key={index}>
             <div
-              key={index}
               className={`${data.image} w-full h-screen bg-fixed relative`}
             >
               
