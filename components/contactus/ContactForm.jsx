@@ -207,15 +207,10 @@ const ContactForm = () => {
         isOpen={modalIsOpen}
         onRequestClose={closeModal}
         contentLabel="Modal"
-        style={{
-          content: {
-            borderRadius: '8px',
-          },
-        }}
         className="flex items-center justify-center w-full h-full"
       >
         {/* Add your modal content here */}
-        <div className="flex flex-col items-center bg-[#F7F7F7] w-[350px] h-[200px]">
+        <div className="flex flex-col items-center justify-center bg-[#F7F7F7] w-[350px] h-[200px] p-2 border rounded-sm ">
           <p  className="text-md lg:text-xl mb-5">Your Enquiry form Submitted Successfully.</p>
           <button onClick={closeModal} className="p-2 bg-[#17c294] border text-white rounded-sm">Close</button>
         </div>
