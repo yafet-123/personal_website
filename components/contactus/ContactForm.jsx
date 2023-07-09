@@ -1,8 +1,9 @@
 'use client'
-import React from "react";
+import React, { useState } from 'react';
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import {BsFacebook, BsYoutube, BsLinkedin, BsInstagram, BsTwitter} from 'react-icons/bs'
 import Link from "next/link";
+import ReactModal from 'react-modal';
 import PhoneInput from 'react-phone-number-input';
 import 'react-phone-number-input/style.css';
 import { useRouter, useSearchParams } from "next/navigation";
@@ -49,6 +50,7 @@ const validateForm = (values) => {
 
 const ContactForm = () => {
   const router = useRouter();
+  const [modalIsOpen, setModalIsOpen] = useState(false);
   const socialMediaLinks = [
     {id:"https://www.linkedin.com/in/helen-zeray-789b89267",path:<BsLinkedin size={30} color="black"/>},
     {id:"https://instagram.com/helenzeray1?igshid=ZGUzMzM3NWJiOQ==",path:<BsInstagram size={30} color="black"/>},
@@ -72,7 +74,7 @@ const ContactForm = () => {
       });
       console.log(response.ok)
       if (response.ok) {
-        window.alert('Email sent successfully');
+        setModalIsOpen(true)
         router.push('/contact')
       } else {
         window.alert('Email not sent successfully');
@@ -81,6 +83,10 @@ const ContactForm = () => {
     } catch (error) {
       console.error('Error:', error);
     }
+  };
+
+  const closeModal = () => {
+    setModalIsOpen(false);
   };
   return (
     <div className="w-full flex flex-col md:flex-row items-center space-y-6">
@@ -195,6 +201,16 @@ const ContactForm = () => {
         </form>
         )}
       </Formik>
+
+      <ReactModal
+        isOpen={modalIsOpen}
+        onRequestClose={closeModal}
+        contentLabel="Modal"
+      >
+        {/* Add your modal content here */}
+        <p>Your Enquiry form Submitted Successfully.</p>
+        <button onClick={closeModal}>Close Modal</button>
+      </ReactModal>
     </div>
   );
 };
