@@ -6,7 +6,7 @@ export const metadata: Metadata = {
 
 async function fetchExhibitionsCount() {
   const data = await fetch(
-    process.env.URL + '/api/News',
+    process.env.URL + '/api/Exhibitions/Count',
     {   
       next: {
         revalidate: 60,
