@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useRef } from 'react';
 import Swiper from 'swiper';
-import 'swiper/css';
+import '@/app/globals.css';
 
 
 const Hero = () => {
