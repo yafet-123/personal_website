@@ -58,6 +58,13 @@
   background-position: center;
 }
 
+.hero-background-five {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url('../public/image5.png');
+  background-size: cover;
+  background-position: center;
+}
+
 .outline_btn {
   @apply rounded-full border border-black bg-white py-1.5 px-5 text-black transition-all hover:bg-black hover:text-white text-center text-sm font-inter flex items-center justify-center;
 }
