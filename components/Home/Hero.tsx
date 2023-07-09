@@ -1,7 +1,8 @@
 "use client";
 import React, { useEffect, useRef } from 'react';
 import Swiper from 'swiper';
-import 'swiper/swiper.min.css';
+import 'swiper/css';
+
 
 const Hero = () => {
   const swiperRef = useRef(null);
