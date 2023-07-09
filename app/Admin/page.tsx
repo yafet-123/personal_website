@@ -86,7 +86,7 @@ export default async function AdminHome() {
           <h2 className="font-normal font-poppins xs:text-[24px] xs:leading-[30px] text-[20px] leading-[26px] tracking-[0.25%] text-black">{exhibitioncount}</h2>
         </div>
       </div>
-      {/*<BarChart work={Workcount} news={newscount} exhibition={exhibitioncount} user={usercount} />*/}
+      <BarChart work={Workcount} news={newscount} exhibition={exhibitioncount} user={usercount} />
     </section>
   );
 }
