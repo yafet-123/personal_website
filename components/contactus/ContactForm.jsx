@@ -6,7 +6,7 @@ import Link from "next/link";
 import ReactModal from 'react-modal';
 import PhoneInput from 'react-phone-number-input';
 import 'react-phone-number-input/style.css';
-import { useRouter, useSearchParams } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 
 const initialValues = {
   name: "",
@@ -74,7 +74,8 @@ const ContactForm = () => {
       });
       console.log(response.ok)
       if (response.ok) {
-        setModalIsOpen(true)       
+        setModalIsOpen(true)    
+        router.push("/contact")   
       } else {
         setModalIsOpenone(true)
       }
@@ -85,7 +86,8 @@ const ContactForm = () => {
 
   const closeModal = () => {
     setModalIsOpen(false);
-    router.push("/contact")
+    console.log("contact")
+    router.push("/")
   };
 
   const closeModalone = () => {
@@ -214,14 +216,16 @@ const ContactForm = () => {
         {/* Add your modal content here */}
         <div className="flex flex-col items-center justify-center bg-[#F7F7F7] w-[350px] h-[200px] p-2 border rounded-sm ">
           <p  className="text-md lg:text-xl mb-5 text-center">Your Enquiry form Submitted Successfully.</p>
-          <button onClick={closeModal} className="p-2 bg-[#17c294] border text-white rounded-sm">Close</button>
+          <button onClick={closeModal} className="p-2 bg-[#17c294] border text-white rounded-sm">
+            Close
+          </button>
         </div>
       </ReactModal>
 
       <ReactModal
         isOpen={modalIsOpenone}
         onRequestClose={closeModalone}
-        contentLabel="Modal"
+        contentLabel="Modal Two"
         className="flex items-center justify-center w-full h-full"
       >
         {/* Add your modal content here */}

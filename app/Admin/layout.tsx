@@ -10,6 +10,10 @@ export const metadata = {
   title: "Helen Zerray : Admin",
 };
 
+import Modal from 'react-modal';
+
+Modal.setAppElement('#root');
+
 export default function AdminRootLayout({
   children,
 }: {
