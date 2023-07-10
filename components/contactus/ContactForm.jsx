@@ -51,6 +51,7 @@ const validateForm = (values) => {
 const ContactForm = () => {
   const router = useRouter();
   const [modalIsOpen, setModalIsOpen] = useState(false);
+  const [modalIsOpenone, setModalIsOpenone] = useState(false);
   const socialMediaLinks = [
     {id:"https://www.linkedin.com/in/helen-zeray-789b89267",path:<BsLinkedin size={30} color="black"/>},
     {id:"https://instagram.com/helenzeray1?igshid=ZGUzMzM3NWJiOQ==",path:<BsInstagram size={30} color="black"/>},
@@ -77,7 +78,7 @@ const ContactForm = () => {
         setModalIsOpen(true)
         
       } else {
-        window.alert('Your Enquiry form Submitted un Successfull.  Please retry');
+        window.alert('Your Enquiry form Submitted un Successfull.  Please retry ');
         console.log('Failed to send email');
       }
     } catch (error) {
@@ -87,6 +88,11 @@ const ContactForm = () => {
 
   const closeModal = () => {
     setModalIsOpen(false);
+    router.push('/contact')
+  };
+
+  const closeModalone = () => {
+    setModalIsOpenone(false);
     router.push('/contact')
   };
   return (
@@ -213,6 +219,19 @@ const ContactForm = () => {
         <div className="flex flex-col items-center justify-center bg-[#F7F7F7] w-[350px] h-[200px] p-2 border rounded-sm ">
           <p  className="text-md lg:text-xl mb-5 text-center">Your Enquiry form Submitted Successfully.</p>
           <button onClick={closeModal} className="p-2 bg-[#17c294] border text-white rounded-sm">Close</button>
+        </div>
+      </ReactModal>
+
+      <ReactModal
+        isOpen={modalIsOpenone}
+        onRequestClose={closeModalone}
+        contentLabel="Modal"
+        className="flex items-center justify-center w-full h-full"
+      >
+        {/* Add your modal content here */}
+        <div className="flex flex-col items-center justify-center bg-[#F7F7F7] w-[350px] h-[200px] p-2 border rounded-sm ">
+          <p  className="text-md lg:text-xl mb-5 text-center">Your Enquiry form Submitted un Successfull.  Please retry again.</p>
+          <button onClick={closeModalone} className="p-2 bg-[#17c294] border text-white rounded-sm">Close</button>
         </div>
       </ReactModal>
     </div>
