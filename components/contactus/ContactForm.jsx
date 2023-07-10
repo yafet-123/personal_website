@@ -57,7 +57,6 @@ const ContactForm = () => {
     {id:"https://instagram.com/helenzeray1?igshid=ZGUzMzM3NWJiOQ==",path:<BsInstagram size={30} color="black"/>},
   ]
   const handleSubmit = async (values) => {
-    event.preventDefault()
     console.log(values)
     // Handle form submission logic her
     try {
@@ -86,13 +85,6 @@ const ContactForm = () => {
 
   const closeModal = () => {
     setModalIsOpen(false);
-    const initialValues = {
-      name: "",
-      email: "",
-      phone: "",
-      message: "",
-    };
-
     router.push("/contact")
   };
 
