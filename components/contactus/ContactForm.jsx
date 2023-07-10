@@ -75,11 +75,9 @@ const ContactForm = () => {
       });
       console.log(response.ok)
       if (response.ok) {
-        setModalIsOpen(true)
-        
+        setModalIsOpen(true)       
       } else {
-        window.alert('Your Enquiry form Submitted un Successfull.  Please retry ');
-        console.log('Failed to send email');
+        setModalIsOpenone(true)
       }
     } catch (error) {
       console.error('Error:', error);
@@ -88,12 +86,18 @@ const ContactForm = () => {
 
   const closeModal = () => {
     setModalIsOpen(false);
-    router.push('/contact')
+    const initialValues = {
+      name: "",
+      email: "",
+      phone: "",
+      message: "",
+    };
+
+    router.push("/contact")
   };
 
   const closeModalone = () => {
     setModalIsOpenone(false);
-    router.push('/contact')
   };
   return (
     <div className="w-full flex flex-col md:flex-row items-center space-y-6">
