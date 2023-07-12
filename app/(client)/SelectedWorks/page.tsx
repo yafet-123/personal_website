@@ -3,7 +3,7 @@ import List from '@/components/works/List'
 import { Metadata } from 'next'
  
 export const metadata: Metadata = {
-  title: 'Helen Zerray : Selected Works',
+  title: 'Helen Zeray : Selected Works',
 }
 async function fetchSelectedWorks() {
   const response = await fetch(

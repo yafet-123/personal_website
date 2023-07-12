@@ -3,7 +3,7 @@ import { Metadata } from 'next'
 import { Suspense } from 'react';
 
 export const metadata: Metadata = {
-  title: 'Helen Zerray : NEWS & PRESS',
+  title: 'Helen Zeray : NEWS & PRESS',
 }
 
 async function fetchNews() {

@@ -3,7 +3,7 @@ import Display from '@/components/exhibitions/Display'
 import { Metadata } from 'next'
  
 export const metadata: Metadata = {
-  title: 'Helen Zerray : Exhibitions',
+  title: 'Helen Zeray : Exhibitions',
 }
 // const fetchIndividualExhibition = async(id : string) => {
 //   const data = await fetch(process.env.URL + `/api/Exhibitions/${id}`,

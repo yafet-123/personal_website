@@ -3,7 +3,7 @@ import Display from '@/components/works/Display'
 import { Metadata } from 'next'
  
 export const metadata: Metadata = {
-  title: 'Helen Zerray : Selected Works',
+  title: 'Helen Zeray : Selected Works',
 }
 const fetchIndividualWorks = async(id : string) => {
   const data = await fetch(process.env.URL + `/api/Works/${id}`,

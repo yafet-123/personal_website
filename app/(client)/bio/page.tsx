@@ -2,7 +2,7 @@ import Hero from '@/components/Bio/Hero';
 import { Metadata } from 'next'
  
 export const metadata: Metadata = {
-  title: 'Helen Zerray : Biography',
+  title: 'Helen Zeray : Biography',
 }
 export default async function Bio() {
   return (

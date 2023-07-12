@@ -7,7 +7,7 @@ const inter = Inter({ subsets: ["latin"] });
 import Provider from "@/components/Admin/Common/Provider";
 
 export const metadata = {
-  title: "Helen Zerray : Admin",
+  title: "Helen Zeray : Admin",
 };
 
 
