@@ -7,7 +7,7 @@ import Footer from '@/components/common/Footer'
 import Provider from "@/components/Admin/Common/Provider";
 
 export const metadata = {
-  title: "Helen Zerray : Home",
+  title: "Helen Zeray : Home",
   description: "Helen Zeray's artistic journey is one that is filled with wonder and admiration for the beauty of nature.",
   // verification: {
   //   google: 'google',
