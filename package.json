@@ -2,6 +2,8 @@
   "name": "project3",
   "version": "0.1.0",
   "private": true,
+  "description": "Helen Zeray Portfolio",
+  "homepage": "https://www.helenzeray.com/",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
